@@ -751,6 +751,45 @@
   /* PRIVATE CHEF SERVICES */
   .services-inner .services-grid { grid-template-columns: 1fr; gap: 2px; }
   .service-img { height: 56vw; }
+
+  /* ━━━ MOBILE FIX OVERRIDES ━━━ */
+  /* Kill horizontal overflow globally on small screens */
+  html, body { max-width: 100vw; overflow-x: hidden; }
+  img, video, iframe { max-width: 100%; height: auto; }
+
+  /* HOMEPAGE HERO - right side uses .hero-right not .hero-content */
+  .hero-right { padding: 36px 24px 40px !important; }
+  .hero-left { height: 55vw; min-height: 260px; }
+
+  /* HOMEPAGE SERVICES SECTION - overrides inline styles on index.html */
+  .services[style],
+  section.services { padding: 56px 20px !important; }
+  .services > div[style] { padding: 0 !important; }
+  .services > div > div[style] { margin-bottom: 40px !important; }
+  .services > div > div[style]:last-child { margin-bottom: 0 !important; }
+  /* The 3-column grid of service cards - force single column on mobile */
+  .services div[style*="grid-template-columns:repeat(3"],
+  .services div[style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: 1fr !important;
+    gap: 2px !important;
+  }
+  /* Shrink the 420px-tall service cards on mobile */
+  .services a[style*="height:420px"],
+  .services a[style*="height: 420px"] { height: 320px !important; }
+  .services a[style] > div[style*="padding:32px"] { padding: 24px !important; }
+
+  /* CHAT WINDOW on small phones - position from screen edges not fixed offset */
+  .chat-window {
+    bottom: 80px !important;
+    right: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: calc(100vh - 80px) !important;
+    max-height: calc(100vh - 80px) !important;
+    border-radius: 0 !important;
+  }
+  .chat-bubble { bottom: 16px !important; right: 16px !important; }
 }
 
 @media (max-width: 480px) {
@@ -758,6 +797,9 @@
   .gallery-grid { columns: 1 !important; }
   .hero-content h1 { font-size: 28px; }
   .display-title { font-size: 28px; }
+  /* Extra tight padding on very small phones */
+  .hero-right { padding: 28px 18px 32px !important; }
+  section.services { padding: 48px 16px !important; }
 }
 
 </style>
@@ -806,7 +848,7 @@
 </div>
 
 <!-- SERVICES -->
-<section class="services" <section id="services" style="padding:96px 72px;background:var(--cream);border-bottom:1px solid var(--rule);">
+<section class="services" id="services" style="padding:96px 72px;background:var(--cream);border-bottom:1px solid var(--rule);">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:64px;">
       <span style="font-size:10.5px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:18px;">What We Do</span>
