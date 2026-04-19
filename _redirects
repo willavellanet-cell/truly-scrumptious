@@ -1,0 +1,11 @@
+# Netlify redirects
+/menu-bbq           /menu-bbq.html           200
+/menu-buffet        /menu-buffet.html         200
+/menu-canapes       /menu-canapes.html        200
+/menu-afternoon-tea /menu-afternoon-tea.html  200
+/menu-bespoke       /menu-bespoke.html        200
+/private-chef       /private-chef.html        200
+/gallery            /gallery.html             200
+/about              /about.html               200
+/contact            /contact.html             200
+/terms              /terms.html               200
