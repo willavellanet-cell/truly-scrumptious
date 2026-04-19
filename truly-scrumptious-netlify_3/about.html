@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- mobile-fix-v4 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -513,6 +514,28 @@
   }
   /* Give breathing room at bottom of hero so chat bubble doesn't overlap buttons */
   .hero-right { padding-bottom: 80px !important; }
+
+
+  /* Hide nav Request a Quote on mobile — it overlaps the logo. Users can still use hamburger or hero CTA */
+  .nav-cta { display: none !important; }
+  /* Tighten ghost button on mobile so it doesn't look like a broken card */
+  .btn-ghost {
+    border: 1px solid rgba(0,0,0,0.18) !important;
+    padding: 14px 24px !important;
+  }
+
+
+  /* Stack basket button and chat bubble vertically so they don't overlap */
+  .basket-btn, #tsc-basket-btn {
+    bottom: 16px !important;
+    right: 16px !important;
+    top: auto !important;
+  }
+  .chat-bubble {
+    bottom: 72px !important;   /* basket (44px) + 12px gap + 16px bottom = 72px */
+    right: 16px !important;
+    top: auto !important;
+  }
 
 }
 
