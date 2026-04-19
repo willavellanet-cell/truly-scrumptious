@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Truly Scrumptious — Oxford Catering</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f9f6f0;
+    --blue: #56aae5;
+    --blue-dark: #3d8ec9;
+    --plum: #2d1a2e;
+    --black: #1a1a1a;
+    --mid: #6b6560;
+    --white: #ffffff;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--black);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    padding: 0 48px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+  }
+
+  .nav-logo-text {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    color: var(--black);
+    line-height: 1;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--mid);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--black); }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary {
+    background: var(--blue);
+    color: var(--white);
+  }
+  .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(86,170,229,0.35); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 1.5px solid rgba(255,255,255,0.7);
+  }
+  .btn-outline:hover { background: rgba(255,255,255,0.12); }
+
+  .btn-outline-dark {
+    background: transparent;
+    color: var(--black);
+    border: 1.5px solid var(--black);
+  }
+  .btn-outline-dark:hover { background: var(--black); color: var(--white); }
+
+  .btn-lg { padding: 16px 36px; font-size: 15px; border-radius: 4px; }
+
+  /* ─── HERO ─── */
+  .hero {
+    margin-top: 72px;
+    height: calc(100vh - 72px);
+    min-height: 560px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #b5d5a8 0%, #d4c5a0 35%, #c8a87a 65%, #a0795a 100%);
+    /* Placeholder: replace with actual food photography */
+  }
+
+  /* Simulated food photo using CSS art */
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 600px 400px at 70% 60%, rgba(180,120,60,0.5) 0%, transparent 70%),
+      radial-gradient(ellipse 400px 300px at 30% 40%, rgba(120,160,80,0.4) 0%, transparent 60%),
+      radial-gradient(ellipse 300px 200px at 80% 20%, rgba(200,160,90,0.3) 0%, transparent 50%);
+  }
+
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.2) 55%, rgba(0,0,0,0.08) 100%);
+  }
+
+  /* Linen texture overlay */
+  .hero-texture {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='1' height='4' fill='%23fff'/%3E%3C/svg%3E");
+    background-size: 4px 4px;
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 580px;
+    padding: 0 80px;
+    animation: heroFade 1s ease both;
+  }
+
+  @keyframes heroFade {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 20px;
+    border-left: 2px solid var(--blue);
+    padding-left: 10px;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5.5vw, 68px);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 22px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .hero p {
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.82);
+    margin-bottom: 36px;
+    font-weight: 300;
+    max-width: 440px;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.5);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+
+  .hero-scroll::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 32px;
+    background: rgba(255,255,255,0.3);
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(5px); }
+  }
+
+  /* ─── SECTION BASE ─── */
+  section { padding: 96px 48px; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 3.5vw, 48px);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--plum);
+    letter-spacing: -0.3px;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--mid);
+    font-weight: 300;
+    max-width: 520px;
+    margin-top: 14px;
+  }
+
+  /* ─── SERVICES ─── */
+  .services {
+    background: var(--cream);
+  }
+
+  .services-header {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+  }
+
+  .services-cards {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .service-card {
+    background: var(--white);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
+
+  .service-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* CSS placeholder images */
+  .img-placeholder {
+    width: 100%;
+    display: block;
+  }
+
+  .service-img-placeholder {
+    height: 220px;
+    background: linear-gradient(135deg, #d4c5a0, #c8a87a);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-img-placeholder.private { background: linear-gradient(135deg, #c8b89a, #b89470); }
+  .service-img-placeholder.corporate { background: linear-gradient(135deg, #a8c4b8, #7aa090); }
+  .service-img-placeholder.special { background: linear-gradient(135deg, #d4a8b8, #b87890); }
+
+  .service-img-placeholder::after {
+    content: 'Photo';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+  }
+
+  .service-body {
+    padding: 28px 30px 32px;
+  }
+
+  .service-body h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--plum);
+    margin-bottom: 10px;
+  }
+
+  .service-body p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--mid);
+    font-weight: 300;
+    margin-bottom: 22px;
+  }
+
+  .services-cta {
+    max-width: 1200px;
+    margin: 52px auto 0;
+    text-align: center;
+    background: var(--plum);
+    border-radius: 6px;
+    padding: 36px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .services-cta p {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--white);
+    font-style: italic;
+  }
+
+  /* ─── MENUS ─── */
+  .menus {
+    background: var(--plum);
+    padding: 96px 48px;
+  }
+
+  .menus .section-label { color: rgba(255,255,255,0.5); }
+  .menus .section-title { color: var(--white); }
+
+  .menus-header {
+    max-width: 1200px;
+    margin: 0 auto 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .menus-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+  }
+
+  .menu-tile {
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .menu-tile:hover { background: rgba(255,255,255,0.13); transform: translateY(-4px); }
+
+  .menu-tile-img {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .menu-tile-img.bbq { background: linear-gradient(160deg, #8b4513 0%, #cd853f 100%); }
+  .menu-tile-img.buffet { background: linear-gradient(160deg, #556b2f 0%, #8fbc8f 100%); }
+  .menu-tile-img.canapes { background: linear-gradient(160deg, #8b6914 0%, #daa520 100%); }
+  .menu-tile-img.afternoon-tea { background: linear-gradient(160deg, #9b6b9b 0%, #d8a8d8 100%); }
+  .menu-tile-img.bespoke { background: linear-gradient(160deg, #2f6b8b 0%, #56aae5 100%); }
+
+  .menu-tile-img::after {
+    content: 'Photo';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+  }
+
+  .menu-tile-body {
+    padding: 18px 20px 22px;
+  }
+
+  .menu-tile-body h3 {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--blue);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+  }
+  .link-arrow::after { content: '→'; transition: transform 0.2s; }
+  .link-arrow:hover::after { transform: translateX(4px); }
+
+  /* ─── ABOUT ─── */
+  .about {
+    background: var(--white);
+  }
+
+  .about-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-img-wrap {
+    position: relative;
+  }
+
+  .about-img-main {
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: 6px;
+    background: linear-gradient(160deg, #c8b090, #a0805a);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-img-main::after {
+    content: 'Photo of Jamie';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+  }
+
+  .about-img-accent {
+    position: absolute;
+    bottom: -24px;
+    right: -24px;
+    width: 160px;
+    height: 160px;
+    border-radius: 6px;
+    background: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: 0 12px 32px rgba(86,170,229,0.3);
+  }
+
+  .about-img-accent span:first-child {
+    font-family: var(--font-display);
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .about-img-accent span:last-child {
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    letter-spacing: 0.06em;
+    text-align: center;
+    max-width: 110px;
+    line-height: 1.4;
+  }
+
+  .about-content { }
+
+  .about-content .section-subtitle {
+    max-width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .about-content blockquote {
+    border-left: 3px solid var(--blue);
+    padding-left: 20px;
+    margin: 32px 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--plum);
+  }
+
+  /* ─── FINAL CTA ─── */
+  .final-cta {
+    padding: 0;
+    position: relative;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .final-cta-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #8b6914 0%, #c8903a 40%, #a07040 70%, #6b4520 100%);
+  }
+
+  .final-cta-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.48);
+  }
+
+  .final-cta-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+  }
+
+  .final-cta h2 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 18px;
+    line-height: 1.1;
+  }
+
+  .final-cta p {
+    font-size: 17px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 36px;
+    max-width: 480px;
+    line-height: 1.65;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--plum);
+    padding: 72px 48px 40px;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+  }
+
+  .footer-brand .nav-logo-text {
+    color: var(--white);
+    font-size: 22px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .footer-brand p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+
+  .footer-heading {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a, .footer-contact a {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover, .footer-contact a:hover { color: var(--white); }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .footer-form input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.07);
+    border-radius: 4px;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 13px;
+    outline: none;
+  }
+  .footer-form input::placeholder { color: rgba(255,255,255,0.35); }
+  .footer-form input:focus { border-color: var(--blue); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-bottom p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+    font-weight: 300;
+  }
+
+  .footer-areas {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .area-tag {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── ENQUIRY SECTION in footer ─── */
+  .footer-enquiry {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    padding: 20px;
+    margin-top: 8px;
+  }
+
+  .footer-enquiry textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: transparent;
+    border-radius: 4px;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 300;
+    resize: none;
+    height: 80px;
+    margin-bottom: 10px;
+    outline: none;
+  }
+  .footer-enquiry textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .footer-enquiry textarea:focus { border-color: var(--blue); }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: var(--blue);
+    margin: 20px 0;
+  }
+
+  /* ─── LOGO SVG in nav ─── */
+  .bowl-icon {
+    width: 36px;
+    height: 36px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <a href="#" class="nav-logo">
+    <!-- Bowl icon with TSC -->
+    <svg class="bowl-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Bottom bowl -->
+      <path d="M10 58 Q10 85 50 88 Q90 85 90 58 Z" fill="#1a1a1a"/>
+      <rect x="38" y="86" width="24" height="5" rx="2.5" fill="#1a1a1a"/>
+      <!-- Middle bowl (tilted) -->
+      <path d="M18 40 Q18 60 50 62 Q82 60 82 40 Z" fill="white"/>
+      <path d="M22 40 Q22 57 50 59 Q78 57 78 40 Z" fill="#1a1a1a"/>
+      <!-- Top bowl (most tilted) -->
+      <path d="M32 22 Q30 36 55 40 Q80 38 84 26 Z" fill="white"/>
+      <path d="M35 23 Q33 35 56 38 Q78 36 81 26 Z" fill="#1a1a1a"/>
+      <!-- TSC text in bottom bowl -->
+      <text x="50" y="78" text-anchor="middle" font-family="DM Sans, sans-serif" font-weight="700" font-size="13" fill="white" letter-spacing="-0.5">TSC</text>
+    </svg>
+    <span class="nav-logo-text">truly scrumptious</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#menus">Menus</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Request a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-texture"></div>
+  <div class="hero-content">
+    <span class="hero-tag">Oxford Based Catering</span>
+    <h1>Food to Bring<br><em>People Together</em></h1>
+    <p>Oxford based catering for private events, celebrations and gatherings. Generous, flavour-led food crafted with care.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-primary btn-lg">Request a Quote</a>
+      <a href="#menus" class="btn btn-outline btn-lg">View Menus</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <p class="section-label">What We Do</p>
+      <h2 class="section-title">Catering for<br>Every Occasion</h2>
+    </div>
+    <p class="section-subtitle">From intimate gatherings to large corporate events, we bring warmth and generous food to every table.</p>
+  </div>
+
+  <div class="services-cards">
+    <div class="service-card">
+      <div class="service-img-placeholder private"></div>
+      <div class="service-body">
+        <h3>Private Events</h3>
+        <p>Birthdays, anniversaries and celebrations catered with warmth and generous food.</p>
+        <a href="#" class="btn btn-outline-dark" style="font-size:13px;padding:10px 20px;">Learn More</a>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-img-placeholder corporate"></div>
+      <div class="service-body">
+        <h3>Corporate Events</h3>
+        <p>Reliable catering for meetings, conferences and college events throughout Oxfordshire.</p>
+        <a href="#" class="btn btn-outline-dark" style="font-size:13px;padding:10px 20px;">Learn More</a>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-img-placeholder special"></div>
+      <div class="service-body">
+        <h3>Special Occasions</h3>
+        <p>From garden parties to receptions, we create food that people remember.</p>
+        <a href="#" class="btn btn-outline-dark" style="font-size:13px;padding:10px 20px;">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="services-cta">
+    <p>Planning an event?</p>
+    <a href="#contact" class="btn btn-primary btn-lg">Request a Quote</a>
+  </div>
+</section>
+
+<!-- ═══ MENUS ═══ -->
+<section class="menus" id="menus">
+  <div class="menus-header">
+    <div>
+      <p class="section-label">Explore</p>
+      <h2 class="section-title" style="color:var(--white);">Our Menus</h2>
+    </div>
+  </div>
+
+  <div class="menus-grid">
+    <a href="#" class="menu-tile">
+      <div class="menu-tile-img bbq"></div>
+      <div class="menu-tile-body">
+        <h3>BBQ Catering</h3>
+        <span class="link-arrow">View Menu</span>
+      </div>
+    </a>
+    <a href="#" class="menu-tile">
+      <div class="menu-tile-img buffet"></div>
+      <div class="menu-tile-body">
+        <h3>Buffet Catering</h3>
+        <span class="link-arrow">View Menu</span>
+      </div>
+    </a>
+    <a href="#" class="menu-tile">
+      <div class="menu-tile-img canapes"></div>
+      <div class="menu-tile-body">
+        <h3>Canapés</h3>
+        <span class="link-arrow">View Menu</span>
+      </div>
+    </a>
+    <a href="#" class="menu-tile">
+      <div class="menu-tile-img afternoon-tea"></div>
+      <div class="menu-tile-body">
+        <h3>Afternoon Tea</h3>
+        <span class="link-arrow">View Menu</span>
+      </div>
+    </a>
+    <a href="#" class="menu-tile">
+      <div class="menu-tile-img bespoke"></div>
+      <div class="menu-tile-body">
+        <h3>Bespoke Catering</h3>
+        <span class="link-arrow">View Menu</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-img-wrap">
+      <div class="about-img-main"></div>
+      <div class="about-img-accent">
+        <span>10+</span>
+        <span>Years of<br>catering</span>
+      </div>
+    </div>
+    <div class="about-content">
+      <p class="section-label">Our Story</p>
+      <h2 class="section-title">A Family Run<br>Catering Company</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Truly Scrumptious is owned and run by Jamie Forbes. Passionate about food and creating meals that bring people together around the table.</p>
+      <blockquote>"Good food is about more than the meal — it's the moments it creates."</blockquote>
+      <a href="#" class="btn btn-primary">Learn More About Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<div class="final-cta">
+  <div class="final-cta-bg"></div>
+  <div class="final-cta-content">
+    <h2>Planning an Event?</h2>
+    <p>Tell us about your event and we will help create the perfect menu.</p>
+    <a href="#contact" class="btn btn-primary btn-lg">Request a Quote</a>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="footer-top">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <span class="nav-logo-text">truly scrumptious</span>
+        <p>Oxford based catering for private events, celebrations and gatherings. Generous, flavour-led food crafted with care.</p>
+        <div class="footer-areas">
+          <span class="area-tag">Oxford</span>
+          <span class="area-tag">Oxfordshire</span>
+          <span class="area-tag">Cotswolds</span>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <p class="footer-heading">Contact Us</p>
+        <div class="footer-contact">
+          <a href="tel:+441865000000">📞 01865 000 000</a>
+          <a href="mailto:hello@trulyscrumptious.co.uk">✉ hello@trulyscrumptious.co.uk</a>
+        </div>
+        <div class="footer-enquiry" style="margin-top:20px;">
+          <p style="font-size:12px;color:rgba(255,255,255,0.4);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.08em;">Quick Enquiry</p>
+          <input type="text" placeholder="Your name" style="width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,0.15);background:transparent;border-radius:4px;color:white;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;margin-bottom:8px;">
+          <textarea placeholder="Tell us about your event…"></textarea>
+          <a href="#" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Send Enquiry</a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <p class="footer-heading">Quick Links</p>
+        <ul class="footer-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#menus">Menus</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Menus -->
+      <div>
+        <p class="footer-heading">Our Menus</p>
+        <ul class="footer-links">
+          <li><a href="#">BBQ Catering</a></li>
+          <li><a href="#">Buffet Catering</a></li>
+          <li><a href="#">Canapés</a></li>
+          <li><a href="#">Afternoon Tea</a></li>
+          <li><a href="#">Bespoke Catering</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Truly Scrumptious. All rights reserved.</p>
+      <p>Oxford, Oxfordshire</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
