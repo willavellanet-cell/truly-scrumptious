@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
 <title>Truly Scrumptious — Oxford Catering</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Editorial+New:ital,wght@0,200;0,400;1,200;1,400&display=swap" rel="stylesheet">
@@ -362,6 +363,105 @@
     display: flex; justify-content: space-between; align-items: center; gap: 20px;
   }
   .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.22); font-weight: 300; }
+
+@media (max-width: 768px) {
+  /* NAV */
+  nav { padding: 0 20px; height: 64px; }
+  .nav-bowl-img { height: 36px; }
+  .nav-wordmark-img { height: 20px; }
+  .nav-links { display: none; }
+  .nav-cta { font-size: 10px; padding: 8px 14px; }
+
+  /* HERO - homepage split */
+  .hero { grid-template-columns: 1fr; height: auto; margin-top: 64px; }
+  .hero-img { height: 55vw; min-height: 260px; }
+  .hero-content { padding: 36px 24px 40px; }
+  .hero-content h1 { font-size: clamp(28px, 8vw, 42px); }
+  .hero-content p { font-size: 14px; }
+  .hero-btns { flex-direction: column; gap: 10px; }
+  .hero-btns a { text-align: center; }
+
+  /* HERO - full width pages */
+  .page-hero { height: 60vw; min-height: 300px; margin-top: 64px; }
+  .hero-bg { min-height: 300px; }
+  .hero-content { padding: 0 24px 40px; }
+  .hero-content h1 { font-size: clamp(30px, 8vw, 48px); }
+
+  /* SECTIONS */
+  .intro { padding: 48px 24px; }
+  .story { padding: 56px 24px; }
+  .story-inner { grid-template-columns: 1fr; gap: 40px; }
+  .story-img-accent { display: none; }
+  .story-stat { display: none; }
+  .services { padding: 56px 24px; }
+  .values { padding: 56px 24px; }
+  .approach { grid-template-columns: 1fr; }
+  .approach-img { height: 260px; }
+  .approach-content { padding: 48px 24px; }
+  .numbers { padding: 48px 24px; }
+  .tc-page { padding: 48px 24px; }
+  .faq { padding: 56px 24px; }
+  .included { padding: 56px 24px; }
+
+  /* GRIDS */
+  .services-grid { grid-template-columns: 1fr; }
+  .trust-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr; }
+  .numbers-inner { grid-template-columns: repeat(2, 1fr); }
+  .footer-top { grid-template-columns: 1fr; gap: 36px; }
+  .services-inner .services-grid { grid-template-columns: 1fr; }
+  .included-inner { grid-template-columns: 1fr; gap: 40px; }
+  .dietary-inner { grid-template-columns: 1fr; gap: 32px; }
+  .menu-inner { grid-template-columns: 1fr; gap: 40px; }
+  .menu-aside { position: static; }
+  .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+  .tc-inner { grid-template-columns: 1fr; gap: 32px; }
+  .tc-header { position: static; }
+  .values-header { grid-template-columns: 1fr; gap: 24px; }
+  .page-header { grid-template-columns: 1fr; gap: 24px; padding: 48px 24px 40px; }
+
+  /* IMAGE STRIP */
+  .img-strip { grid-template-columns: repeat(2, 1fr); height: auto; }
+  .img-strip > div, .strip-item { height: 44vw; }
+
+  /* MENU CARDS */
+  .menus-scroll { grid-template-columns: 1fr; padding: 0 24px; }
+  .menu-card { width: 100%; }
+
+  /* HERO SCROLL HINT */
+  .hero-scroll-hint { display: none; }
+
+  /* MARQUEE */
+  .marquee-wrap { padding: 0; }
+
+  /* CTA */
+  .cta-strip { height: 320px; }
+  .cta-content h2 { font-size: clamp(28px, 8vw, 42px); }
+  .cta-content p { font-size: 13px; }
+
+  /* GALLERY */
+  .gallery-grid { columns: 2 !important; }
+
+  /* FOOTER */
+  footer { padding: 48px 24px 32px; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+
+  /* BASKET + CHAT BUTTONS */
+  .basket-btn, #tsc-basket-btn, .chat-bubble { bottom: 16px; right: 16px; width: 48px; height: 48px; }
+  .basket-drawer, #tsc-basket-drawer, .chat-window { width: 100vw; right: 0; border-radius: 0; }
+
+  /* PRIVATE CHEF SERVICES */
+  .services-inner .services-grid { grid-template-columns: 1fr; gap: 2px; }
+  .service-img { height: 56vw; }
+}
+
+@media (max-width: 480px) {
+  .numbers-inner { grid-template-columns: 1fr; }
+  .gallery-grid { columns: 1 !important; }
+  .hero-content h1 { font-size: 28px; }
+  .display-title { font-size: 28px; }
+}
+
 </style>
 </head>
 <body>

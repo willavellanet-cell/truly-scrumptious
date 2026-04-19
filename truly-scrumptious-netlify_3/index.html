@@ -2,8 +2,44 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Truly Scrumptious — Oxford Catering</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Truly Scrumptious Oxford | Catering Company Oxford & Oxfordshire</title>
+<meta name="description" content="Oxford based catering company specialising in BBQ, buffets, canapés, afternoon tea and bespoke menus. Generous, flavour-led food for private events, weddings and corporate occasions across Oxfordshire and the Cotswolds.">
+<meta name="keywords" content="catering Oxford, catering company Oxford, Oxfordshire caterers, event catering Oxford, private party catering Oxford, wedding catering Oxfordshire, corporate catering Oxford, buffet catering Oxford, BBQ catering Oxford, Cotswolds catering">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Truly Scrumptious Oxford">
+<meta property="og:title" content="Truly Scrumptious Oxford | Catering Company Oxford & Oxfordshire">
+<meta property="og:description" content="Oxford based catering company specialising in BBQ, buffets, canapés, afternoon tea and bespoke menus. Generous, flavour-led food for private events, weddings and corporate occasions across Oxfordshire and the Cotswolds.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.trulyscrumptiousoxford.co.uk">
+<meta property="og:image" content="https://www.trulyscrumptiousoxford.co.uk/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Truly Scrumptious Oxford | Catering Company Oxford & Oxfordshire">
+<meta name="twitter:description" content="Oxford based catering company specialising in BBQ, buffets, canapés, afternoon tea and bespoke menus. Generous, flavour-led food for private events, weddings and corporate occasions across Oxfordshire and the Cotswolds.">
+<link rel="canonical" href="https://www.trulyscrumptiousoxford.co.uk/index.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FoodEstablishment",
+  "name": "Truly Scrumptious Oxford",
+  "description": "Oxford based catering company specialising in BBQ, buffets, canapés, afternoon tea and bespoke menus for private events, weddings and corporate occasions.",
+  "url": "https://www.trulyscrumptiousoxford.co.uk",
+  "telephone": "+441865790769",
+  "email": "hello@trulyscrumptious.co.uk",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Oxford",
+    "addressRegion": "Oxfordshire",
+    "addressCountry": "GB"
+  },
+  "areaServed": ["Oxford", "Oxfordshire", "Cotswolds", "Abingdon", "Witney", "Bicester", "Banbury"],
+  "servesCuisine": ["British", "Contemporary", "Canapés", "Buffet", "BBQ", "Afternoon Tea"],
+  "priceRange": "££",
+  "openingHours": "Mo-Fr 09:00-18:00",
+  "sameAs": []
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=aktiv-grotesk@700i,700,800i,800&display=swap" rel="stylesheet">
@@ -625,6 +661,231 @@
     border: none !important;
   }
 
+
+
+  .nav-hamburger { display: none; }
+  .mobile-nav-panel { display: none; }
+
+@media (max-width: 768px) {
+  /* NAV */
+  nav { padding: 0 20px; height: 64px; }
+  .nav-bowl-img { height: 36px; }
+  .nav-wordmark-img { height: 20px; }
+  .nav-links { display: none; }
+  .nav-cta { font-size: 10px; padding: 8px 14px; }
+
+  /* HERO - homepage split */
+  .hero { grid-template-columns: 1fr; height: auto; margin-top: 64px; }
+  .hero-img { height: 55vw; min-height: 260px; }
+  .hero-content { padding: 36px 24px 40px; }
+  .hero-content h1 { font-size: clamp(28px, 8vw, 42px); }
+  .hero-content p { font-size: 14px; }
+  .hero-btns { flex-direction: column; gap: 10px; }
+  .hero-btns a { text-align: center; }
+
+  /* HERO - full width pages */
+  .page-hero { height: 60vw; min-height: 300px; margin-top: 64px; }
+  .hero-bg { min-height: 300px; }
+  .hero-content { padding: 0 24px 40px; }
+  .hero-content h1 { font-size: clamp(30px, 8vw, 48px); }
+
+  /* SECTIONS */
+  .intro { padding: 48px 24px; }
+  .story { padding: 56px 24px; }
+  .story-inner { grid-template-columns: 1fr; gap: 40px; }
+  .story-img-accent { display: none; }
+  .story-stat { display: none; }
+  .services { padding: 56px 24px; }
+  .values { padding: 56px 24px; }
+  .approach { grid-template-columns: 1fr; }
+  .approach-img { height: 260px; }
+  .approach-content { padding: 48px 24px; }
+  .numbers { padding: 48px 24px; }
+  .tc-page { padding: 48px 24px; }
+  .faq { padding: 56px 24px; }
+  .included { padding: 56px 24px; }
+
+  /* GRIDS */
+  .services-grid { grid-template-columns: 1fr; }
+  .trust-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr; }
+  .numbers-inner { grid-template-columns: repeat(2, 1fr); }
+  .footer-top { grid-template-columns: 1fr; gap: 36px; }
+  .services-inner .services-grid { grid-template-columns: 1fr; }
+  .included-inner { grid-template-columns: 1fr; gap: 40px; }
+  .dietary-inner { grid-template-columns: 1fr; gap: 32px; }
+  .menu-inner { grid-template-columns: 1fr; gap: 40px; }
+  .menu-aside { position: static; }
+  .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+  .tc-inner { grid-template-columns: 1fr; gap: 32px; }
+  .tc-header { position: static; }
+  .values-header { grid-template-columns: 1fr; gap: 24px; }
+  .page-header { grid-template-columns: 1fr; gap: 24px; padding: 48px 24px 40px; }
+
+  /* IMAGE STRIP */
+  .img-strip { grid-template-columns: repeat(2, 1fr); height: auto; }
+  .img-strip > div, .strip-item { height: 44vw; }
+
+  /* MENU CARDS */
+  .menus-scroll { grid-template-columns: 1fr; padding: 0 24px; }
+  .menu-card { width: 100%; }
+
+  /* HERO SCROLL HINT */
+  .hero-scroll-hint { display: none; }
+
+  /* MARQUEE */
+  .marquee-wrap { padding: 0; }
+
+  /* CTA */
+  .cta-strip { height: 320px; }
+  .cta-content h2 { font-size: clamp(28px, 8vw, 42px); }
+  .cta-content p { font-size: 13px; }
+
+  /* GALLERY */
+  .gallery-grid { columns: 2 !important; }
+
+  /* FOOTER */
+  footer { padding: 48px 24px 32px; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+
+  /* BASKET + CHAT BUTTONS */
+  .basket-btn, #tsc-basket-btn, .chat-bubble { bottom: 16px; right: 16px; width: 48px; height: 48px; }
+  .basket-drawer, #tsc-basket-drawer, .chat-window { width: 100vw; right: 0; border-radius: 0; }
+
+  /* PRIVATE CHEF SERVICES */
+  .services-inner .services-grid { grid-template-columns: 1fr; gap: 2px; }
+  .service-img { height: 56vw; }
+
+  /* ━━━ MOBILE FIX OVERRIDES ━━━ */
+  /* Kill horizontal overflow globally on small screens */
+  html, body { max-width: 100vw; overflow-x: hidden; }
+  img, video, iframe { max-width: 100%; height: auto; }
+
+  /* HOMEPAGE HERO - right side uses .hero-right not .hero-content */
+  .hero-right { padding: 36px 24px 40px !important; }
+  .hero-left { height: 55vw; min-height: 260px; }
+
+  /* HOMEPAGE SERVICES SECTION - overrides inline styles on index.html */
+  .services[style],
+  section.services { padding: 56px 20px !important; }
+  .services > div[style] { padding: 0 !important; }
+  .services > div > div[style] { margin-bottom: 40px !important; }
+  .services > div > div[style]:last-child { margin-bottom: 0 !important; }
+  /* The 3-column grid of service cards - force single column on mobile */
+  .services div[style*="grid-template-columns:repeat(3"],
+  .services div[style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: 1fr !important;
+    gap: 2px !important;
+  }
+  /* Shrink the 420px-tall service cards on mobile */
+  .services a[style*="height:420px"],
+  .services a[style*="height: 420px"] { height: 320px !important; }
+  .services a[style] > div[style*="padding:32px"] { padding: 24px !important; }
+
+  /* CHAT WINDOW on small phones - position from screen edges not fixed offset */
+  .chat-window {
+    bottom: 80px !important;
+    right: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: calc(100vh - 80px) !important;
+    max-height: calc(100vh - 80px) !important;
+    border-radius: 0 !important;
+  }
+  .chat-bubble { bottom: 16px !important; right: 16px !important; }
+
+  /* ━━━ MOBILE HAMBURGER NAV ━━━ */
+  .nav-hamburger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 4px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--black);
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  .mobile-nav-panel {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(248,245,239,0.98);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--rule);
+    padding: 20px 24px 28px;
+    transform: translateY(-120%);
+    transition: transform 0.3s ease;
+    z-index: 190;
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+  }
+  .mobile-nav-panel.open { transform: translateY(0); }
+  .mobile-nav-panel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .mobile-nav-panel li { border-bottom: 1px solid var(--rule); }
+  .mobile-nav-panel li:last-child { border-bottom: none; }
+  .mobile-nav-panel a {
+    display: block;
+    padding: 16px 4px;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+    font-family: var(--font-sans);
+  }
+  .mobile-nav-panel a:active { color: var(--blue); }
+
+
+  /* Chat bubble sizing + hero button spacing on mobile */
+  .chat-bubble, #tsc-basket-btn, .basket-btn {
+    width: 44px !important;
+    height: 44px !important;
+  }
+  .chat-bubble img, .basket-btn svg { width: 20px !important; height: 20px !important; }
+  .hero-btns { align-items: stretch !important; }
+  .hero-btns a, .hero-btns .btn-primary, .hero-btns .btn-ghost {
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  /* Give breathing room at bottom of hero so chat bubble doesn't overlap buttons */
+  .hero-right { padding-bottom: 80px !important; }
+
+}
+
+@media (max-width: 480px) {
+  .numbers-inner { grid-template-columns: 1fr; }
+  .gallery-grid { columns: 1 !important; }
+  .hero-content h1 { font-size: 28px; }
+  .display-title { font-size: 28px; }
+  /* Extra tight padding on very small phones */
+  .hero-right { padding: 28px 18px 32px !important; }
+  section.services { padding: 48px 16px !important; }
+}
+
 </style>
 </head>
 <body>
@@ -645,8 +906,35 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <a href="contact.html" class="nav-cta">Request a Quote</a>
+  <button class="nav-hamburger" aria-label="Menu" onclick="toggleMobileNav()">
+    <span></span><span></span><span></span>
+  </button>
   </div>
 </nav>
+<div class="mobile-nav-panel" id="mobileNavPanel">
+  <ul>
+    <li><a href="index.html" onclick="toggleMobileNav()">Home</a></li>
+    <li><a href="about.html" onclick="toggleMobileNav()">About</a></li>
+    <li><a href="gallery.html" onclick="toggleMobileNav()">Gallery</a></li>
+    <li><a href="menu-bbq.html" onclick="toggleMobileNav()">BBQ</a></li>
+    <li><a href="menu-buffet.html" onclick="toggleMobileNav()">Buffets</a></li>
+    <li><a href="menu-canapes.html" onclick="toggleMobileNav()">Canapés</a></li>
+    <li><a href="menu-afternoon-tea.html" onclick="toggleMobileNav()">Afternoon Tea</a></li>
+    <li><a href="menu-bespoke.html" onclick="toggleMobileNav()">Bespoke</a></li>
+    <li><a href="private-chef.html" onclick="toggleMobileNav()">Private Chef</a></li>
+    <li><a href="contact.html" onclick="toggleMobileNav()">Contact</a></li>
+  </ul>
+</div>
+<script>
+function toggleMobileNav(){
+  var b = document.querySelector('.nav-hamburger');
+  var p = document.getElementById('mobileNavPanel');
+  if(!b||!p)return;
+  b.classList.toggle('open');
+  p.classList.toggle('open');
+}
+</script>
+
 
 <!-- HERO -->
 <section class="hero">
@@ -671,7 +959,7 @@
 </div>
 
 <!-- SERVICES -->
-<section class="services" <section id="services" style="padding:96px 72px;background:var(--cream);border-bottom:1px solid var(--rule);">
+<section class="services" id="services" style="padding:96px 72px;background:var(--cream);border-bottom:1px solid var(--rule);">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:64px;">
       <span style="font-size:10.5px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:18px;">What We Do</span>
