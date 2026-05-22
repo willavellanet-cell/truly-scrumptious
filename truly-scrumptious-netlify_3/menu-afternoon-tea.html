@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- v10 sample-menus -->
+<!-- v12 hiw-ideas -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -609,6 +609,111 @@
     .sm-course-items li { font-size: 14px; }
   }
 
+
+  /* ━━━ ADD TO IDEAS (accordion) ━━━ */
+  .sm-add-btn {
+    margin-top: 22px !important;
+    max-width: 320px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* ━━━ HOW IT WORKS ━━━ */
+  .hiw-section { padding: 96px 72px; background: var(--cream); border-bottom: 1px solid var(--rule); }
+  .hiw-inner { max-width: 1080px; margin: 0 auto; }
+  .hiw-header { text-align: center; margin-bottom: 56px; }
+  .hiw-header .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--blue);
+  }
+  .hiw-header .display-title { margin-top: 14px; }
+  .hiw-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    position: relative;
+  }
+  .hiw-steps::before {
+    content: '';
+    position: absolute;
+    top: 44px;
+    left: 16.66%;
+    right: 16.66%;
+    height: 1px;
+    background: var(--rule);
+    z-index: 0;
+  }
+  .hiw-step { text-align: center; position: relative; z-index: 1; }
+  .hiw-badge {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    box-shadow: 0 0 0 6px var(--cream);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .hiw-step:hover .hiw-badge {
+    transform: translateY(-2px);
+    border-color: var(--blue);
+  }
+  .hiw-badge svg { width: 32px; height: 32px; }
+  .hiw-step-label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 10px;
+  }
+  .hiw-step-title {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--black);
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+  .hiw-step-desc {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--mid);
+    max-width: 260px;
+    margin: 0 auto;
+  }
+  .hiw-footnote {
+    margin: 56px auto 0;
+    text-align: center;
+    max-width: 560px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--mid);
+  }
+  @media (max-width: 768px) {
+    .hiw-section { padding: 64px 20px; }
+    .hiw-header { margin-bottom: 40px; }
+    .hiw-steps { grid-template-columns: 1fr; gap: 40px; }
+    .hiw-steps::before { display: none; }
+    .hiw-badge { width: 72px; height: 72px; box-shadow: none; }
+    .hiw-badge svg { width: 26px; height: 26px; }
+    .hiw-step-title { font-size: 20px; }
+    .hiw-footnote { margin-top: 40px; font-size: 15px; }
+  }
+
 </style>
 </head>
 <body>
@@ -672,7 +777,9 @@
           <div class="sm-course">
             <p class="sm-course-title">Dessert buffet</p>
             <ul class="sm-course-items"><li>Village fete style cakes, bars &amp; biscuits served with cream &amp; raspberry coulis</li></ul>
-          </div>
+          
+        <button class="add-to-basket sm-add-btn" type="button" data-menu="Afternoon Tea Canap&amp;eacute;s &amp; Sharing Pies" onclick="addMenuToIdeas(this)">Add to Ideas</button>
+      </div>
         </div>
       </div>
     </div>
@@ -695,60 +802,67 @@ function toggleSampleMenu(btn) {
     btn.classList.remove('open');
   }
 }
+function addMenuToIdeas(btn) {
+  var menuName = btn.getAttribute('data-menu') || 'Sample Menu';
+  if (window.TSCBasket) {
+    var added = window.TSCBasket.addItem(menuName, 'Sample Menu');
+    if (added) window.TSCBasket.showToast(menuName);
+  }
+  btn.classList.add('added');
+  var original = btn.dataset.originalText || btn.textContent;
+  btn.dataset.originalText = original;
+  btn.textContent = 'Added ✓';
+  var panel = btn.closest('.sm-panel');
+  if (panel && panel.style.maxHeight && panel.style.maxHeight !== '0px') {
+    panel.style.maxHeight = panel.scrollHeight + 'px';
+  }
+  setTimeout(function() {
+    btn.classList.remove('added');
+    btn.textContent = original;
+    if (panel && panel.style.maxHeight && panel.style.maxHeight !== '0px') {
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    }
+  }, 1800);
+}
+
 </script>
 
-<section class="menu-section">
-  <div class="menu-inner">
-    <div>
-      <div class="menu-content-header">
-        <span class="eyebrow">The Menu</span>
-        <h2 class="display-title"><span class="line-serif">Sample</span><span class="line-sans">Afternoon Tea Menu</span></h2>
+<section class="hiw-section">
+  <div class="hiw-inner">
+    <div class="hiw-header">
+      <span class="eyebrow">How It Works</span>
+      <h2 class="display-title"><span class="line-serif">Build a Menu,</span><span class="line-sans">Not a Shopping List</span></h2>
+    </div>
+    <div class="hiw-steps">
+      <div class="hiw-step">
+        <div class="hiw-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
+        <span class="hiw-step-label">Step One</span>
+        <h3 class="hiw-step-title">Explore</h3>
+        <p class="hiw-step-desc">Browse the menus above. They&rsquo;re real events, real dishes &mdash; a starting point.</p>
       </div>
-      <div class="menu-columns">
-        <div class="menu-course">
-          <p class="menu-course-title">Finger Sandwiches</p>
-          <div class="menu-items">
-            <div class="menu-item"><span class="menu-item-name">Cucumber & cream cheese</span><span class="menu-item-desc">white bread</span></div>
-            <div class="menu-item"><span class="menu-item-name">Smoked salmon & dill</span><span class="menu-item-desc">brown bread</span></div>
-            <div class="menu-item"><span class="menu-item-name">Free-range egg mayonnaise</span><span class="menu-item-desc">watercress</span></div>
-            <div class="menu-item"><span class="menu-item-name">Coronation chicken</span><span class="menu-item-desc">sourdough</span></div>
-          </div>
+      <div class="hiw-step">
+        <div class="hiw-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
         </div>
-        <div class="menu-course">
-          <p class="menu-course-title">Freshly Baked Scones</p>
-          <div class="menu-items">
-            <div class="menu-item"><span class="menu-item-name">Plain scones</span><span class="menu-item-desc">clotted cream & jam</span></div>
-            <div class="menu-item"><span class="menu-item-name">Fruit scones</span><span class="menu-item-desc">sultanas & lemon zest</span></div>
-            <div class="menu-item"><span class="menu-item-name">Cheese & chive scones</span><span class="menu-item-desc">savoury option</span></div>
-          </div>
+        <span class="hiw-step-label">Step Two</span>
+        <h3 class="hiw-step-title">Add to Ideas</h3>
+        <p class="hiw-step-desc">Expand any menu above and tap <strong>Add to Ideas</strong>. Build a shortlist.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
         </div>
-        <div class="menu-course">
-          <p class="menu-course-title">Patisserie & Cakes</p>
-          <div class="menu-items">
-            <div class="menu-item"><span class="menu-item-name">Victoria sponge</span><span class="menu-item-desc">fresh cream & strawberry</span></div>
-            <div class="menu-item"><span class="menu-item-name">Lemon drizzle cake</span><span class="menu-item-desc">candied zest</span></div>
-            <div class="menu-item"><span class="menu-item-name">Chocolate éclairs</span><span class="menu-item-desc">vanilla cream</span></div>
-            <div class="menu-item"><span class="menu-item-name">Macarons</span><span class="menu-item-desc">seasonal flavours</span></div>
-            <div class="menu-item"><span class="menu-item-name">Fresh berry tartlets</span><span class="menu-item-desc">crème pâtissière</span></div>
-          </div>
-        </div>
-        <div class="menu-note"><p>Served with a selection of fine teas and freshly ground coffee. Champagne or Prosecco can be added on request.</p></div>
+        <span class="hiw-step-label">Step Three</span>
+        <h3 class="hiw-step-title">Send &amp; Chat</h3>
+        <p class="hiw-step-desc">We&rsquo;ll get in touch to shape it around your event, guests and budget.</p>
       </div>
     </div>
-    <div class="menu-aside">
-      <div class="menu-aside-img" style="background-image:url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=700&q=80')"></div>
-      <div class="menu-aside-cta">
-        <h3>Ready to book?</h3>
-        <p>Get in touch and we'll put together a bespoke quote for your event.</p>
-        <a href="contact.html" class="btn-primary">Request a Quote</a>
-        <button class="add-to-basket" onclick="if(window.TSCBasket){const ok=window.TSCBasket.addItem('Afternoon Tea','Menu');window.TSCBasket.showToast('Afternoon Tea');}" style="margin-top:10px;width:100%;justify-content:center;">
-          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-          Add to Ideas
-        </button>
-      </div>
-    </div>
+    <p class="hiw-footnote">Think of it as a mood board, not a checkout. Save what speaks to you, and we&rsquo;ll take it from there.</p>
   </div>
 </section>
+
 <div class="img-strip">
   <div class="img-strip-item" style="background-image:url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=700&q=80')"></div>
   <div class="img-strip-item" style="background-image:url('https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?w=700&q=80')"></div>
