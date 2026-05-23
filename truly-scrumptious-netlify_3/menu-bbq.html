@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- v13 subnav-fix -->
+<!-- v14 menu-navigator -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -48,7 +48,7 @@
   .nav-cta:hover { background: var(--blue-mid); }
 
   /* HERO */
-  .page-hero { margin-top: 84px; position: relative; height: 72vh; min-height: 480px; display: flex; align-items: flex-end; overflow: hidden; }
+  .page-hero { margin-top: 0; position: relative; height: 72vh; min-height: 480px; display: flex; align-items: flex-end; overflow: hidden; }
   .page-hero-img { position: absolute; inset: 0; background-size: cover; background-position: center; transform: scale(1.03); animation: heroZoom 8s ease forwards; }
   @keyframes heroZoom { from { transform: scale(1.03); } to { transform: scale(1); } }
   .page-hero-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0.05) 100%); }
@@ -715,7 +715,7 @@
     .hiw-footnote { margin-top: 40px; font-size: 15px; }
   }
 
-  /* MENU SUB-NAV STRIP — overrides */
+  /* MENU SUB-NAV STRIP — v14 menu-navigator */
   div.menu-nav,
   nav.menu-nav,
   .menu-nav {
@@ -731,10 +731,12 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     padding: 0 !important;
-    margin: 0 !important;
+    margin: 84px 0 0 0 !important;
     min-height: 0 !important;
     height: auto !important;
-    position: static !important;
+    position: sticky !important;
+    top: 84px !important;
+    z-index: 90 !important;
   }
   .menu-nav::-webkit-scrollbar { display: none; }
   .menu-nav a,
@@ -778,7 +780,7 @@
   }
   .page-hero { margin-top: 0 !important; }
   @media (max-width: 768px) {
-    .menu-nav { justify-content: flex-start !important; padding: 0 8px !important; }
+    .menu-nav { justify-content: flex-start !important; padding: 0 8px !important; margin-top: 64px !important; top: 64px !important; }
     .menu-nav a { padding: 14px 16px !important; font-size: 12px !important; letter-spacing: 0.06em !important; }
   }
 </style>
