@@ -792,10 +792,19 @@
     border-bottom-color: #56aae5 !important;
     font-weight: 500 !important;
   }
-  /* kill any phantom spacer right after the nav */
+  /* kill any phantom spacer between nav and hero */
   .menu-nav + br,
   .menu-nav + .menu-nav-spacer,
-  .menu-nav + div:empty { display: none !important; }
+  .menu-nav + div:empty,
+  .menu-nav ~ br,
+  .menu-nav ~ div:empty { display: none !important; }
+  .menu-nav { margin-bottom: 0 !important; }
+  .menu-nav + section,
+  .menu-nav + .page-hero {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  .page-hero { margin-top: 0 !important; }
   @media (max-width: 768px) {
     .menu-nav { justify-content: flex-start !important; padding: 0 8px !important; }
     .menu-nav a { padding: 14px 16px !important; font-size: 12px !important; letter-spacing: 0.06em !important; }
