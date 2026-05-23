@@ -743,12 +743,63 @@
     .some-class { color: red; }
     .another-class { padding: 20px; }
     .yet-another { background: white; }
-
-    /* MENU SUB-NAV STRIP */         ← paste starts here
-    .menu-nav {
-      background: #faf8f4 !important;
-      ...
-    }
+    /* MENU SUB-NAV STRIP — overrides */
+  div.menu-nav,
+  nav.menu-nav,
+  .menu-nav {
+    background: #faf8f4 !important;
+    background-color: #faf8f4 !important;
+    border-bottom: 1px solid rgba(0,0,0,0.1) !important;
+    border-top: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0 !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    position: static !important;
+  }
+  .menu-nav::-webkit-scrollbar { display: none; }
+  .menu-nav a,
+  .menu-nav a:link,
+  .menu-nav a:visited {
+    padding: 16px 24px !important;
+    margin: 0 !important;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-size: 13px !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: #6a6560 !important;
+    text-decoration: none !important;
+    border: none !important;
+    border-bottom: 2px solid transparent !important;
+    white-space: nowrap !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    display: inline-block !important;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .menu-nav a:hover { color: #111110 !important; }
+  .menu-nav a.active,
+  .menu-nav a.active:link,
+  .menu-nav a.active:visited {
+    color: #111110 !important;
+    border-bottom-color: #56aae5 !important;
+    font-weight: 500 !important;
+  }
+  /* kill any phantom spacer right after the nav */
+  .menu-nav + br,
+  .menu-nav + .menu-nav-spacer,
+  .menu-nav + div:empty { display: none !important; }
+  @media (max-width: 768px) {
+    .menu-nav { justify-content: flex-start !important; padding: 0 8px !important; }
+    .menu-nav a { padding: 14px 16px !important; font-size: 12px !important; letter-spacing: 0.06em !important; }
+  }
     ...                                ← paste ends here
 </style>                              ← this line already exists, don't touch it
 </head></style>
