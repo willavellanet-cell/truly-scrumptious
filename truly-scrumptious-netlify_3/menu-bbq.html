@@ -23,17 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=aktiv-grotesk@700i,700,800i,800&display=swap" rel="stylesheet">
-/* ━━━ MENU SUB-NAV STRIP ━━━ */
-  .menu-nav {
-    background: #faf8f4;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    display: flex;
-    justify-content: center;
-    gap: 0;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
+
   .menu-nav::-webkit-scrollbar { display: none; }
   .menu-nav a {
     padding: 16px 24px;
@@ -749,7 +739,19 @@
     .hiw-footnote { margin-top: 40px; font-size: 15px; }
   }
 
-</style>
+<style>
+    .some-class { color: red; }
+    .another-class { padding: 20px; }
+    .yet-another { background: white; }
+
+    /* MENU SUB-NAV STRIP */         ← paste starts here
+    .menu-nav {
+      background: #faf8f4 !important;
+      ...
+    }
+    ...                                ← paste ends here
+</style>                              ← this line already exists, don't touch it
+</head></style>
 </head>
 <body>
 <nav>
