@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- v13 subnav-fix -->
+<!-- v14 subnav-visible -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -139,7 +139,9 @@
   color: #ffffff !important;
   border-bottom-color: #56aae5 !important;
   font-weight: 500 !important;
-  .menu-nav a.active { color: var(--white); border-bottom-color: var(--blue); }
+  .menu-nav a.active { color: var(--white); border-bottom-color: var(--blue); }1/* v14 — push subnav below fixed main nav */
+.menu-nav { margin-top: 72px !important; position: sticky !important; top: 72px !important; z-index: 90 !important; }
+@media (max-width: 768px) { .menu-nav { margin-top: 64px !important; top: 64px !important; } }
 
   /* FOOTER */
   footer { background: var(--off-white); border-top: 1px solid var(--rule); padding: 80px 48px 36px; }
