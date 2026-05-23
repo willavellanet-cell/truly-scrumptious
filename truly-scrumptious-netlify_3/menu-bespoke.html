@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- v12 hiw-ideas -->
+<!-- v14 menu-navigator -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -47,7 +47,7 @@
   .nav-cta:hover { background: var(--blue-mid); }
 
   /* HERO */
-  .page-hero { margin-top: 84px; position: relative; height: 72vh; min-height: 480px; display: flex; align-items: flex-end; overflow: hidden; }
+  .page-hero { margin-top: 0; position: relative; height: 72vh; min-height: 480px; display: flex; align-items: flex-end; overflow: hidden; }
   .page-hero-img { position: absolute; inset: 0; background-size: cover; background-position: center; transform: scale(1.03); animation: heroZoom 8s ease forwards; }
   @keyframes heroZoom { from { transform: scale(1.03); } to { transform: scale(1); } }
   .page-hero-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0.05) 100%); }
@@ -127,11 +127,61 @@
   .cta-content p { font-size: 14.5px; font-weight: 300; color: rgba(255,255,255,0.68); margin-bottom: 32px; line-height: 1.8; }
 
   /* MENU NAV */
-  .menu-nav { background: var(--black); padding: 0 48px; display: flex; align-items: center; gap: 0; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  /* MENU SUB-NAV STRIP — v14 menu-navigator */
+  div.menu-nav,
+  nav.menu-nav,
+  .menu-nav {
+    background: #faf8f4 !important;
+    background-color: #faf8f4 !important;
+    border-bottom: 1px solid rgba(0,0,0,0.1) !important;
+    border-top: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0 !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 !important;
+    margin: 84px 0 0 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    position: sticky !important;
+    top: 84px !important;
+    z-index: 90 !important;
+  }
   .menu-nav::-webkit-scrollbar { display: none; }
-  .menu-nav a { font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; padding: 16px 22px; white-space: nowrap; border-bottom: 2px solid transparent; transition: all 0.2s; }
-  .menu-nav a:hover { color: rgba(255,255,255,0.8); }
-  .menu-nav a.active { color: var(--white); border-bottom-color: var(--blue); }
+  .menu-nav a,
+  .menu-nav a:link,
+  .menu-nav a:visited {
+    padding: 16px 24px !important;
+    margin: 0 !important;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-size: 13px !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: #6a6560 !important;
+    text-decoration: none !important;
+    border: none !important;
+    border-bottom: 2px solid transparent !important;
+    white-space: nowrap !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    display: inline-block !important;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .menu-nav a:hover { color: #111110 !important; }
+  .menu-nav a.active,
+  .menu-nav a.active:link,
+  .menu-nav a.active:visited {
+    color: #111110 !important;
+    border-bottom-color: #56aae5 !important;
+    font-weight: 500 !important;
+  }
+  @media (max-width: 768px) {
+    .menu-nav { justify-content: flex-start !important; padding: 0 8px !important; margin-top: 64px !important; top: 64px !important; }
+    .menu-nav a { padding: 14px 16px !important; font-size: 12px !important; letter-spacing: 0.06em !important; }
+  }
 
   /* FOOTER */
   footer { background: var(--off-white); border-top: 1px solid var(--rule); padding: 80px 48px 36px; }
