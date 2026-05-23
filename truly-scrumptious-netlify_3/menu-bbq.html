@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- v12 hiw-ideas -->
+<!-- v13 subnav-fix -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -24,31 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=aktiv-grotesk@700i,700,800i,800&display=swap" rel="stylesheet">
 
-  .menu-nav::-webkit-scrollbar { display: none; }
-  .menu-nav a {
-    padding: 16px 24px;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #6a6560;
-    text-decoration: none;
-    border-bottom: 2px solid transparent;
-    white-space: nowrap;
-    transition: color 0.2s ease, border-color 0.2s ease;
-  }
-  .menu-nav a:hover {
-    color: #111110;
-  }
-  .menu-nav a.active {
-    color: #111110;
-    border-bottom-color: #56aae5;
-    font-weight: 500;
-  }
-  @media (max-width: 768px) {
-    .menu-nav { justify-content: flex-start; padding: 0 8px; }
-    .menu-nav a { padding: 14px 16px; font-size: 12px; letter-spacing: 0.06em; }
-  }<style>
+<style>
   :root {
     --cream: #f8f5ef; --off-white: #faf8f4; --blue: #56aae5; --blue-mid: #3e96d6;
     --black: #111110; --mid: #6a6560; --light: #b0a89e; --rule: rgba(0,0,0,0.1); --white: #ffffff;
@@ -739,11 +715,7 @@
     .hiw-footnote { margin-top: 40px; font-size: 15px; }
   }
 
-<style>
-    .some-class { color: red; }
-    .another-class { padding: 20px; }
-    .yet-another { background: white; }
-    /* MENU SUB-NAV STRIP — overrides */
+  /* MENU SUB-NAV STRIP — overrides */
   div.menu-nav,
   nav.menu-nav,
   .menu-nav {
@@ -809,9 +781,7 @@
     .menu-nav { justify-content: flex-start !important; padding: 0 8px !important; }
     .menu-nav a { padding: 14px 16px !important; font-size: 12px !important; letter-spacing: 0.06em !important; }
   }
-    ...                                ← paste ends here
-</style>                              ← this line already exists, don't touch it
-</head></style>
+</style>
 </head>
 <body>
 <nav>
