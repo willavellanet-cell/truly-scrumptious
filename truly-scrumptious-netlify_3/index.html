@@ -996,7 +996,7 @@ function toggleMobileNav(){
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-left"></div>
+  <div class="hero-left" id="ed-hero-left"></div>
   <div class="hero-right">
     <span class="hero-eyebrow" id="ed-hero-eyebrow">Oxford Based Catering</span>
     <h1><span class="line-serif" id="ed-hero-line1">Food to Bring</span><span class="line-sans"><em id="ed-hero-line2">People Together</em></span></h1>
@@ -1035,23 +1035,23 @@ function toggleMobileNav(){
     </button>
     <div class="menus-scroll" id="menusScroll">
     <a href="menu-bbq.html" class="menu-card">
-      <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80')"></div>
+      <div class="menu-card-img" id="ed-card-bbq" style="background-image:url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80')"></div>
       <div class="menu-card-body"><h3 class="menu-card-title">BBQ Catering</h3><span class="menu-view">View Menu</span></div>
     </a>
     <a href="menu-buffet.html" class="menu-card">
-      <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1555244162-803834f70033?w=800&q=80')"></div>
+      <div class="menu-card-img" id="ed-card-buffet" style="background-image:url('https://images.unsplash.com/photo-1555244162-803834f70033?w=800&q=80')"></div>
       <div class="menu-card-body"><h3 class="menu-card-title">Buffet Catering</h3><span class="menu-view">View Menu</span></div>
     </a>
     <a href="menu-canapes.html" class="menu-card">
-      <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1541529086526-db283c563270?w=800&q=80')"></div>
+      <div class="menu-card-img" id="ed-card-canapes" style="background-image:url('https://images.unsplash.com/photo-1541529086526-db283c563270?w=800&q=80')"></div>
       <div class="menu-card-body"><h3 class="menu-card-title">Canapés</h3><span class="menu-view">View Menu</span></div>
     </a>
     <a href="menu-afternoon-tea.html" class="menu-card">
-      <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=600&q=80')"></div>
+      <div class="menu-card-img" id="ed-card-afternoon" style="background-image:url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=600&q=80')"></div>
       <div class="menu-card-body"><h3 class="menu-card-title">Afternoon Tea</h3><span class="menu-view">View Menu</span></div>
     </a>
     <a href="menu-bespoke.html" class="menu-card">
-      <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80')"></div>
+      <div class="menu-card-img" id="ed-card-bespoke" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80')"></div>
       <div class="menu-card-body"><h3 class="menu-card-title">Bespoke Catering</h3><span class="menu-view">View Menu</span></div>
     </a>
     </div>
@@ -1761,10 +1761,17 @@ Always end responses about booking or pricing with a warm nudge to get in touch:
 
 <script>
 (function(){
+  function bgUrl(v){
+    if(!v) return null;
+    v = String(v);
+    if(!/^https?:\/\//.test(v)) v = v.replace(/^\//,'');  // strip leading slash for local files only
+    return "url('" + v + "')";
+  }
   fetch('home.json?t=' + Date.now())
     .then(function(r){ return r.json(); })
     .then(function(d){
       function setText(id, val){ var el=document.getElementById(id); if(el && val!=null) el.textContent = val; }
+      function setBg(id, val){ var el=document.getElementById(id); var u=bgUrl(val); if(el && u) el.style.backgroundImage = u; }
       setText('ed-hero-eyebrow', d.hero_eyebrow);
       setText('ed-hero-line1', d.hero_line1);
       setText('ed-hero-line2', d.hero_line2);
@@ -1773,9 +1780,13 @@ Always end responses about booking or pricing with a warm nudge to get in touch:
       setText('ed-about-h2', d.about_heading_line2);
       setText('ed-about-p1', d.about_para1);
       setText('ed-about-p2', d.about_para2);
-      setText('ed-about-eyebrow', d.about_eyebrow);
-      var img=document.getElementById('ed-about-img');
-      if(img && d.about_image){ img.style.backgroundImage = "url('" + String(d.about_image).replace(/^\//,'') + "')"; }
+      setBg('ed-about-img', d.about_image);
+      setBg('ed-hero-left', d.hero_left_image);
+      setBg('ed-card-bbq', d.card_bbq_image);
+      setBg('ed-card-buffet', d.card_buffet_image);
+      setBg('ed-card-canapes', d.card_canapes_image);
+      setBg('ed-card-afternoon', d.card_afternoon_image);
+      setBg('ed-card-bespoke', d.card_bespoke_image);
     })
     .catch(function(e){ console.error('home content load failed', e); });
 })();
