@@ -889,11 +889,11 @@
   <a href="menu-bespoke.html" >Bespoke</a>
 </div>
 <section class="page-hero">
-  <div class="page-hero-img" style="background-image:url('https://images.unsplash.com/photo-1555244162-803834f70033?w=1600&q=80')"></div>
+  <div class="page-hero-img" id="ed-hero-img" style="background-image:url('https://images.unsplash.com/photo-1555244162-803834f70033?w=1600&q=80')"></div>
   <div class="page-hero-content">
-    <span class="hero-eyebrow">Oxford & Oxfordshire</span>
-    <h1><span class="line-serif">Buffet Catering</span><span class="line-sans">in Oxfordshire</span></h1>
-    <p>Vibrant, colourful and abundantly generous — buffet catering designed to impress and satisfy.</p>
+    <span class="hero-eyebrow" id="ed-hero-eyebrow">Oxford & Oxfordshire</span>
+    <h1><span class="line-serif" id="ed-hero-line1">Buffet Catering</span><span class="line-sans" id="ed-hero-line2">in Oxfordshire</span></h1>
+    <p id="ed-hero-subtitle">Vibrant, colourful and abundantly generous — buffet catering designed to impress and satisfy.</p>
     <a href="contact.html" class="btn-primary">Request a Quote</a>
   </div>
 </section>
@@ -902,7 +902,7 @@
     <div class="sm-header">
       <span class="eyebrow">Sample Menus</span>
       <h2 class="display-title"><span class="line-serif">Real Menus</span><span class="line-sans">From Real Events</span></h2>
-      <p class="sm-intro">A taste of what&rsquo;s possible. Cold buffets and picnic spreads, hot lunch menus by region, and full event-style buffets for larger occasions. Each one is a starting point for the conversation. Tap any menu to expand.</p>
+      <p class="sm-intro" id="ed-samples-intro">A taste of what&rsquo;s possible. Cold buffets and picnic spreads, hot lunch menus by region, and full event-style buffets for larger occasions. Each one is a starting point for the conversation. Tap any menu to expand.</p>
     </div>
     <div class="sm-tabs" role="tablist">
       <button class="sm-tab active" type="button" role="tab" aria-selected="true" data-target="cold" onclick="switchGroup(this)">Cold Buffets<span class="sm-tab-count">7</span></button>
@@ -1403,11 +1403,11 @@ function addMenuToIdeas(btn) {
 </section>
 
 <div class="cta-strip">
-  <div class="cta-bg" style="background-image:url('https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=1600&q=80')"></div>
+  <div class="cta-bg" id="ed-cta-img" style="background-image:url('https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=1600&q=80')"></div>
   <div class="cta-overlay"></div>
   <div class="cta-content">
-    <h2><span class="line-serif">Planning an</span><span class="line-sans">Event?</span></h2>
-    <p>Tell us about your event and we will create a menu that works perfectly for you.</p>
+    <h2><span class="line-serif" id="ed-cta-line1">Planning an</span><span class="line-sans" id="ed-cta-line2">Event?</span></h2>
+    <p id="ed-cta-sub">Tell us about your event and we will create a menu that works perfectly for you.</p>
     <a href="contact.html" class="btn-primary">Request a Quote</a>
   </div>
 </div>
@@ -1759,4 +1759,19 @@ function addMenuToIdeas(btn) {
 <!-- WINDOW -->
 
 
-</body></html>
+<script>
+(function(){
+  function bgUrl(v){ if(!v) return null; v=String(v); if(!/^https?:\/\//.test(v)) v=v.replace(/^\//,''); return "url('"+v+"')"; }
+  fetch('menu-buffet.json?t=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      function t(id,v){ var e=document.getElementById(id); if(e&&v!=null) e.textContent=v; }
+      function bg(id,v){ var e=document.getElementById(id); var u=bgUrl(v); if(e&&u) e.style.backgroundImage=u; }
+      t('ed-hero-eyebrow',d.hero_eyebrow); t('ed-hero-line1',d.hero_line1); t('ed-hero-line2',d.hero_line2);
+      t('ed-hero-subtitle',d.hero_subtitle); t('ed-samples-intro',d.samples_intro);
+      t('ed-cta-line1',d.cta_line1); t('ed-cta-line2',d.cta_line2); t('ed-cta-sub',d.cta_subtitle);
+      bg('ed-hero-img',d.hero_image); bg('ed-cta-img',d.cta_image);
+    })
+    .catch(function(e){ console.error('content load failed', e); });
+})();
+</script></body></html>

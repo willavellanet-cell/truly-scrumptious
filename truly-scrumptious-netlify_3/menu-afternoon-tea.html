@@ -832,11 +832,11 @@
   <a href="menu-bespoke.html" >Bespoke</a>
 </div>
 <section class="page-hero">
-  <div class="page-hero-img" style="background-image:url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=1600&q=80')"></div>
+  <div class="page-hero-img" id="ed-hero-img" style="background-image:url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=1600&q=80')"></div>
   <div class="page-hero-content">
-    <span class="hero-eyebrow">Oxford & Oxfordshire</span>
-    <h1><span class="line-serif">Afternoon Tea</span><span class="line-sans">Catering</span></h1>
-    <p>Elegant, indulgent and utterly British — afternoon tea catering for celebrations and special occasions.</p>
+    <span class="hero-eyebrow" id="ed-hero-eyebrow">Oxford & Oxfordshire</span>
+    <h1><span class="line-serif" id="ed-hero-line1">Afternoon Tea</span><span class="line-sans" id="ed-hero-line2">Catering</span></h1>
+    <p id="ed-hero-subtitle">Elegant, indulgent and utterly British — afternoon tea catering for celebrations and special occasions.</p>
     <a href="contact.html" class="btn-primary">Request a Quote</a>
   </div>
 </section>
@@ -845,7 +845,7 @@
     <div class="sm-header">
       <span class="eyebrow">Sample Menus</span>
       <h2 class="display-title"><span class="line-serif">Real Menus</span><span class="line-sans">From Real Events</span></h2>
-      <p class="sm-intro">A taste of what&rsquo;s possible. Here&rsquo;s a recent menu we built around afternoon tea elements &mdash; finger sandwiches, mini tartlets, scones with jam and cream, followed by something more substantial. Tap to expand.</p>
+      <p class="sm-intro" id="ed-samples-intro">A taste of what&rsquo;s possible. Here&rsquo;s a recent menu we built around afternoon tea elements &mdash; finger sandwiches, mini tartlets, scones with jam and cream, followed by something more substantial. Tap to expand.</p>
     </div>
     <div class="sm-accordion">
     <div class="sm-item">
@@ -982,11 +982,11 @@ function addMenuToIdeas(btn) {
 </section>
 
 <div class="cta-strip">
-  <div class="cta-bg" style="background-image:url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=1600&q=80')"></div>
+  <div class="cta-bg" id="ed-cta-img" style="background-image:url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=1600&q=80')"></div>
   <div class="cta-overlay"></div>
   <div class="cta-content">
-    <h2><span class="line-serif">Planning a</span><span class="line-sans">Special Occasion?</span></h2>
-    <p>Tell us about your event and we will create a menu that works perfectly for you.</p>
+    <h2><span class="line-serif" id="ed-cta-line1">Planning a</span><span class="line-sans" id="ed-cta-line2">Special Occasion?</span></h2>
+    <p id="ed-cta-sub">Tell us about your event and we will create a menu that works perfectly for you.</p>
     <a href="contact.html" class="btn-primary">Request a Quote</a>
   </div>
 </div>
@@ -1338,4 +1338,19 @@ function addMenuToIdeas(btn) {
 <!-- WINDOW -->
 
 
-</body></html>
+<script>
+(function(){
+  function bgUrl(v){ if(!v) return null; v=String(v); if(!/^https?:\/\//.test(v)) v=v.replace(/^\//,''); return "url('"+v+"')"; }
+  fetch('menu-afternoon-tea.json?t=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      function t(id,v){ var e=document.getElementById(id); if(e&&v!=null) e.textContent=v; }
+      function bg(id,v){ var e=document.getElementById(id); var u=bgUrl(v); if(e&&u) e.style.backgroundImage=u; }
+      t('ed-hero-eyebrow',d.hero_eyebrow); t('ed-hero-line1',d.hero_line1); t('ed-hero-line2',d.hero_line2);
+      t('ed-hero-subtitle',d.hero_subtitle); t('ed-samples-intro',d.samples_intro);
+      t('ed-cta-line1',d.cta_line1); t('ed-cta-line2',d.cta_line2); t('ed-cta-sub',d.cta_subtitle);
+      bg('ed-hero-img',d.hero_image); bg('ed-cta-img',d.cta_image);
+    })
+    .catch(function(e){ console.error('content load failed', e); });
+})();
+</script></body></html>

@@ -832,11 +832,11 @@
   <a href="menu-bespoke.html" >Bespoke</a>
 </div>
 <section class="page-hero">
-  <div class="page-hero-img" style="background-image:url('about-3.jpg')"></div>
+  <div class="page-hero-img" id="ed-hero-img" style="background-image:url('about-3.jpg')"></div>
   <div class="page-hero-content">
-    <span class="hero-eyebrow">Oxford & Oxfordshire</span>
-    <h1><span class="line-serif">Canapés &</span><span class="line-sans">Drinks Receptions</span></h1>
-    <p>Beautiful, bite-sized and made to impress — canapés that set the tone for your occasion.</p>
+    <span class="hero-eyebrow" id="ed-hero-eyebrow">Oxford & Oxfordshire</span>
+    <h1><span class="line-serif" id="ed-hero-line1">Canapés &</span><span class="line-sans" id="ed-hero-line2">Drinks Receptions</span></h1>
+    <p id="ed-hero-subtitle">Beautiful, bite-sized and made to impress — canapés that set the tone for your occasion.</p>
     <a href="contact.html" class="btn-primary">Request a Quote</a>
   </div>
 </section>
@@ -845,7 +845,7 @@
     <div class="sm-header">
       <span class="eyebrow">Sample Menus</span>
       <h2 class="display-title"><span class="line-serif">Real Menus</span><span class="line-sans">From Real Events</span></h2>
-      <p class="sm-intro">A taste of what we&rsquo;ve served. These are real canap&eacute; menus from real events, mixing finger and bowl canap&eacute;s around a single theme. Each one is a starting point for the conversation. Tap any menu to expand.</p>
+      <p class="sm-intro" id="ed-samples-intro">A taste of what we&rsquo;ve served. These are real canap&eacute; menus from real events, mixing finger and bowl canap&eacute;s around a single theme. Each one is a starting point for the conversation. Tap any menu to expand.</p>
     </div>
     <div class="sm-accordion">
     <div class="sm-item">
@@ -1053,11 +1053,11 @@ function addMenuToIdeas(btn) {
 </section>
 
 <div class="cta-strip">
-  <div class="cta-bg" style="background-image:url('about-3.jpg')"></div>
+  <div class="cta-bg" id="ed-cta-img" style="background-image:url('about-3.jpg')"></div>
   <div class="cta-overlay"></div>
   <div class="cta-content">
-    <h2><span class="line-serif">Planning a</span><span class="line-sans">Reception?</span></h2>
-    <p>Tell us about your event and we will create a menu that works perfectly for you.</p>
+    <h2><span class="line-serif" id="ed-cta-line1">Planning a</span><span class="line-sans" id="ed-cta-line2">Reception?</span></h2>
+    <p id="ed-cta-sub">Tell us about your event and we will create a menu that works perfectly for you.</p>
     <a href="contact.html" class="btn-primary">Request a Quote</a>
   </div>
 </div>
@@ -1409,4 +1409,19 @@ function addMenuToIdeas(btn) {
 <!-- WINDOW -->
 
 
-</body></html>
+<script>
+(function(){
+  function bgUrl(v){ if(!v) return null; v=String(v); if(!/^https?:\/\//.test(v)) v=v.replace(/^\//,''); return "url('"+v+"')"; }
+  fetch('menu-canapes.json?t=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      function t(id,v){ var e=document.getElementById(id); if(e&&v!=null) e.textContent=v; }
+      function bg(id,v){ var e=document.getElementById(id); var u=bgUrl(v); if(e&&u) e.style.backgroundImage=u; }
+      t('ed-hero-eyebrow',d.hero_eyebrow); t('ed-hero-line1',d.hero_line1); t('ed-hero-line2',d.hero_line2);
+      t('ed-hero-subtitle',d.hero_subtitle); t('ed-samples-intro',d.samples_intro);
+      t('ed-cta-line1',d.cta_line1); t('ed-cta-line2',d.cta_line2); t('ed-cta-sub',d.cta_subtitle);
+      bg('ed-hero-img',d.hero_image); bg('ed-cta-img',d.cta_image);
+    })
+    .catch(function(e){ console.error('content load failed', e); });
+})();
+</script></body></html>
