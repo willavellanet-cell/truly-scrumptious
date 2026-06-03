@@ -998,9 +998,9 @@ function toggleMobileNav(){
 <section class="hero">
   <div class="hero-left"></div>
   <div class="hero-right">
-    <span class="hero-eyebrow">Oxford Based Catering</span>
-    <h1><span class="line-serif">Food to Bring</span><span class="line-sans"><em>People Together</em></span></h1>
-    <p>Generous, flavour-led catering for private events, celebrations and gatherings across Oxfordshire.</p>
+    <span class="hero-eyebrow" id="ed-hero-eyebrow">Oxford Based Catering</span>
+    <h1><span class="line-serif" id="ed-hero-line1">Food to Bring</span><span class="line-sans"><em id="ed-hero-line2">People Together</em></span></h1>
+    <p id="ed-hero-subtitle">Generous, flavour-led catering for private events, celebrations and gatherings across Oxfordshire.</p>
     <div class="hero-btns">
       <a href="contact.html" class="btn-primary">Request a Quote</a>
       <a href="#menus" class="btn-ghost">View Menus</a>
@@ -1066,13 +1066,13 @@ function toggleMobileNav(){
 
 <!-- ABOUT -->
 <section class="about" id="about">
-  <div class="about-img" style="background-image:url('index-3.jpg')"></div>
+  <div class="about-img" id="ed-about-img" style="background-image:url('index-3.jpg')"></div>
   <div class="about-content">
     <span class="eyebrow">Our Story</span>
-    <h2 class="display-title"><span class="line-serif">A Family Run</span><span class="line-sans">Catering Company</span></h2>
+    <h2 class="display-title"><span class="line-serif" id="ed-about-h1">A Family Run</span><span class="line-sans" id="ed-about-h2">Catering Company</span></h2>
     <div class="rule-line"></div>
-    <p>Truly Scrumptious is owned and run by Jamie Forbes — a passion project turned profession, built on the belief that great food brings people together.</p>
-    <p>Every menu is crafted with fresh, seasonal ingredients and served with genuine care. No two events are the same, and we love it that way.</p>
+    <p id="ed-about-p1">Truly Scrumptious is owned and run by Jamie Forbes — a passion project turned profession, built on the belief that great food brings people together.</p>
+    <p id="ed-about-p2">Every menu is crafted with fresh, seasonal ingredients and served with genuine care. No two events are the same, and we love it that way.</p>
     <blockquote>"Good food is about more than the meal — it's the moments it creates."</blockquote>
     <a href="#" class="btn-ghost" style="align-self:flex-start;">Our Story</a>
   </div>
@@ -1759,5 +1759,26 @@ Always end responses about booking or pricing with a warm nudge to get in touch:
 })();
 </script>
 
+<script>
+(function(){
+  fetch('home.json?t=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      function setText(id, val){ var el=document.getElementById(id); if(el && val!=null) el.textContent = val; }
+      setText('ed-hero-eyebrow', d.hero_eyebrow);
+      setText('ed-hero-line1', d.hero_line1);
+      setText('ed-hero-line2', d.hero_line2);
+      setText('ed-hero-subtitle', d.hero_subtitle);
+      setText('ed-about-h1', d.about_heading_line1);
+      setText('ed-about-h2', d.about_heading_line2);
+      setText('ed-about-p1', d.about_para1);
+      setText('ed-about-p2', d.about_para2);
+      setText('ed-about-eyebrow', d.about_eyebrow);
+      var img=document.getElementById('ed-about-img');
+      if(img && d.about_image){ img.style.backgroundImage = "url('" + String(d.about_image).replace(/^\//,'') + "')"; }
+    })
+    .catch(function(e){ console.error('home content load failed', e); });
+})();
+</script>
 </body>
 </html>
