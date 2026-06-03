@@ -750,7 +750,7 @@ function render(filter) {
     item.className = 'gallery-item';
 
     var img = document.createElement('img');
-    img.src = photo.src;
+    img.src = (photo.src || '').replace(/^\//, '');
     img.alt = photo.label;
     img.loading = 'lazy';
     item.appendChild(img);
@@ -809,7 +809,7 @@ function closeLightbox() {
 }
 function updateLightbox() {
   var p = filtered[currentIndex];
-  document.getElementById('lb-img').src = p.src;
+  document.getElementById('lb-img').src = (p.src || '').replace(/^\//, '');
   document.getElementById('lb-caption').textContent = p.label;
   document.getElementById('lb-counter').textContent = (currentIndex+1) + ' / ' + filtered.length;
 }
