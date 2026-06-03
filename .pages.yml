@@ -37,31 +37,61 @@ content:
     path: truly-scrumptious-netlify_3/home.json
     fields:
       - name: hero_eyebrow
-        label: Hero — small label above title
+        label: "Hero — small label above title"
         type: string
       - name: hero_line1
-        label: Hero — headline line 1
+        label: "Hero — headline line 1"
         type: string
       - name: hero_line2
-        label: Hero — headline line 2
+        label: "Hero — headline line 2"
         type: string
       - name: hero_subtitle
-        label: Hero — subtitle
+        label: "Hero — subtitle"
         type: text
+      - name: hero_left_image
+        label: "Hero — left banner photo"
+        type: image
+        options:
+          media: images
       - name: about_image
-        label: About section — photo
+        label: "About section — photo"
         type: image
         options:
           media: images
       - name: about_heading_line1
-        label: About — heading line 1
+        label: "About — heading line 1"
         type: string
       - name: about_heading_line2
-        label: About — heading line 2
+        label: "About — heading line 2"
         type: string
       - name: about_para1
-        label: About — paragraph 1
+        label: "About — paragraph 1"
         type: text
       - name: about_para2
-        label: About — paragraph 2
+        label: "About — paragraph 2"
         type: text
+      - name: card_bbq_image
+        label: "Menu card — BBQ photo"
+        type: image
+        options:
+          media: images
+      - name: card_buffet_image
+        label: "Menu card — Buffet photo"
+        type: image
+        options:
+          media: images
+      - name: card_canapes_image
+        label: "Menu card — Canapés photo"
+        type: image
+        options:
+          media: images
+      - name: card_afternoon_image
+        label: "Menu card — Afternoon Tea photo"
+        type: image
+        options:
+          media: images
+      - name: card_bespoke_image
+        label: "Menu card — Bespoke photo"
+        type: image
+        options:
+          media: images
