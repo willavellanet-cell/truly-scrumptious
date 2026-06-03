@@ -1,0 +1,32 @@
+# Pages CMS configuration — Truly Scrumptious Oxford
+# MUST live at the repository ROOT (not inside the subdirectory).
+# Site files and images live in truly-scrumptious-netlify_3/ (images are flat there).
+
+media:
+  - name: images
+    label: Photos
+    input: truly-scrumptious-netlify_3
+    output: ""
+    extensions: [jpg, jpeg, png, webp]
+    categories: [image]
+
+content:
+  - name: gallery
+    label: Gallery Photos
+    type: file
+    path: truly-scrumptious-netlify_3/gallery.json
+    list: true
+    fields:
+      - name: src
+        label: Photo
+        type: image
+        options:
+          media: images
+      - name: cat
+        label: Category
+        type: select
+        options:
+          values: [buffet, canapes, desserts]
+      - name: label
+        label: Caption
+        type: string
