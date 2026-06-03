@@ -192,7 +192,7 @@
   /* BASKET DRAWER */
   .basket-drawer {
     position: fixed; bottom: 0; right: 0; z-index: 600;
-    width: 420px; max-height: 85vh;
+    width: 420px; max-width: 100vw; max-height: 85vh;
     background: var(--white); border-left: 1px solid var(--rule);
     border-top: 1px solid var(--rule);
     display: flex; flex-direction: column;
@@ -711,11 +711,6 @@ function toggleMobileNav(){
         <textarea class="form-input" placeholder="Any other details about your event, venue, ideas or questions…" id="f-message"></textarea>
       </div>
 
-      <div class="form-tc" style="background:rgba(86,170,229,0.07);border:1px solid rgba(86,170,229,0.2);padding:14px 16px;border-radius:2px;">
-        <input type="checkbox" id="tc-agree">
-        <label for="tc-agree">I have read and agree to the <a href="terms.html">Terms & Conditions</a> including the standard payment terms of 15 days and cancellation policy.</label>
-      </div>
-
       <p style="font-size:11.5px;color:var(--light);font-weight:300;margin-bottom:12px;line-height:1.6;">By submitting this form your enquiry will be sent directly to Jamie via email.</p>
       <button class="btn-submit" onclick="submitForm()">Send Enquiry</button>
       <div class="form-success" id="form-success">
@@ -1106,14 +1101,10 @@ function toggleMobileNav(){
 function submitForm() {
   var first = document.getElementById('f-first').value.trim();
   var email = document.getElementById('f-email').value.trim();
-  var agreed = document.getElementById('tc-agree').checked;
 
   if (!first || !email) {
     alert('Please fill in at least your name and email address.');
     return;
-  }
-  if (!agreed) {
-    if (!confirm('Please note you have not agreed to the Terms & Conditions. Continue anyway?')) return;
   }
 
   var services = [];
@@ -1131,7 +1122,6 @@ function submitForm() {
   body += 'Catering: ' + (services.length ? services.join(', ') : 'Not specified') + '\n';
   body += 'Dietary: ' + (document.getElementById('f-dietary').value||'None stated') + '\n\n';
   body += 'Message:\n' + (document.getElementById('f-message').value||'') + '\n\n';
-  body += 'T&Cs agreed: Yes';
 
   window.location.href = 'mailto:hello@trulyscrumptious.co.uk?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
 
