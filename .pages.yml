@@ -135,3 +135,163 @@ content:
       - name: cta_subtitle
         label: "Bottom banner — subtitle"
         type: text
+
+  - name: menu_buffet
+    label: "Menu: Buffet"
+    type: file
+    path: truly-scrumptious-netlify_3/menu-buffet.json
+    fields:
+      - name: hero_image
+        label: "Hero — background photo"
+        type: image
+        options:
+          media: images
+      - name: hero_eyebrow
+        label: "Hero — small label"
+        type: string
+      - name: hero_line1
+        label: "Hero — title line 1"
+        type: string
+      - name: hero_line2
+        label: "Hero — title line 2"
+        type: string
+      - name: hero_subtitle
+        label: "Hero — subtitle"
+        type: text
+      - name: samples_intro
+        label: "Sample Menus — intro paragraph"
+        type: text
+      - name: cta_image
+        label: "Bottom banner — background photo"
+        type: image
+        options:
+          media: images
+      - name: cta_line1
+        label: "Bottom banner — heading line 1"
+        type: string
+      - name: cta_line2
+        label: "Bottom banner — heading line 2"
+        type: string
+      - name: cta_subtitle
+        label: "Bottom banner — subtitle"
+        type: text
+
+  - name: menu_canapes
+    label: "Menu: Canapés"
+    type: file
+    path: truly-scrumptious-netlify_3/menu-canapes.json
+    fields:
+      - name: hero_image
+        label: "Hero — background photo"
+        type: image
+        options:
+          media: images
+      - name: hero_eyebrow
+        label: "Hero — small label"
+        type: string
+      - name: hero_line1
+        label: "Hero — title line 1"
+        type: string
+      - name: hero_line2
+        label: "Hero — title line 2"
+        type: string
+      - name: hero_subtitle
+        label: "Hero — subtitle"
+        type: text
+      - name: samples_intro
+        label: "Sample Menus — intro paragraph"
+        type: text
+      - name: cta_image
+        label: "Bottom banner — background photo"
+        type: image
+        options:
+          media: images
+      - name: cta_line1
+        label: "Bottom banner — heading line 1"
+        type: string
+      - name: cta_line2
+        label: "Bottom banner — heading line 2"
+        type: string
+      - name: cta_subtitle
+        label: "Bottom banner — subtitle"
+        type: text
+
+  - name: menu_afternoon
+    label: "Menu: Afternoon Tea"
+    type: file
+    path: truly-scrumptious-netlify_3/menu-afternoon-tea.json
+    fields:
+      - name: hero_image
+        label: "Hero — background photo"
+        type: image
+        options:
+          media: images
+      - name: hero_eyebrow
+        label: "Hero — small label"
+        type: string
+      - name: hero_line1
+        label: "Hero — title line 1"
+        type: string
+      - name: hero_line2
+        label: "Hero — title line 2"
+        type: string
+      - name: hero_subtitle
+        label: "Hero — subtitle"
+        type: text
+      - name: samples_intro
+        label: "Sample Menus — intro paragraph"
+        type: text
+      - name: cta_image
+        label: "Bottom banner — background photo"
+        type: image
+        options:
+          media: images
+      - name: cta_line1
+        label: "Bottom banner — heading line 1"
+        type: string
+      - name: cta_line2
+        label: "Bottom banner — heading line 2"
+        type: string
+      - name: cta_subtitle
+        label: "Bottom banner — subtitle"
+        type: text
+
+  - name: menu_bespoke
+    label: "Menu: Bespoke"
+    type: file
+    path: truly-scrumptious-netlify_3/menu-bespoke.json
+    fields:
+      - name: hero_image
+        label: "Hero — background photo"
+        type: image
+        options:
+          media: images
+      - name: hero_eyebrow
+        label: "Hero — small label"
+        type: string
+      - name: hero_line1
+        label: "Hero — title line 1"
+        type: string
+      - name: hero_line2
+        label: "Hero — title line 2"
+        type: string
+      - name: hero_subtitle
+        label: "Hero — subtitle"
+        type: text
+      - name: samples_intro
+        label: "Sample Menus — intro paragraph"
+        type: text
+      - name: cta_image
+        label: "Bottom banner — background photo"
+        type: image
+        options:
+          media: images
+      - name: cta_line1
+        label: "Bottom banner — heading line 1"
+        type: string
+      - name: cta_line2
+        label: "Bottom banner — heading line 2"
+        type: string
+      - name: cta_subtitle
+        label: "Bottom banner — subtitle"
+        type: text
