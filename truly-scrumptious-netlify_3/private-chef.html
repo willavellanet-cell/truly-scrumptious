@@ -407,11 +407,11 @@ function toggleMobileNav(){
 
 
 <section class="hero">
-  <div class="hero-bg" style="background-image:url('private-chef-3.jpg')"></div>
+  <div class="hero-bg" id="ed-hero-img" style="background-image:url('private-chef-3.jpg')"></div>
   <div class="hero-content">
-    <span class="eyebrow">Private Chef Services</span>
-    <h1>Jamie Forbes,<br>Private Chef</h1>
-    <p>Restaurant-quality cooking in your own home. From relaxed dinner parties to bespoke dining experiences — Jamie brings the kitchen to you.</p>
+    <span class="eyebrow" id="ed-hero-eyebrow">Private Chef Services</span>
+    <h1 id="ed-hero-h1">Jamie Forbes,<br>Private Chef</h1>
+    <p id="ed-hero-subtitle">Restaurant-quality cooking in your own home. From relaxed dinner parties to bespoke dining experiences — Jamie brings the kitchen to you.</p>
     <div class="hero-btns">
       <a href="contact.html" class="btn-primary">Book Jamie</a>
       <a href="#included" class="btn-ghost">What's Included</a>
@@ -554,5 +554,15 @@ function toggleMobileNav(){
     </div>
   </div>
 </footer>
-</body>
+<script>
+(function(){
+ function bgUrl(v){if(!v)return null;v=String(v);if(!/^https?:\/\//.test(v))v=v.replace(/^\//,'');return "url('"+v+"')";}
+ fetch('private-chef.json?t='+Date.now()).then(function(r){return r.json();}).then(function(d){
+  function t(id,v){var e=document.getElementById(id);if(e&&v!=null)e.textContent=v;}
+  function bg(id,v){var e=document.getElementById(id);var u=bgUrl(v);if(e&&u)e.style.backgroundImage=u;}
+  t('ed-hero-eyebrow',d.hero_eyebrow);t('ed-hero-subtitle',d.hero_subtitle);bg('ed-hero-img',d.hero_image);
+  var hh=document.getElementById('ed-hero-h1'); if(hh&&d.hero_heading!=null) hh.innerHTML=d.hero_heading;
+ }).catch(function(e){console.error('pc load',e);});
+})();
+</script></body>
 </html>

@@ -599,14 +599,14 @@ function toggleMobileNav(){
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-img" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80')"></div>
+  <div class="hero-img" id="ed-hero-img" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80')"></div>
   <div class="hero-content">
-    <span class="eyebrow">Our Story</span>
+    <span class="eyebrow" id="ed-hero-eyebrow">Our Story</span>
     <h1 class="display-title" style="margin-bottom:26px;">
-      <span class="line-serif">Truly Scrumptious</span>
-      <span class="line-sans">Oxford Catering</span>
+      <span class="line-serif" id="ed-hero-line1">Truly Scrumptious</span>
+      <span class="line-sans" id="ed-hero-line2">Oxford Catering</span>
     </h1>
-    <p>A catering company built on a simple belief — that great food, made with care, brings people together in a way nothing else can.</p>
+    <p id="ed-hero-subtitle">A catering company built on a simple belief — that great food, made with care, brings people together in a way nothing else can.</p>
     <div class="hero-btns">
       <a href="#story" class="btn-primary">Our Story</a>
       <a href="contact.html" class="btn-ghost">Get in Touch</a>
@@ -739,7 +739,7 @@ function toggleMobileNav(){
 
 <!-- CTA -->
 <div class="cta-strip">
-  <div class="cta-bg" style="background-image:url('https://images.unsplash.com/photo-1555244162-803834f70033?w=1600&q=80')"></div>
+  <div class="cta-bg" id="ed-cta-img" style="background-image:url('https://images.unsplash.com/photo-1555244162-803834f70033?w=1600&q=80')"></div>
   <div class="cta-overlay"></div>
   <div class="cta-content">
     <h2>
@@ -1387,5 +1387,15 @@ Always end responses about booking or pricing with a warm nudge to get in touch:
 })();
 </script>
 
-</body>
+<script>
+(function(){
+ function bgUrl(v){if(!v)return null;v=String(v);if(!/^https?:\/\//.test(v))v=v.replace(/^\//,'');return "url('"+v+"')";}
+ fetch('about.json?t='+Date.now()).then(function(r){return r.json();}).then(function(d){
+  function t(id,v){var e=document.getElementById(id);if(e&&v!=null)e.textContent=v;}
+  function bg(id,v){var e=document.getElementById(id);var u=bgUrl(v);if(e&&u)e.style.backgroundImage=u;}
+  t('ed-hero-eyebrow',d.hero_eyebrow);t('ed-hero-line1',d.hero_line1);t('ed-hero-line2',d.hero_line2);
+  t('ed-hero-subtitle',d.hero_subtitle);bg('ed-hero-img',d.hero_image);bg('ed-cta-img',d.cta_image);
+ }).catch(function(e){console.error('about load',e);});
+})();
+</script></body>
 </html>

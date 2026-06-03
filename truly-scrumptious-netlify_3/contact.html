@@ -619,13 +619,13 @@ function toggleMobileNav(){
 <!-- PAGE HEADER -->
 <div class="page-header">
   <div>
-    <span class="eyebrow">Get in Touch</span>
+    <span class="eyebrow" id="ed-hero-eyebrow">Get in Touch</span>
     <h1 class="display-title">
-      <span class="line-serif">Let's Plan</span>
-      <span class="line-sans">Your Event</span>
+      <span class="line-serif" id="ed-hero-line1">Let's Plan</span>
+      <span class="line-sans" id="ed-hero-line2">Your Event</span>
     </h1>
   </div>
-  <p>Whether you have everything figured out or just a rough idea, we'd love to hear from you. Tell us about your event and we'll come back with ideas and a bespoke quote.</p>
+  <p id="ed-hero-subtitle">Whether you have everything figured out or just a rough idea, we'd love to hear from you. Tell us about your event and we'll come back with ideas and a bespoke quote.</p>
 </div>
 
 <!-- CONTACT SECTION -->
@@ -1495,5 +1495,12 @@ Always end responses about booking or pricing with a warm nudge to get in touch:
 })();
 </script>
 
-</body>
+<script>
+(function(){
+ fetch('contact.json?t='+Date.now()).then(function(r){return r.json();}).then(function(d){
+  function t(id,v){var e=document.getElementById(id);if(e&&v!=null)e.textContent=v;}
+  t('ed-hero-eyebrow',d.eyebrow);t('ed-hero-line1',d.line1);t('ed-hero-line2',d.line2);t('ed-hero-subtitle',d.subtitle);
+ }).catch(function(e){console.error('contact load',e);});
+})();
+</script></body>
 </html>
