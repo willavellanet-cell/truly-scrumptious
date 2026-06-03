@@ -295,3 +295,66 @@ content:
       - name: cta_subtitle
         label: "Bottom banner — subtitle"
         type: text
+
+  - name: about
+    label: "Page: About"
+    type: file
+    path: truly-scrumptious-netlify_3/about.json
+    fields:
+      - name: hero_image
+        label: "Hero — background photo"
+        type: image
+        options: { media: images }
+      - name: hero_eyebrow
+        label: "Hero — small label"
+        type: string
+      - name: hero_line1
+        label: "Hero — title line 1"
+        type: string
+      - name: hero_line2
+        label: "Hero — title line 2"
+        type: string
+      - name: hero_subtitle
+        label: "Hero — subtitle"
+        type: text
+      - name: cta_image
+        label: "Bottom banner — background photo"
+        type: image
+        options: { media: images }
+
+  - name: contact
+    label: "Page: Contact"
+    type: file
+    path: truly-scrumptious-netlify_3/contact.json
+    fields:
+      - name: eyebrow
+        label: "Header — small label"
+        type: string
+      - name: line1
+        label: "Header — title line 1"
+        type: string
+      - name: line2
+        label: "Header — title line 2"
+        type: string
+      - name: subtitle
+        label: "Header — intro paragraph"
+        type: text
+
+  - name: private_chef
+    label: "Page: Private Chef"
+    type: file
+    path: truly-scrumptious-netlify_3/private-chef.json
+    fields:
+      - name: hero_image
+        label: "Hero — background photo"
+        type: image
+        options: { media: images }
+      - name: hero_eyebrow
+        label: "Hero — small label"
+        type: string
+      - name: hero_heading
+        label: "Hero — heading (use <br> for line break)"
+        type: string
+      - name: hero_subtitle
+        label: "Hero — subtitle"
+        type: text
