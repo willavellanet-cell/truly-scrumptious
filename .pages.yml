@@ -30,3 +30,38 @@ content:
       - name: label
         label: Caption
         type: string
+
+  - name: homepage
+    label: Homepage
+    type: file
+    path: truly-scrumptious-netlify_3/home.json
+    fields:
+      - name: hero_eyebrow
+        label: Hero — small label above title
+        type: string
+      - name: hero_line1
+        label: Hero — headline line 1
+        type: string
+      - name: hero_line2
+        label: Hero — headline line 2
+        type: string
+      - name: hero_subtitle
+        label: Hero — subtitle
+        type: text
+      - name: about_image
+        label: About section — photo
+        type: image
+        options:
+          media: images
+      - name: about_heading_line1
+        label: About — heading line 1
+        type: string
+      - name: about_heading_line2
+        label: About — heading line 2
+        type: string
+      - name: about_para1
+        label: About — paragraph 1
+        type: text
+      - name: about_para2
+        label: About — paragraph 2
+        type: text
