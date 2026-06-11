@@ -98,5 +98,10 @@
     "src": "/gallery-20.jpg",
     "cat": "desserts",
     "label": "Fruit & trifle"
+  },
+  {
+    "src": "/MalaysianCurrySpicesjpg-1.jpg",
+    "cat": "buffet",
+    "label": "Maylaysian Curry Ingredients"
   }
 ]
