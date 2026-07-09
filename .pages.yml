@@ -95,6 +95,11 @@ content:
         type: image
         options:
           media: images
+      - name: card_whatwecater_image
+        label: "Menu card — What We Cater photo"
+        type: image
+        options:
+          media: images
 
   - name: menu_bbq
     label: "Menu: BBQ"
