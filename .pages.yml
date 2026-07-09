@@ -121,6 +121,29 @@ content:
       - name: samples_intro
         label: "Sample Menus — intro paragraph"
         type: text
+      - name: samples
+        label: "Sample Menus (accordion)"
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: "Menu name"
+            type: string
+          - name: blurb
+            label: "Short description"
+            type: text
+          - name: courses
+            label: "Courses"
+            type: object
+            list: true
+            fields:
+              - name: course
+                label: "Course heading (e.g. On the barbecue)"
+                type: string
+              - name: items
+                label: "Dishes (one per line)"
+                type: string
+                list: true
       - name: cta_image
         label: "Bottom banner — background photo"
         type: image
@@ -161,6 +184,29 @@ content:
       - name: samples_intro
         label: "Sample Menus — intro paragraph"
         type: text
+      - name: samples
+        label: "Sample Menus (accordion)"
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: "Menu name"
+            type: string
+          - name: blurb
+            label: "Short description"
+            type: text
+          - name: courses
+            label: "Courses"
+            type: object
+            list: true
+            fields:
+              - name: course
+                label: "Course heading (e.g. On the barbecue)"
+                type: string
+              - name: items
+                label: "Dishes (one per line)"
+                type: string
+                list: true
       - name: cta_image
         label: "Bottom banner — background photo"
         type: image
@@ -201,6 +247,29 @@ content:
       - name: samples_intro
         label: "Sample Menus — intro paragraph"
         type: text
+      - name: samples
+        label: "Sample Menus (accordion)"
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: "Menu name"
+            type: string
+          - name: blurb
+            label: "Short description"
+            type: text
+          - name: courses
+            label: "Courses"
+            type: object
+            list: true
+            fields:
+              - name: course
+                label: "Course heading (e.g. On the barbecue)"
+                type: string
+              - name: items
+                label: "Dishes (one per line)"
+                type: string
+                list: true
       - name: cta_image
         label: "Bottom banner — background photo"
         type: image
@@ -241,6 +310,29 @@ content:
       - name: samples_intro
         label: "Sample Menus — intro paragraph"
         type: text
+      - name: samples
+        label: "Sample Menus (accordion)"
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: "Menu name"
+            type: string
+          - name: blurb
+            label: "Short description"
+            type: text
+          - name: courses
+            label: "Courses"
+            type: object
+            list: true
+            fields:
+              - name: course
+                label: "Course heading (e.g. On the barbecue)"
+                type: string
+              - name: items
+                label: "Dishes (one per line)"
+                type: string
+                list: true
       - name: cta_image
         label: "Bottom banner — background photo"
         type: image
@@ -281,6 +373,29 @@ content:
       - name: samples_intro
         label: "Sample Menus — intro paragraph"
         type: text
+      - name: samples
+        label: "Sample Menus (accordion)"
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: "Menu name"
+            type: string
+          - name: blurb
+            label: "Short description"
+            type: text
+          - name: courses
+            label: "Courses"
+            type: object
+            list: true
+            fields:
+              - name: course
+                label: "Course heading (e.g. On the barbecue)"
+                type: string
+              - name: items
+                label: "Dishes (one per line)"
+                type: string
+                list: true
       - name: cta_image
         label: "Bottom banner — background photo"
         type: image
