@@ -1,3 +1,4 @@
+<!-- v-home-vertical-mobile labels+whatwecater -->
 <!DOCTYPE html>
 <!-- v101 seo-ready -->
 <html lang="en">
@@ -762,8 +763,12 @@
 
   /* MENU CARDS */
   .menus-carousel { padding: 0 16px; }
-  .menus-scroll { gap: 14px; padding-left: 8px; padding-right: 8px; }
-  .menu-card { flex: 0 0 75%; }
+  .menus-scroll {
+    flex-direction: column; gap: 16px;
+    overflow-x: visible; scroll-snap-type: none;
+    padding-left: 0; padding-right: 0;
+  }
+  .menu-card { flex: 0 0 auto; width: 100%; aspect-ratio: 16/10; }
   .menus-arrow { display: none; }
 
   /* HERO SCROLL HINT */
@@ -1043,15 +1048,19 @@ function toggleMobileNav(){
     </a>
     <a href="menu-canapes.html" class="menu-card">
       <div class="menu-card-img" id="ed-card-canapes" style="background-image:url('https://images.unsplash.com/photo-1541529086526-db283c563270?w=800&q=80')"></div>
-      <div class="menu-card-body"><h3 class="menu-card-title">Canapés</h3><span class="menu-view">View Menu</span></div>
+      <div class="menu-card-body"><h3 class="menu-card-title">Canapés + Bowl Food</h3><span class="menu-view">View Menu</span></div>
     </a>
     <a href="menu-afternoon-tea.html" class="menu-card">
       <div class="menu-card-img" id="ed-card-afternoon" style="background-image:url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=600&q=80')"></div>
-      <div class="menu-card-body"><h3 class="menu-card-title">Afternoon Tea</h3><span class="menu-view">View Menu</span></div>
+      <div class="menu-card-body"><h3 class="menu-card-title">Stand Up + Reception</h3><span class="menu-view">View Menu</span></div>
     </a>
     <a href="menu-bespoke.html" class="menu-card">
       <div class="menu-card-img" id="ed-card-bespoke" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80')"></div>
       <div class="menu-card-body"><h3 class="menu-card-title">Bespoke Catering</h3><span class="menu-view">View Menu</span></div>
+    </a>
+    <a href="what-we-cater.html" class="menu-card">
+      <div class="menu-card-img" id="ed-card-whatwecater" style="background-image:url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80')"></div>
+      <div class="menu-card-body"><h3 class="menu-card-title">What We Cater</h3><span class="menu-view">View Menu</span></div>
     </a>
     </div>
   </div>
@@ -1785,6 +1794,7 @@ Always end responses about booking or pricing with a warm nudge to get in touch:
       setBg('ed-card-canapes', d.card_canapes_image);
       setBg('ed-card-afternoon', d.card_afternoon_image);
       setBg('ed-card-bespoke', d.card_bespoke_image);
+      setBg('ed-card-whatwecater', d.card_whatwecater_image);
     })
     .catch(function(e){ console.error('home content load failed', e); });
 })();
