@@ -1,3 +1,4 @@
+<!-- v-cms-samples aftea -->
 <!DOCTYPE html>
 <!-- v15 seo-ready -->
 <html lang="en">
@@ -846,33 +847,7 @@
       <h2 class="display-title"><span class="line-serif">Real Menus</span><span class="line-sans">From Real Events</span></h2>
       <p class="sm-intro" id="ed-samples-intro">A taste of what&rsquo;s possible. Here&rsquo;s a recent menu we built around afternoon tea elements &mdash; finger sandwiches, mini tartlets, scones with jam and cream, followed by something more substantial. Tap to expand.</p>
     </div>
-    <div class="sm-accordion">
-    <div class="sm-item">
-      <button class="sm-trigger" type="button" aria-expanded="false" aria-controls="sm-panel-0" onclick="toggleSampleMenu(this)">
-        <span class="sm-trigger-title">Afternoon Tea Canap&eacute;s &amp; Sharing Pies</span>
-        <span class="sm-trigger-icon" aria-hidden="true"></span>
-      </button>
-      <div class="sm-panel" id="sm-panel-0">
-        <p class="sm-blurb">A very English reception. Pimms served on the lawn behind the manor house, and afternoon tea in miniature passed for the guests to nibble on: finger sandwiches, mini quiche Lorraine, leek &amp; parmesan tartlets, mini scones with jam &amp; cream. The family style meal was then served in a marquee on the edge of a wood.</p>
-        <div class="sm-courses">
-          <div class="sm-course">
-            <p class="sm-course-title">To start</p>
-            <ul class="sm-course-items"><li>Baskets of crostini and rustic breads served with home cured beetroot stained gravadlax with dill &amp; mustard cream cheese</li><li>Mozzarella with extra virgin olive oil, lemon zest &amp; chilli flakes</li><li>Beetroot, feta &amp; mint dip</li><li>Vine tomatoes with extra virgin olive oil, Maldon salt &amp; fresh basil</li></ul>
-          </div>
-          <div class="sm-course">
-            <p class="sm-course-title">Main course</p>
-            <ul class="sm-course-items"><li>Chicken, chorizo &amp; roasted pepper pie with a filo crust</li><li>Sweet potato, wild mushroom &amp; spinach pie with a puff pastry crust (V)</li><li>New potatoes with parsley butter</li><li>Green beans &amp; mangetout with toasted hazelnuts &amp; orange</li><li>Mixed leaves with pomegranate seeds and a pomegranate &amp; honey dressing</li></ul>
-          </div>
-          <div class="sm-course">
-            <p class="sm-course-title">Dessert buffet</p>
-            <ul class="sm-course-items"><li>Village fete style cakes, bars &amp; biscuits served with cream &amp; raspberry coulis</li></ul>
-          
-        <button class="add-to-basket sm-add-btn" type="button" data-menu="Afternoon Tea Canap&amp;eacute;s &amp; Sharing Pies" onclick="addMenuToIdeas(this)">Add to Ideas</button>
-      </div>
-        </div>
-      </div>
-    </div>
-    </div>
+    <div class="sm-accordion" id="sm-accordion"></div>
     <p class="sm-note">Pricing on request. Tell us about your event and we&rsquo;ll build a menu around it.</p>
   </div>
 </section>
@@ -1339,6 +1314,29 @@ function addMenuToIdeas(btn) {
 <script>
 (function(){
   function bgUrl(v){ if(!v) return null; v=String(v); if(!/^https?:\/\//.test(v)) v=v.replace(/^\//,''); return "url('"+v+"')"; }
+  function esc(x){ return String(x==null?'':x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function renderSamples(list){
+    var wrap = document.getElementById('sm-accordion');
+    if(!wrap || !Array.isArray(list)) return;
+    wrap.innerHTML = list.map(function(m, idx){
+      var courses = (m.courses||[]).map(function(c){
+        var items = (c.items||[]).map(function(it){ return '<li>'+esc(it)+'</li>'; }).join('');
+        return '<div class="sm-course"><p class="sm-course-title">'+esc(c.course)+'</p><ul class="sm-course-items">'+items+'</ul></div>';
+      }).join('');
+      var title = esc(m.title);
+      return '<div class="sm-item">'
+        + '<button class="sm-trigger" type="button" aria-expanded="false" aria-controls="sm-panel-'+idx+'" onclick="toggleSampleMenu(this)">'
+        + '<span class="sm-trigger-title">'+title+'</span>'
+        + '<span class="sm-trigger-icon" aria-hidden="true"></span>'
+        + '</button>'
+        + '<div class="sm-panel" id="sm-panel-'+idx+'">'
+        + '<p class="sm-blurb">'+esc(m.blurb)+'</p>'
+        + '<div class="sm-courses">'+courses+'</div>'
+        + '<button class="add-to-basket sm-add-btn" type="button" data-menu="'+title+'" onclick="addMenuToIdeas(this)">Add to Ideas</button>'
+        + '</div>'
+        + '</div>';
+    }).join('');
+  }
   fetch('menu-afternoon-tea.json?t=' + Date.now())
     .then(function(r){ return r.json(); })
     .then(function(d){
@@ -1348,6 +1346,7 @@ function addMenuToIdeas(btn) {
       t('ed-hero-subtitle',d.hero_subtitle); t('ed-samples-intro',d.samples_intro);
       t('ed-cta-line1',d.cta_line1); t('ed-cta-line2',d.cta_line2); t('ed-cta-sub',d.cta_subtitle);
       bg('ed-hero-img',d.hero_image); bg('ed-cta-img',d.cta_image);
+      renderSamples(d.samples);
     })
     .catch(function(e){ console.error('content load failed', e); });
 })();

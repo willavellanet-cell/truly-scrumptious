@@ -4,9 +4,165 @@
   "hero_line1": "BBQ Catering",
   "hero_line2": "in Oxfordshire",
   "hero_subtitle": "Generous, flame-grilled catering designed for relaxed and memorable outdoor events.",
-  "samples_intro": "A taste of what we\u2019ve cooked. These are real barbecue menus from real events \u2014 from springtime country lunches to corporate days out. Each one is a starting point, not a fixed offering. Tap any menu to expand.",
+  "samples_intro": "A taste of what we’ve cooked. These are real barbecue menus from real events — from springtime country lunches to corporate days out. Each one is a starting point, not a fixed offering. Tap any menu to expand.",
   "cta_image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=1600&q=80",
   "cta_line1": "Planning an",
   "cta_line2": "Outdoor Event?",
-  "cta_subtitle": "Tell us about your event and we will create a menu that works perfectly for you."
+  "cta_subtitle": "Tell us about your event and we will create a menu that works perfectly for you.",
+  "samples": [
+    {
+      "title": "Spring Countryside Barbecue",
+      "blurb": "This was the perfect menu for a countryside event. The smell of the meat cooking whetted the appetites, and when guests were called to the tables they seated themselves in record time!",
+      "courses": [
+        {
+          "course": "On the barbecue",
+          "items": [
+            "Grilled spice rubbed rump of beef",
+            "Smoky Moroccan chicken skewers",
+            "Lamb & mint burgers with minty Greek yogurt",
+            "Grilled halloumi with roasted peppers (V)"
+          ]
+        },
+        {
+          "course": "Accompaniments",
+          "items": [
+            "Mixed baby leaves with strawberries & a fruit vinaigrette",
+            "Jewelled couscous with pomegranate seeds",
+            "Lemony chick pea, red pepper and feta salad with parsley & coriander",
+            "Puy lentil, roasted pepper, sun-dried tomato & parsley salad",
+            "Artisan breads & butter"
+          ]
+        },
+        {
+          "course": "Dessert",
+          "items": [
+            "Baked New York style lime & ginger cheesecake",
+            "Chocolate cream tartlets with local strawberries"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Summer Birthday Barbecue",
+      "blurb": "It could hardly have been a more perfect day for a birthday barbecue. The sun shone brightly, the garden was full of family and friends, and a certain British tennis player won Wimbledon!",
+      "courses": [
+        {
+          "course": "On the barbecue",
+          "items": [
+            "Vietnamese lemongrass chicken",
+            "Moroccan lamb kebabs",
+            "Monkfish, pancetta & rosemary skewers",
+            "Portobello mushrooms with a gorgonzola & thyme stuffing (V)"
+          ]
+        },
+        {
+          "course": "Accompaniments",
+          "items": [
+            "Rocket & mini plum tomato salad with parmesan shavings & a balsamic vinaigrette",
+            "New potato, sun-dried tomato & basil salad",
+            "Broad bean, pea & feta salad with mint",
+            "Black bean, roasted pepper, sweetcorn, coriander & lime salad",
+            "Artisan breads & butter"
+          ]
+        },
+        {
+          "course": "Dessert",
+          "items": [
+            "Chocolate oblivion with raspberry coulis",
+            "Pavlova with chantilly cream, fresh strawberries & mango coulis"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Midsummer Staff Party",
+      "blurb": "A party for staff and their families on the longest day of the year. Tables were set up on the grounds of a manor house. Children ran and played. Adults ate, drank and were merry.",
+      "courses": [
+        {
+          "course": "On the barbecue",
+          "items": [
+            "Grilled Lincolnshire and Toulouse sausages with caramelised onion relish",
+            "¼ pound beef burgers with all the trimmings",
+            "Black bean, roasted pepper & coriander burgers (V)"
+          ]
+        },
+        {
+          "course": "Accompaniments",
+          "items": [
+            "Potato and cucumber salad with red onions & dill",
+            "Mixed green salad with a herb vinaigrette",
+            "Chick pea, halloumi, tomato, cucumber & mint salad"
+          ]
+        },
+        {
+          "course": "Dessert",
+          "items": [
+            "Stack of gooey chocolate brownies",
+            "Summer fruit salad with ice cream"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Corporate Team Building Day",
+      "blurb": "It was a departmental day out, doing some volunteer work as a way of giving back to the local community. A morning of gardening and clearing brush was rewarded with a scrumptious barbecue lunch.",
+      "courses": [
+        {
+          "course": "On the barbecue",
+          "items": [
+            "American style pork ribs with chipotle barbecue sauce",
+            "Rosemary & garlic chicken skewers",
+            "Local pork sausages with caramelised onion relish",
+            "Grilled tuna steaks with pomegranate molasses"
+          ]
+        },
+        {
+          "course": "Accompaniments",
+          "items": [
+            "Black bean, edamame & brown rice salad with lime & coriander",
+            "Grilled halloumi, chick pea, tomato, cucumber & mint salad with lemon dressing",
+            "Chorizo, butternut squash and wheatberry salad",
+            "Rocket, plum tomatoes and shaved parmesan with a balsamic vinaigrette",
+            "Artisan breads & butter"
+          ]
+        },
+        {
+          "course": "Dessert",
+          "items": [
+            "Pavlovas with lemon cream and fresh berries",
+            "Baked chocolate tart with mascarpone cream & fresh local raspberries"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Family Style Barbecue",
+      "blurb": "A marquee in the garden of the host's family home, on the edge of the Cotswolds. Huge trees, flower beds, and a gathering of friends and family from far & wide. Guests milled on the lawn before the ceremony drinking fizz and eating smoked salmon on seeded rye bread.",
+      "courses": [
+        {
+          "course": "Main course",
+          "items": [
+            "Spice rubbed grilled rump of beef served on a bed of rocket",
+            "Smoky lemon & harissa chicken skewers",
+            "Butternut squash, chick pea & spinach tagine (V)",
+            "Jewelled couscous with pomegranate seeds",
+            "Broad bean, pea, cucumber, halloumi & mint salad",
+            "Roasted beetroot, puy lentil, feta & mint salad"
+          ]
+        },
+        {
+          "course": "Dessert",
+          "items": [
+            "Assorted baklava with honeyed Greek yogurt"
+          ]
+        },
+        {
+          "course": "In the evening",
+          "items": [
+            "Mugs of potato & leek soup with crusty breads"
+          ]
+        }
+      ]
+    }
+  ]
 }

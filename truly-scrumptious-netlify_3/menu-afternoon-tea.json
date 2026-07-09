@@ -8,5 +8,38 @@
   "cta_image": "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=1600&q=80",
   "cta_line1": "Planning a",
   "cta_line2": "Special Occasion?",
-  "cta_subtitle": "Tell us about your event and we will create a menu that works perfectly for you."
+  "cta_subtitle": "Tell us about your event and we will create a menu that works perfectly for you.",
+  "samples": [
+    {
+      "title": "Afternoon Tea Canapés & Sharing Pies",
+      "blurb": "A very English reception. Pimms served on the lawn behind the manor house, and afternoon tea in miniature passed for the guests to nibble on: finger sandwiches, mini quiche Lorraine, leek & parmesan tartlets, mini scones with jam & cream. The family style meal was then served in a marquee on the edge of a wood.",
+      "courses": [
+        {
+          "course": "To start",
+          "items": [
+            "Baskets of crostini and rustic breads served with home cured beetroot stained gravadlax with dill & mustard cream cheese",
+            "Mozzarella with extra virgin olive oil, lemon zest & chilli flakes",
+            "Beetroot, feta & mint dip",
+            "Vine tomatoes with extra virgin olive oil, Maldon salt & fresh basil"
+          ]
+        },
+        {
+          "course": "Main course",
+          "items": [
+            "Chicken, chorizo & roasted pepper pie with a filo crust",
+            "Sweet potato, wild mushroom & spinach pie with a puff pastry crust (V)",
+            "New potatoes with parsley butter",
+            "Green beans & mangetout with toasted hazelnuts & orange",
+            "Mixed leaves with pomegranate seeds and a pomegranate & honey dressing"
+          ]
+        },
+        {
+          "course": "Dessert buffet",
+          "items": [
+            "Village fete style cakes, bars & biscuits served with cream & raspberry coulis"
+          ]
+        }
+      ]
+    }
+  ]
 }

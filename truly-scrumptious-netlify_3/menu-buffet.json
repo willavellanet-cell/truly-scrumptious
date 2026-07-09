@@ -8,5 +8,358 @@
   "cta_image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=1600&q=80",
   "cta_line1": "Planning an",
   "cta_line2": "Event?",
-  "cta_subtitle": "Tell us about your event and we will create a menu that works perfectly for you."
+  "cta_subtitle": "Tell us about your event and we will create a menu that works perfectly for you.",
+  "samples": [
+    {
+      "title": "Ploughman's",
+      "blurb": "Our simplest cold buffet — ideal for drop-off lunches. A proper British ploughman's with quality breads, cured meats, classic British cheeses and homemade pickles. Easy, generous, never disappointing.",
+      "courses": [
+        {
+          "course": "On the table",
+          "items": [
+            "Crusty baguette and butter",
+            "Slices of gammon, grilled chicken breast, or houmous and falafel",
+            "Mature cheddar, brie and stilton",
+            "Pickled onions and beetroot",
+            "Red onion chutney"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The Coronation",
+      "blurb": "A classic English cold buffet built around Coronation Chicken — comfortable, familiar flavours perfect for garden lunches and relaxed receptions.",
+      "courses": [
+        {
+          "course": "On the table",
+          "items": [
+            "Coronation Chicken",
+            "Hard boiled eggs with smoked salmon & dill cream cheese",
+            "Potato, cucumber and dill salad",
+            "Mixed leaf salad with a classic French vinaigrette",
+            "Classic coleslaw with apple",
+            "French baguette and butter"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Simple Greek",
+      "blurb": "Bright Mediterranean flavours served cold and easy to graze on. Great for summer lunches, drinks receptions with substance, or any time a lighter, sunnier buffet is wanted.",
+      "courses": [
+        {
+          "course": "On the table",
+          "items": [
+            "Pita bread with assorted dips: babaganoush, red pepper hummus and tzatziki",
+            "Garlic, lemon & oregano marinated grilled chicken breast",
+            "Spinach and feta filo pie",
+            "Greek salad"
+          ]
+        },
+        {
+          "course": "To finish",
+          "items": [
+            "Baklava, or a cut fruit platter"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Mediterranean Antipasti",
+      "blurb": "A grazing-style cold buffet inspired by the antipasti table — cured meats, roasted vegetables, beautiful breads and bright salads, laid out for guests to help themselves.",
+      "courses": [
+        {
+          "course": "On the table",
+          "items": [
+            "Slices of assorted salami",
+            "Slices of garlic & rosemary grilled chicken breast",
+            "Assorted grilled & marinated vegetables",
+            "Tomato, mozzarella & basil salad",
+            "Pesto & mixed bean pasta salad",
+            "Selection of breads including homemade focaccia with rosemary & sea salt",
+            "Mixed olives"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Festive Christmas Buffet",
+      "blurb": "A traditional Christmas cold spread — roast turkey, glazed gammon, festive sides and a selection of our own Christmas baking. Perfect for office parties, family gatherings or any winter celebration.",
+      "courses": [
+        {
+          "course": "On the table",
+          "items": [
+            "Roast turkey with cranberry sauce",
+            "Gammon glazed with grainy mustard & marmalade",
+            "Butternut squash and stilton tart",
+            "Mixed leaf salad with red onion and pomegranate seeds",
+            "“Light” coleslaw of red cabbage, carrot, fennel & parsley with a lemon vinaigrette",
+            "Jewelled couscous"
+          ]
+        },
+        {
+          "course": "Sweet Christmas treats",
+          "items": [
+            "A selection of our Christmas cookies and cakes including mini mince pies, Christmas cake, cinnamon & almond shortbread stars and orange & spice gooey chocolate brownie bites"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Summer Garden Party",
+      "blurb": "Our more generous summer cold spread — designed for relaxed afternoons in the garden. Cured and grilled meats, bright salads, British cheeses and proper homemade puddings.",
+      "courses": [
+        {
+          "course": "On the table",
+          "items": [
+            "Assorted British and continental sliced meats",
+            "Grilled lemon, garlic & herb chicken breast",
+            "Roasted cherry tomato, kalamata olive, feta & basil tart",
+            "New potato salad with a sun-dried tomato & basil dressing",
+            "Mixed leaf, strawberry and herb salad with a fruit vinaigrette",
+            "Selection of British cheeses with chutneys",
+            "Assorted artisan breads and butter"
+          ]
+        },
+        {
+          "course": "Dessert",
+          "items": [
+            "Lemon cream tartlets with fresh berries",
+            "Gooey chocolate brownies with chocolate dipped strawberries"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ham & Salmon",
+      "blurb": "A more elegant cold buffet built around two star centrepieces — home-baked glazed ham and poached salmon. Quietly impressive, ideal for milestone lunches and refined receptions.",
+      "courses": [
+        {
+          "course": "On the table",
+          "items": [
+            "Home baked glazed ham with assorted chutneys",
+            "Poached salmon with a lemon & herb yogurt sauce",
+            "New potato, cucumber & dill salad",
+            "Spinach salad with avocado, orange, toasted slivered almonds & a citrus vinaigrette",
+            "Chunky vegetable salad with lemon & parsley",
+            "Selection of quality breads & butter"
+          ]
+        },
+        {
+          "course": "Dessert",
+          "items": [
+            "Individual pavlovas with fresh berries & lemon cream, or chocolate hazelnut cream & hazelnut praline",
+            "Cut fruit platter"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Mexican DIY Wraps",
+      "blurb": "A relaxed, hands-on hot lunch — lively flavours and a build-your-own approach that always gets the room talking. Brilliant for offices and informal gatherings.",
+      "courses": [
+        {
+          "course": "Mains",
+          "items": [
+            "Mexican chicken",
+            "Black bean chilli",
+            "Wraps, cheese, pico de gallo salsa, guacamole"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Indian",
+      "blurb": "Aromatic, gently spiced and full of warmth — an Indian-inspired hot lunch with a meat and a vegetarian curry alongside basmati rice.",
+      "courses": [
+        {
+          "course": "Mains",
+          "items": [
+            "Sri Lankan chicken curry",
+            "Aubergine, chickpea and tomato curry",
+            "Basmati rice"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Moroccan",
+      "blurb": "Fragrant North African tagines paired with jewelled couscous — comforting, lightly spiced, and beautiful on the table.",
+      "courses": [
+        {
+          "course": "Mains",
+          "items": [
+            "Chicken, preserved lemon and olive tagine",
+            "Chickpea, butternut squash and spinach tagine",
+            "Jewelled couscous"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Mediterranean",
+      "blurb": "A classic European hot lunch — a French-leaning meat main, a hearty vegetarian alternative and a comforting root vegetable mash.",
+      "courses": [
+        {
+          "course": "Mains",
+          "items": [
+            "Beef bourguignon, or chicken provencale",
+            "Leek, butterbean and parmesan roast",
+            "Root vegetable mash"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pakistani",
+      "blurb": "A rich, slow-cooked lamb keema alongside a vegetable curry and basmati rice — deeply flavoured but never heavy.",
+      "courses": [
+        {
+          "course": "Mains",
+          "items": [
+            "Lamb keema curry",
+            "Potato, chickpea, spinach",
+            "Basmati rice"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Persian",
+      "blurb": "Bright Persian flavours — herbs, citrus, pomegranate and warm spice — with a fresh seasonal salad and a buttery dip alongside.",
+      "courses": [
+        {
+          "course": "Mains",
+          "items": [
+            "Orange, thyme & spice chicken",
+            "Apple, sumac, red onion and pomegranate salad",
+            "Butterbean and za'atar dip with flatbread crisps"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "North African",
+      "blurb": "Smoky paprika chicken with a chickpea, spinach and saffron stew — full of colour and warmth, with flatbread or couscous to soak it all up.",
+      "courses": [
+        {
+          "course": "Mains",
+          "items": [
+            "Moroccan paprika chicken",
+            "Chickpea, spinach and saffron",
+            "Cauliflower and preserved lemon salad",
+            "Flatbread or couscous"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Lebanese",
+      "blurb": "Vibrant, fresh Levantine flavours — shawarma and falafel with all the trimmings. Brilliant for a hands-on lunch where guests build their own plates.",
+      "courses": [
+        {
+          "course": "Mains",
+          "items": [
+            "Chicken shawarma",
+            "Falafel",
+            "Houmous, garlic sauce, hot sauce",
+            "Lebanese slaw, flatbread"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Thai",
+      "blurb": "Fragrant Thai curries — a yellow chicken curry alongside a vegetable green curry — served with cooling cucumber salad and Thai scented rice.",
+      "courses": [
+        {
+          "course": "Mains",
+          "items": [
+            "Yellow chicken curry",
+            "Thai vegetable green curry",
+            "Cucumber and pepper salad",
+            "Thai scented rice"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Italian",
+      "blurb": "A proper Italian hot lunch — a generous lasagne with a vegan porcini or soya alternative, garlic bread and a chunky seasonal salad.",
+      "courses": [
+        {
+          "course": "Mains",
+          "items": [
+            "Beef lasagne, or beef & pork lasagne",
+            "Vegan porcini/soya lasagne",
+            "Garlic bread",
+            "Chunky salad"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Late Summer Family Style Grazing",
+      "blurb": "A simple marquee and village hall transformed to reflect the personalities and talents of the hosts. From hand drawn menu cards to black and gold striped table runners to a bar area complete with jars and metal tubs of drinks, the atmosphere was fun and contemporary. A bespoke grazing menu let guests help themselves to a little of this and a little of that.",
+      "courses": [
+        {
+          "course": "Main course",
+          "items": [
+            "Bespoke family-style grazing menu featuring the client's favourite dishes — please get in touch for full details"
+          ]
+        },
+        {
+          "course": "Dessert buffet",
+          "items": [
+            "A selection of 'bring & share' puddings made by family & friends"
+          ]
+        },
+        {
+          "course": "Evening snacks",
+          "items": [
+            "Bagels with smoked salmon & cream cheese",
+            "Bagels with home cured salt beef and a selection of mustards"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Family Style Summer Picnic",
+      "blurb": "The extensive grounds of a gothic style country manor house. Various outbuildings added rustic charm, as did the barn dotted with fairy lights for the evening festivities. A ceremony on the terrace was followed by a drinks reception, then the meal in an open-air tent where guests sat at picnic tables.",
+      "courses": [
+        {
+          "course": "Crostini selection",
+          "items": [
+            "Sicilian caponata with toasted almonds",
+            "Roasted peppers with capers",
+            "Mozzarella with basil & a sprinkle of chilli"
+          ]
+        },
+        {
+          "course": "Main course — platters of roasted & cured meats",
+          "items": [
+            "Gammon with a honey, mustard & marmalade glaze",
+            "Italian style porchetta",
+            "Garlic & herb crusted roast beef",
+            "Assorted salame & chorizo"
+          ]
+        },
+        {
+          "course": "Sharing tarts",
+          "items": [
+            "Roasted cherry tomato, kalamata olive, feta & basil",
+            "Caramelised onion, garlic & goat cheese"
+          ]
+        },
+        {
+          "course": "Salads & cheese",
+          "items": [
+            "A selection of British and continental cheeses",
+            "Lemony chick pea, feta & herb salad",
+            "New potato, sun-dried tomato & basil salad"
+          ]
+        }
+      ]
+    }
+  ]
 }

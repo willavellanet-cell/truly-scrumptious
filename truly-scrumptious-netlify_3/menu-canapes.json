@@ -8,5 +8,115 @@
   "cta_image": "about-3.jpg",
   "cta_line1": "Planning a",
   "cta_line2": "Reception?",
-  "cta_subtitle": "Tell us about your event and we will create a menu that works perfectly for you."
+  "cta_subtitle": "Tell us about your event and we will create a menu that works perfectly for you.",
+  "samples": [
+    {
+      "title": "Southeast Asian 50th Birthday",
+      "blurb": "A bold, fragrant mix of finger and bowl canapés for a milestone birthday — balancing sharper Thai and Vietnamese flavours with rich, slow-cooked bowls that arrived later in the evening.",
+      "courses": [
+        {
+          "course": "Finger canapés",
+          "items": [
+            "Thai fish cakes with a sweet chilli & lime dipping sauce",
+            "Coconut & shiitake mushroom rice balls",
+            "Singapore style chicken satays with peanut sauce",
+            "Chilli, coriander & lemongrass prawn skewers with a mango, lime & coriander dipping sauce"
+          ]
+        },
+        {
+          "course": "Bowl canapés",
+          "items": [
+            "Thai green vegetable curry with steamed rice",
+            "Beef rendang with toasted coconut and steamed rice"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Mediterranean Theme (garden reception)",
+      "blurb": "A casual stand-up reception in the garden — sunny Mediterranean flavours, a mix of finger canapés, hearty bowl canapés and a beautiful mini-pavlova finish.",
+      "courses": [
+        {
+          "course": "Finger canapés",
+          "items": [
+            "Parcels of dried fig and soft goat cheese wrapped in prosciutto",
+            "Crostini with 2 toppings: Sicilian caponata; mozzarella & basil with a touch of chilli",
+            "Mini spinach & feta filo pies"
+          ]
+        },
+        {
+          "course": "Bowl canapés",
+          "items": [
+            "Tagine of chicken, preserved lemons & olives with couscous",
+            "Pea & mint risotto with shaved pecorino",
+            "Pork souvlaki with tzatziki in mini pitta bread"
+          ]
+        },
+        {
+          "course": "Sweet",
+          "items": [
+            "Mini pavlovas with orange cream & pomegranate seeds"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Crowd Pleasers (18th Birthday Party)",
+      "blurb": "Designed for a younger crowd with hearty appetites — familiar favourites with a touch of polish, all easy to eat standing up, finishing with a proper birthday cake.",
+      "courses": [
+        {
+          "course": "Finger canapés",
+          "items": [
+            "Mini cocktail sausages with a honey, mustard and sesame glaze",
+            "Grilled monkfish & pancetta skewers with rosemary & garlic",
+            "Wild mushroom, chevre & thyme tartlets",
+            "Baby roasted vegetable pizza slices"
+          ]
+        },
+        {
+          "course": "Bowl canapés",
+          "items": [
+            "Mini burgers with chunky chips",
+            "Thai green chicken curry with rice",
+            "Butternut squash, chick pea & spinach tagine with couscous"
+          ]
+        },
+        {
+          "course": "To finish",
+          "items": [
+            "Chocolate birthday cake"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sicilian Inspired Spring Menu",
+      "blurb": "Violent thunderstorms in the night followed by torrential rain in the morning gave way, in the end, to the perfect late spring afternoon. The menu was Italian, incorporating the flavours of Sicily where the hosts had become engaged. Guests were greeted on the lawn with champagne, followed by plenty of hot & cold canapés.",
+      "courses": [
+        {
+          "course": "Canapés",
+          "items": [
+            "Mini porcini arancini with a tomato & garlic dipping sauce",
+            "Crostini with Sicilian caponata & toasted almonds",
+            "Crostini with pea, mint & feta",
+            "Dried fig, soft goat cheese & prosciutto parcels",
+            "Grilled monkfish & pancetta skewers marinated in rosemary & garlic",
+            "Roasted Mediterranean vegetables, mozzarella, and sun-dried tomato & basil pesto on a china spoon"
+          ]
+        },
+        {
+          "course": "Starter",
+          "items": [
+            "Local asparagus & lemon risotto with parmesan shavings"
+          ]
+        },
+        {
+          "course": "Main course",
+          "items": [
+            "Italian-inspired family-style menu — please contact us for full details"
+          ]
+        }
+      ]
+    }
+  ]
 }
