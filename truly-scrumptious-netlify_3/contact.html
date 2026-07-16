@@ -1,4 +1,4 @@
-<!-- v-web3forms contact -->
+<!-- v-checkbox-fix contact -->
 <!DOCTYPE html>
 <!-- mobile-fix-v4 -->
 <html lang="en">
@@ -585,8 +585,9 @@
     <li><a href="gallery.html" onclick="toggleMobileNav()">Gallery</a></li>
     <li><a href="menu-bbq.html" onclick="toggleMobileNav()">BBQ</a></li>
     <li><a href="menu-buffet.html" onclick="toggleMobileNav()">Buffets</a></li>
-    <li><a href="menu-canapes.html" onclick="toggleMobileNav()">Canapés</a></li>
-    <li><a href="menu-afternoon-tea.html" onclick="toggleMobileNav()">Afternoon Tea</a></li>
+    <li><a href="menu-canapes.html" onclick="toggleMobileNav()">Canapés + Bowl Food</a></li>
+    <li><a href="menu-afternoon-tea.html" onclick="toggleMobileNav()">Stand Up + Reception</a></li>
+    <li><a href="what-we-cater.html" onclick="toggleMobileNav()">What We Cater</a></li>
     <li><a href="menu-bespoke.html" onclick="toggleMobileNav()">Bespoke</a></li>
     <li><a href="private-chef.html" onclick="toggleMobileNav()">Private Chef</a></li>
     <li><a href="contact.html" onclick="toggleMobileNav()">Contact</a></li>
@@ -693,12 +694,12 @@ function toggleMobileNav(){
       <div class="form-group">
         <label class="form-label">Catering Interested In</label>
         <div class="form-check-group" id="f-services">
-          <label class="form-check" onclick="this.classList.toggle('checked')"><input type="checkbox" value="BBQ Catering"><span>BBQ</span></label>
-          <label class="form-check" onclick="this.classList.toggle('checked')"><input type="checkbox" value="Buffet Catering"><span>Buffet</span></label>
-          <label class="form-check" onclick="this.classList.toggle('checked')"><input type="checkbox" value="Canapés"><span>Canapés</span></label>
-          <label class="form-check" onclick="this.classList.toggle('checked')"><input type="checkbox" value="Afternoon Tea"><span>Afternoon Tea</span></label>
-          <label class="form-check" onclick="this.classList.toggle('checked')"><input type="checkbox" value="Bespoke Menu"><span>Bespoke</span></label>
-          <label class="form-check" onclick="this.classList.toggle('checked')"><input type="checkbox" value="Private Chef"><span>Private Chef</span></label>
+          <label class="form-check"><input type="checkbox" value="BBQ Catering"><span>BBQ</span></label>
+          <label class="form-check"><input type="checkbox" value="Buffet Catering"><span>Buffet</span></label>
+          <label class="form-check"><input type="checkbox" value="Canapés + Bowl Food"><span>Canapés + Bowl Food</span></label>
+          <label class="form-check"><input type="checkbox" value="Stand Up + Reception"><span>Stand Up + Reception</span></label>
+          <label class="form-check"><input type="checkbox" value="Bespoke Menu"><span>Bespoke</span></label>
+          <label class="form-check"><input type="checkbox" value="Private Chef"><span>Private Chef</span></label>
         </div>
       </div>
 
@@ -847,8 +848,8 @@ function toggleMobileNav(){
     <div class="basket-quick-tags" id="basket-quick-tags">
       <button class="basket-tag" data-name="BBQ Catering" data-cat="Menu">BBQ</button>
       <button class="basket-tag" data-name="Buffet Catering" data-cat="Menu">Buffet</button>
-      <button class="basket-tag" data-name="Canapés" data-cat="Menu">Canapés</button>
-      <button class="basket-tag" data-name="Afternoon Tea" data-cat="Menu">Afternoon Tea</button>
+      <button class="basket-tag" data-name="Canapés + Bowl Food" data-cat="Menu">Canapés + Bowl Food</button>
+      <button class="basket-tag" data-name="Stand Up + Reception" data-cat="Menu">Stand Up + Reception</button>
       <button class="basket-tag" data-name="Bespoke Menu" data-cat="Menu">Bespoke</button>
       <button class="basket-tag" data-name="Private Chef" data-cat="Service">Private Chef</button>
     </div>
@@ -1044,6 +1045,16 @@ function toggleMobileNav(){
 <script>
 // Show free-text box only when 'Other' event type is chosen
 document.addEventListener('DOMContentLoaded', function() {
+  // Catering checkboxes: the hidden input is the source of truth, the
+  // .checked class just mirrors it. Keeps them freely clickable after prefill.
+  document.querySelectorAll('#f-services .form-check').forEach(function(lab) {
+    var cb = lab.querySelector('input[type="checkbox"]');
+    if (!cb) return;
+    cb.addEventListener('change', function() {
+      lab.classList.toggle('checked', cb.checked);
+    });
+  });
+
   var sel = document.getElementById('f-type');
   var other = document.getElementById('f-type-other');
   if (sel && other) {
@@ -1067,8 +1078,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var FALLBACK = {
       'BBQ Catering':    ['bbq','barbecue','barbeque'],
       'Buffet Catering': ['buffet','grazing','picnic','ploughman'],
-      'Canapés':         ['canape','canapé','bowl food'],
-      'Afternoon Tea':   ['afternoon tea','scone'],
+      'Canapés + Bowl Food': ['canape','canapé','bowl food'],
+      'Stand Up + Reception': ['afternoon tea','stand up','reception','scone'],
       'Bespoke Menu':    ['bespoke'],
       'Private Chef':    ['private chef']
     };
@@ -1081,9 +1092,9 @@ document.addEventListener('DOMContentLoaded', function() {
         var keys = FALLBACK[val] || [];
         match = keys.some(function(k){ return chosenText.indexOf(k) !== -1; });
       }
-      if (match && !lab.classList.contains('checked')) {
-        lab.classList.add('checked');
+      if (match && !cb.checked) {
         cb.checked = true;
+        lab.classList.add('checked');
       }
     });
 
@@ -1148,8 +1159,8 @@ function submitForm() {
   }
 
   var services = [];
-  document.querySelectorAll('#f-services .form-check.checked span').forEach(function(s) {
-    services.push(s.textContent);
+  document.querySelectorAll('#f-services input[type="checkbox"]:checked').forEach(function(cb) {
+    services.push(cb.value);
   });
 
   var evType = document.getElementById('f-type').value || '';
@@ -1214,7 +1225,7 @@ function submitForm() {
       ['f-type','f-budget'].forEach(function(id){
         var el = document.getElementById(id); if (el) el.selectedIndex = 0;
       });
-      document.querySelectorAll('#f-services .form-check.checked').forEach(function(lab){
+      document.querySelectorAll('#f-services .form-check').forEach(function(lab){
         lab.classList.remove('checked');
         var cb = lab.querySelector('input[type="checkbox"]'); if (cb) cb.checked = false;
       });
@@ -1446,7 +1457,7 @@ SERVICES OFFERED:
 1. BBQ Catering — outdoor events, garden parties, private events. Grilled meats, salads, sides, desserts.
 2. Buffet Catering — colourful, generous spreads. Salads, wraps, hot dishes, desserts.
 3. Canapés — bite-sized, beautifully presented for drinks receptions, weddings, corporate events. 6-8 per person for reception, 10-12 as meal replacement.
-4. Afternoon Tea — finger sandwiches, freshly baked scones with clotted cream and jam, patisserie, cakes. Served with fine teas and coffee.
+4. Stand Up + Reception — standing receptions and afternoon tea style service: finger sandwiches, freshly baked scones with clotted cream and jam, patisserie, cakes. Served with fine teas and coffee.
 5. Bespoke Catering — completely custom menus built around the client's event.
 6. Private Chef — Jamie cooks in your home or villa. Dinner parties, special occasions, weekly meal prep, holiday/travel chef.
 
@@ -1478,7 +1489,7 @@ DIETARY REQUIREMENTS:
 - Always ask clients to flag requirements at booking
 
 KEY PAGES ON THE WEBSITE:
-- Menus: BBQ, Buffet, Canapés, Afternoon Tea, Bespoke
+- Menus: BBQ, Buffet, Canapés + Bowl Food, Stand Up + Reception, What We Cater, Bespoke
 - Private Chef page
 - Gallery of Jamie's food
 - About page
