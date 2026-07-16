@@ -1,4 +1,4 @@
-<!-- v-checkbox-fix index -->
+<!-- v-mobilenav-fix index -->
 <!DOCTYPE html>
 <!-- v101 seo-ready -->
 <html lang="en">
@@ -864,6 +864,9 @@
   .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
   .mobile-nav-panel {
+    /* fix: base CSS sets display:none — must restore it here or the panel
+       never appears and the hamburger looks dead */
+    display: block !important;
     position: fixed;
     top: 64px;
     left: 0;
