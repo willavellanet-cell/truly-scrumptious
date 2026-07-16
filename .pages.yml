@@ -26,7 +26,7 @@ content:
         label: Category
         type: select
         options:
-          values: [buffet, canapes, desserts]
+          values: [bbq, buffet, canapes, bespoke, desserts, events]
       - name: label
         label: Caption
         type: string
