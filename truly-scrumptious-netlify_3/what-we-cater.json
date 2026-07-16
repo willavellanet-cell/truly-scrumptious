@@ -1,0 +1,66 @@
+{
+  "hero_image": "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1600&q=80",
+  "hero_eyebrow": "Oxford & Oxfordshire",
+  "hero_line1": "What",
+  "hero_line2": "We Cater",
+  "hero_subtitle": "Corporate days, festivals, film sets, photoshoots and private celebrations. Wherever you need feeding, we bring the kitchen to you.",
+  "occasions_intro": "We cook for boardrooms and festival fields, film crews at 5am and families on a Sunday. The food changes to suit the room — the standard doesn't. Whatever the setting, we bring a full kitchen, a calm team and food people actually talk about afterwards.",
+  "occasions": [
+    {
+      "eyebrow": "Corporate",
+      "title": "Corporate Events",
+      "description": "Board lunches, away days, client entertaining, staff parties and office celebrations. Food that respects a schedule and still gives people something to talk about — served quietly, cleared quickly, back to work on time.",
+      "points": [
+        "Board lunches",
+        "Away days",
+        "Client entertaining",
+        "Staff parties",
+        "Product launches"
+      ],
+      "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+    },
+    {
+      "eyebrow": "Festivals",
+      "title": "Festivals & Large Events",
+      "description": "Feeding hundreds in a field is its own discipline. We arrive self-sufficient — our own power, water and prep — and keep the queue moving without dropping the quality that got us booked.",
+      "points": [
+        "Crew catering",
+        "Artist hospitality",
+        "Public traders",
+        "Multi-day builds",
+        "Off-grid setups"
+      ],
+      "image": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80"
+    },
+    {
+      "eyebrow": "On Location",
+      "title": "Film Sets & Photoshoots",
+      "description": "Unit catering that understands a call sheet. Hot food at 5am, a running table through the day, and the flexibility to move when the schedule does — because it always does.",
+      "points": [
+        "Unit catering",
+        "Breakfast from 5am",
+        "Craft table",
+        "Talent dietaries",
+        "Location kitchens"
+      ],
+      "image": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80"
+    },
+    {
+      "eyebrow": "Private",
+      "title": "Private Celebrations",
+      "description": "Birthdays, anniversaries, christenings, milestone dinners and family gatherings at home. The same kitchen and the same care, scaled to a garden or a dining room rather than a marquee.",
+      "points": [
+        "Birthdays",
+        "Anniversaries",
+        "Christenings",
+        "At-home dining",
+        "Garden parties"
+      ],
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
+    }
+  ],
+  "cta_image": "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1600&q=80",
+  "cta_line1": "Tell Us",
+  "cta_line2": "What You Need",
+  "cta_subtitle": "Corporate, festival, location or private — tell us the details and we will build a menu around it."
+}
