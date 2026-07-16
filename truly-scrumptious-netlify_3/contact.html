@@ -1,4 +1,4 @@
-<!-- v-contact-fix contact -->
+<!-- v-final-fixes contact -->
 <!DOCTYPE html>
 <!-- mobile-fix-v4 -->
 <html lang="en">
@@ -123,26 +123,6 @@
   .contact-img { width: 100%; aspect-ratio: 4/3; background-size: cover; background-position: center; border-radius: 2px; margin-top: 36px; }
   .service-areas { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
   .area-tag { font-size: 10.5px; padding: 5px 12px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.15); color: var(--mid); letter-spacing: 0.04em; }
-
-  /* TERMS & CONDITIONS */
-  .tc-section { padding: 80px 72px; background: var(--cream); border-bottom: 1px solid var(--rule); }
-  .tc-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
-  .tc-header { position: sticky; top: 90px; }
-  .tc-header p { font-size: 13.5px; line-height: 1.8; color: var(--mid); font-weight: 300; margin-top: 18px; }
-  .tc-list { display: flex; flex-direction: column; gap: 0; }
-  .tc-item { border-top: 1px solid var(--rule); padding: 24px 0; }
-  .tc-item:last-child { border-bottom: 1px solid var(--rule); }
-  .tc-item-header { display: flex; align-items: flex-start; gap: 20px; }
-  .tc-num { font-family: var(--font-serif); font-size: 13px; font-style: italic; color: var(--blue); font-weight: 400; flex-shrink: 0; padding-top: 1px; min-width: 24px; }
-  .tc-item-title { font-size: 13.5px; font-weight: 500; color: var(--black); margin-bottom: 8px; letter-spacing: 0.01em; }
-  .tc-item p { font-size: 13.5px; line-height: 1.8; color: var(--mid); font-weight: 300; padding-left: 44px; }
-  .tc-note {
-    margin-top: 32px; padding: 20px 24px;
-    background: var(--white); border-left: 2px solid var(--blue); border-radius: 0 2px 2px 0;
-  }
-  .tc-note p { font-size: 13px; line-height: 1.75; color: var(--mid); font-weight: 300; }
-  .tc-note a { color: var(--blue); text-decoration: none; }
-  .tc-note a:hover { text-decoration: underline; }
 
   /* FOOTER */
   footer { background: var(--off-white); border-top: 1px solid var(--rule); padding: 80px 48px 36px; }
@@ -684,8 +664,22 @@ function toggleMobileNav(){
           <option>Garden Party</option>
           <option>Anniversary</option>
           <option>Holiday Villa / Travel</option>
-          <option>Weekly Meal Prep</option>
           <option>Other</option>
+        </select>
+        <input class="form-input" type="text" id="f-type-other" placeholder="Tell us about your event type" style="display:none;margin-top:10px;">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Anticipated Budget</label>
+        <select class="form-select" id="f-budget">
+          <option value="" disabled selected>Select a range (optional)</option>
+          <option>Under £500</option>
+          <option>£500 – £1,000</option>
+          <option>£1,000 – £2,500</option>
+          <option>£2,500 – £5,000</option>
+          <option>£5,000 – £10,000</option>
+          <option>Over £10,000</option>
+          <option>Not sure yet</option>
         </select>
       </div>
 
@@ -699,6 +693,11 @@ function toggleMobileNav(){
           <label class="form-check" onclick="this.classList.toggle('checked')"><input type="checkbox" value="Bespoke Menu"><span>Bespoke</span></label>
           <label class="form-check" onclick="this.classList.toggle('checked')"><input type="checkbox" value="Private Chef"><span>Private Chef</span></label>
         </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Event Itinerary <span style="color:var(--mid);font-weight:300;text-transform:none;letter-spacing:0;">(if available)</span></label>
+        <textarea class="form-input" id="f-itinerary" style="height:90px;" placeholder="Rough running order — arrival, drinks, food service, speeches, finish time..."></textarea>
       </div>
 
       <div class="form-group">
@@ -749,72 +748,7 @@ function toggleMobileNav(){
   </div>
 </section>
 
-<!-- TERMS & CONDITIONS -->
-<section class="tc-section" id="terms">
-  <div class="tc-inner">
-    <div class="tc-header">
-      <span class="eyebrow">Legal</span>
-      <h2 class="display-title">
-        <span class="line-serif">Terms &</span>
-        <span class="line-sans">Conditions</span>
-      </h2>
-      <div style="width:36px;height:1px;background:var(--blue);margin:22px 0;"></div>
-      <p>Standard terms for sandwich lunches, drop-off buffets and catering events. Please read before confirming your booking.</p>
-    </div>
-    <div>
-      <div class="tc-list">
-        <div class="tc-item">
-          <div class="tc-item-header">
-            <span class="tc-num">01</span>
-            <div>
-              <p class="tc-item-title">Confirming Numbers</p>
-            </div>
-          </div>
-          <p>Please confirm final guest numbers at least 2 weeks in advance of your event. This allows us to source the right quantities and plan accordingly.</p>
-        </div>
-        <div class="tc-item">
-          <div class="tc-item-header">
-            <span class="tc-num">02</span>
-            <div>
-              <p class="tc-item-title">Deposit & Cancellation</p>
-            </div>
-          </div>
-          <p>Depending on the nature of the event, we may ask for a deposit of 20%. Cancellation terms will be outlined upon confirmation of your booking.</p>
-        </div>
-        <div class="tc-item">
-          <div class="tc-item-header">
-            <span class="tc-num">03</span>
-            <div>
-              <p class="tc-item-title">Payment Terms</p>
-            </div>
-          </div>
-          <p>Standard payment terms are 15 days from the date of invoice. All orders are subject to VAT at the current rate.</p>
-        </div>
-        <div class="tc-item">
-          <div class="tc-item-header">
-            <span class="tc-num">04</span>
-            <div>
-              <p class="tc-item-title">Delivery Times</p>
-            </div>
-          </div>
-          <p>Delivery for buffets is within one hour of your requested time. If you require a more specific delivery window, please let us know in advance and we will do our best to accommodate.</p>
-        </div>
-        <div class="tc-item">
-          <div class="tc-item-header">
-            <span class="tc-num">05</span>
-            <div>
-              <p class="tc-item-title">Delivery Charges</p>
-            </div>
-          </div>
-          <p>The standard delivery charge is £5 within the Oxford ring road. This may be higher depending on time of day and day of the week. Outside the ring road, the delivery charge will be calculated based on distance and timing.</p>
-        </div>
-      </div>
-      <div class="tc-note">
-        <p>Our more detailed Terms & Conditions for events are available on request. Please <a href="terms.html">view our full Terms & Conditions</a> or <a href="mailto:info@tsoxford.co.uk" style="color:var(--blue);text-decoration:none;">contact us</a> if you have any questions prior to confirming your booking.</p>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- FOOTER -->
 <footer>
@@ -863,7 +797,7 @@ function toggleMobileNav(){
     </div>
     <div class="footer-bottom">
       <p>© 2025 Truly Scrumptious. All rights reserved.</p>
-      <p><a href="#terms" style="color:var(--light);text-decoration:none;">Terms & Conditions</a></p>
+      <p><a href="terms.html" style="color:var(--light);text-decoration:none;">Terms & Conditions</a></p>
     </div>
   </div>
 </footer>
@@ -1098,6 +1032,81 @@ function toggleMobileNav(){
 
 
 <script>
+// Show free-text box only when 'Other' event type is chosen
+document.addEventListener('DOMContentLoaded', function() {
+  var sel = document.getElementById('f-type');
+  var other = document.getElementById('f-type-other');
+  if (sel && other) {
+    sel.addEventListener('change', function() {
+      var isOther = sel.value === 'Other';
+      other.style.display = isOther ? 'block' : 'none';
+      if (isOther) other.focus();
+    });
+  }
+
+  // Prefill from the Add to Ideas basket
+  try {
+    var saved = JSON.parse(localStorage.getItem('tsc_basket')) || [];
+    if (!saved.length) return;
+
+    // Tick catering checkboxes — exact match on the category the menu page sent
+    function norm(x){ return (x||'').toLowerCase().trim(); }
+    var chosenCats = saved.map(function(it){ return norm(it.cat); });
+    var chosenText = saved.map(function(it){ return norm(it.name); }).join(' | ');
+    // Fallback keywords, for baskets saved before pages sent a real category
+    var FALLBACK = {
+      'BBQ Catering':    ['bbq','barbecue','barbeque'],
+      'Buffet Catering': ['buffet','grazing','picnic','ploughman'],
+      'Canapés':         ['canape','canapé','bowl food'],
+      'Afternoon Tea':   ['afternoon tea','scone'],
+      'Bespoke Menu':    ['bespoke'],
+      'Private Chef':    ['private chef']
+    };
+    document.querySelectorAll('#f-services .form-check').forEach(function(lab) {
+      var cb = lab.querySelector('input[type="checkbox"]');
+      if (!cb) return;
+      var val = cb.value;
+      var match = chosenCats.indexOf(norm(val)) !== -1;
+      if (!match) {
+        var keys = FALLBACK[val] || [];
+        match = keys.some(function(k){ return chosenText.indexOf(k) !== -1; });
+      }
+      if (match && !lab.classList.contains('checked')) {
+        lab.classList.add('checked');
+        cb.checked = true;
+      }
+    });
+
+    // Summarise chosen ideas into the message box
+    var msg = document.getElementById('f-message');
+    if (msg && !msg.value.trim()) {
+      var lines = saved.map(function(it){ return it.note ? ('• ' + it.name + ' — ' + it.note) : ('• ' + it.name); });
+      msg.value = 'Menus I am interested in:\n' + lines.join('\n');
+    }
+
+    // Carry over event details captured in the basket drawer
+    var bd = document.getElementById('basket-date');
+    var bg = document.getElementById('basket-guests');
+    var bo = document.getElementById('basket-occasion');
+    var fd = document.getElementById('f-date');
+    var fg = document.getElementById('f-guests');
+    if (bd && fd && bd.value && !fd.value) fd.value = bd.value;
+    if (bg && fg && bg.value && !fg.value) fg.value = bg.value;
+    if (bo && bo.value) {
+      var ft = document.getElementById('f-type');
+      var found = Array.prototype.slice.call(ft.options).some(function(o){
+        if (o.text.toLowerCase() === bo.value.toLowerCase()) { ft.value = o.value || o.text; return true; }
+        return false;
+      });
+      if (!found) {
+        ft.value = 'Other';
+        var oth = document.getElementById('f-type-other');
+        if (oth) { oth.style.display = 'block'; oth.value = bo.value; }
+      }
+    }
+  } catch (e) { console.warn('basket prefill skipped', e); }
+});
+
 function submitForm() {
   var first = document.getElementById('f-first').value.trim();
   var email = document.getElementById('f-email').value.trim();
@@ -1112,15 +1121,29 @@ function submitForm() {
     services.push(s.textContent);
   });
 
+  var evType = document.getElementById('f-type').value || '';
+  var evOther = (document.getElementById('f-type-other').value || '').trim();
+  if (evType === 'Other' && evOther) evType = 'Other — ' + evOther;
+
+  var ideas = [];
+  try {
+    var saved = JSON.parse(localStorage.getItem('tsc_basket')) || [];
+    ideas = saved.map(function(it){ return it.note ? (it.name + ' (' + it.note + ')') : it.name; });
+  } catch (e) {}
+
   var subject = 'Event Enquiry — Truly Scrumptious';
   var body = 'Name: ' + first + ' ' + (document.getElementById('f-last').value||'') + '\n';
   body += 'Email: ' + email + '\n';
   body += 'Phone: ' + (document.getElementById('f-phone').value||'Not provided') + '\n';
   body += 'Date: ' + (document.getElementById('f-date').value||'Not specified') + '\n';
   body += 'Guests: ' + (document.getElementById('f-guests').value||'Not specified') + '\n';
-  body += 'Event type: ' + (document.getElementById('f-type').value||'Not specified') + '\n';
+  body += 'Event type: ' + (evType||'Not specified') + '\n';
+  body += 'Anticipated budget: ' + (document.getElementById('f-budget').value||'Not specified') + '\n';
   body += 'Catering: ' + (services.length ? services.join(', ') : 'Not specified') + '\n';
   body += 'Dietary: ' + (document.getElementById('f-dietary').value||'None stated') + '\n\n';
+  if (ideas.length) body += 'Event Ideas selected:\n- ' + ideas.join('\n- ') + '\n\n';
+  var itin = (document.getElementById('f-itinerary').value||'').trim();
+  if (itin) body += 'Event itinerary:\n' + itin + '\n\n';
   body += 'Message:\n' + (document.getElementById('f-message').value||'') + '\n\n';
 
   window.location.href = 'mailto:info@tsoxford.co.uk?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);

@@ -1,4 +1,4 @@
-<!-- v-contact-fix gallery -->
+<!-- v-final-fixes gallery -->
 <!DOCTYPE html>
 <!-- mobile-fix-v4 -->
 <html lang="en">
@@ -63,25 +63,51 @@
 
   .gallery-section { padding: 40px 48px; background: var(--cream); }
   .gallery-grid { max-width: 1400px; margin: 0 auto; columns: 4; column-gap: 4px; }
-  .gallery-item { break-inside: avoid; margin-bottom: 4px; position: relative; overflow: hidden; cursor: pointer; display: block; }
-  .gallery-item img { width: 100%; display: block; transition: transform 0.5s ease; }
-  .gallery-item:hover img { transform: scale(1.03); }
+  .gallery-item {
+    break-inside: avoid; page-break-inside: avoid; -webkit-column-break-inside: avoid;
+    margin-bottom: 4px; position: relative; overflow: hidden; cursor: pointer; display: block;
+    /* fix: promote to own layer so column layout doesn't mis-paint on hover (Safari) */
+    transform: translateZ(0); -webkit-transform: translateZ(0);
+    backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  }
+  .gallery-item img {
+    width: 100%; display: block; transition: transform 0.5s ease;
+    transform: translateZ(0); -webkit-transform: translateZ(0);
+    backface-visibility: hidden; -webkit-backface-visibility: hidden;
+    will-change: transform;
+  }
+  .gallery-item:hover img { transform: scale(1.03) translateZ(0); }
 
-  .share-bar {
-    position: absolute; top: 8px; right: 8px;
-    display: flex; gap: 4px; z-index: 10;
+  .share-bar { position: absolute; top: 8px; right: 8px; z-index: 10; }
+  .share-toggle {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: rgba(0,0,0,0.55); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.25s, background 0.2s;
+    -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
   }
-  .share-pill {
-    height: 24px; padding: 0 9px;
-    background: rgba(0,0,0,0.65);
-    border: none; border-radius: 12px; cursor: pointer;
-    font-family: var(--font-sans); font-size: 9.5px; font-weight: 500;
-    letter-spacing: 0.05em; text-transform: uppercase;
-    color: rgba(255,255,255,0.9);
-    transition: background 0.2s;
+  .gallery-item:hover .share-toggle,
+  .share-bar.open .share-toggle { opacity: 1; }
+  .share-toggle:hover, .share-bar.open .share-toggle { background: var(--blue); }
+  .share-toggle svg { width: 14px; height: 14px; stroke: #fff; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .share-menu {
+    position: absolute; top: 36px; right: 0; min-width: 132px;
+    background: rgba(17,17,16,0.94); border-radius: 3px; overflow: hidden;
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.28);
+    opacity: 0; visibility: hidden; transform: translateY(-4px);
+    transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
   }
-  .share-pill:hover { background: var(--blue); }
-  .share-pill.copied { background: var(--blue); }
+  .share-bar.open .share-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .share-opt {
+    display: block; width: 100%; text-align: left;
+    padding: 9px 13px; background: none; border: none; cursor: pointer;
+    font-family: var(--font-sans); font-size: 11px; font-weight: 400;
+    letter-spacing: 0.05em; color: rgba(255,255,255,0.88);
+    transition: background 0.15s;
+  }
+  .share-opt:hover { background: var(--blue); color: #fff; }
+  .share-opt.copied { background: var(--blue); color: #fff; }
 
   .item-label {
     position: absolute; bottom: 0; left: 0; right: 0;
@@ -599,18 +625,21 @@ function toggleMobileNav(){
       </div>
       <div class="hint-chip">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-        Use the share buttons on each photo
+        Use the share button on each photo
       </div>
     </div>
   </div>
 </div>
 
 <div class="filter-bar">
-  <button class="filter-btn active" data-filter="all">All (20)</button>
-  <button class="filter-btn" data-filter="canapes">Canapés (6)</button>
-  <button class="filter-btn" data-filter="buffet">Buffet (11)</button>
-  <button class="filter-btn" data-filter="desserts">Desserts (3)</button>
-</div>
+  <button class="filter-btn active" data-filter="all">All <span class="fc"></span></button>
+        <button class="filter-btn" data-filter="buffet">Buffet <span class="fc"></span></button>
+        <button class="filter-btn" data-filter="canapes">Canapés <span class="fc"></span></button>
+        <button class="filter-btn" data-filter="bbq">BBQ <span class="fc"></span></button>
+        <button class="filter-btn" data-filter="bespoke">Bespoke <span class="fc"></span></button>
+        <button class="filter-btn" data-filter="desserts">Desserts <span class="fc"></span></button>
+        <button class="filter-btn" data-filter="events">Events <span class="fc"></span></button>
+        </div>
 
 <section class="gallery-section">
   <div class="gallery-grid" id="gallery-grid"></div>
@@ -739,6 +768,16 @@ let currentFilter = 'all';
 let currentIndex = 0;
 let filtered = [];
 
+function updateFilterCounts() {
+  document.querySelectorAll('.filter-btn').forEach(function(btn) {
+    var f = btn.getAttribute('data-filter');
+    var n = (f === 'all') ? photos.length : photos.filter(function(p){ return p.cat === f; }).length;
+    var span = btn.querySelector('.fc');
+    if (span) span.textContent = '(' + n + ')';
+    btn.style.display = (n === 0 && f !== 'all') ? 'none' : '';
+  });
+}
+
 function render(filter) {
   const grid = document.getElementById('gallery-grid');
   filtered = filter === 'all' ? photos : photos.filter(p => p.cat === filter);
@@ -759,32 +798,47 @@ function render(filter) {
     bar.className = 'share-bar';
     bar.onclick = function(e) { e.stopPropagation(); };
 
-    var pins = [
-      ['Pinterest', function(e){ e.stopPropagation(); window.open('https://pinterest.com/pin/create/button/?url='+encodeURIComponent(window.location.href)+'&description='+encodeURIComponent('Catering by Truly Scrumptious, Oxford'),'_blank'); }],
-      ['WhatsApp', function(e){ e.stopPropagation(); window.open('https://wa.me/?text='+encodeURIComponent('Truly Scrumptious catering Oxford: '+window.location.href),'_blank'); }],
-      ['Email', function(e){ e.stopPropagation(); window.location.href='mailto:?subject='+encodeURIComponent('Truly Scrumptious Catering')+'&body='+encodeURIComponent(window.location.href); }],
-    ];
+    var toggle = document.createElement('button');
+    toggle.className = 'share-toggle';
+    toggle.setAttribute('aria-label', 'Share this photo');
+    toggle.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.6" y1="10.5" x2="15.4" y2="6.5"></line><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"></line></svg>';
+    toggle.onclick = function(e) {
+      e.stopPropagation();
+      var wasOpen = bar.classList.contains('open');
+      document.querySelectorAll('.share-bar.open').forEach(function(b){ b.classList.remove('open'); });
+      if (!wasOpen) bar.classList.add('open');
+    };
+    bar.appendChild(toggle);
 
-    pins.forEach(function(p) {
-      var btn = document.createElement('button');
-      btn.className = 'share-pill';
-      btn.textContent = p[0];
-      btn.onclick = p[1];
-      bar.appendChild(btn);
+    var menu = document.createElement('div');
+    menu.className = 'share-menu';
+
+    var opts = [
+      ['Pinterest', function(e){ e.stopPropagation(); window.open('https://pinterest.com/pin/create/button/?url='+encodeURIComponent(window.location.href)+'&description='+encodeURIComponent('Catering by Truly Scrumptious, Oxford'),'_blank'); bar.classList.remove('open'); }],
+      ['WhatsApp', function(e){ e.stopPropagation(); window.open('https://wa.me/?text='+encodeURIComponent('Truly Scrumptious catering Oxford: '+window.location.href),'_blank'); bar.classList.remove('open'); }],
+      ['Email', function(e){ e.stopPropagation(); window.location.href='mailto:?subject='+encodeURIComponent('Truly Scrumptious Catering')+'&body='+encodeURIComponent(window.location.href); bar.classList.remove('open'); }]
+    ];
+    opts.forEach(function(o) {
+      var b = document.createElement('button');
+      b.className = 'share-opt';
+      b.textContent = o[0];
+      b.onclick = o[1];
+      menu.appendChild(b);
     });
 
     var copyBtn = document.createElement('button');
-    copyBtn.className = 'share-pill';
-    copyBtn.textContent = 'Copy';
+    copyBtn.className = 'share-opt';
+    copyBtn.textContent = 'Copy link';
     copyBtn.onclick = function(e) {
       e.stopPropagation();
       navigator.clipboard.writeText(window.location.href).then(function() {
         copyBtn.textContent = 'Copied!';
         copyBtn.classList.add('copied');
-        setTimeout(function(){ copyBtn.textContent = 'Copy'; copyBtn.classList.remove('copied'); }, 1800);
+        setTimeout(function(){ copyBtn.textContent = 'Copy link'; copyBtn.classList.remove('copied'); bar.classList.remove('open'); }, 1400);
       });
     };
-    bar.appendChild(copyBtn);
+    menu.appendChild(copyBtn);
+    bar.appendChild(menu);
     item.appendChild(bar);
 
     var label = document.createElement('div');
@@ -796,6 +850,10 @@ function render(filter) {
     grid.appendChild(item);
   });
 }
+
+document.addEventListener('click', function(){
+  document.querySelectorAll('.share-bar.open').forEach(function(b){ b.classList.remove('open'); });
+});
 
 function openLightbox(i) {
   currentIndex = i;
@@ -835,7 +893,7 @@ document.querySelectorAll('.filter-btn').forEach(function(btn) {
 
 fetch('gallery.json?t=' + Date.now())
   .then(function(r){ return r.json(); })
-  .then(function(data){ photos = data; render('all'); })
+  .then(function(data){ photos = data; updateFilterCounts(); render('all'); })
   .catch(function(e){ console.error('gallery load failed', e); render('all'); });
 </script>
 
