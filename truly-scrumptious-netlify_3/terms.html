@@ -1,4 +1,4 @@
-<!-- v-nav-restructure terms -->
+<!-- v-contact-fix terms -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -590,8 +590,8 @@
       <h2>Questions & Contact</h2>
       <p>If you have any questions about these terms, or would like a copy of our full event catering agreement, please get in touch:</p>
       <ul class="tc-list">
-        <li>By email: <a href="mailto:hello@trulyscrumptious.co.uk" style="color:var(--blue);text-decoration:none;">hello@trulyscrumptious.co.uk</a></li>
-        <li>By phone: <a href="tel:+441865000000" style="color:var(--blue);text-decoration:none;">01865 000 000</a></li>
+        <li>By email: <a href="mailto:info@tsoxford.co.uk" style="color:var(--blue);text-decoration:none;">info@tsoxford.co.uk</a></li>
+        <li>By phone: <a href="tel:+447949167324" style="color:var(--blue);text-decoration:none;">07949 167 324</a></li>
         <li>Via our <a href="contact.html" style="color:var(--blue);text-decoration:none;">online enquiry form</a></li>
       </ul>
       <div class="tc-highlight">
@@ -638,8 +638,8 @@
       <div>
         <p class="footer-col-head">Contact</p>
         <div class="footer-contact">
-          <a href="tel:+441865000000">01865 000 000</a>
-          <a href="mailto:hello@trulyscrumptious.co.uk">hello@trulyscrumptious.co.uk</a>
+          <a href="tel:+447949167324">07949 167 324</a>
+          <a href="mailto:info@tsoxford.co.uk">info@tsoxford.co.uk</a>
         </div>
         <input class="f-field" type="text" placeholder="Your name">
         <input class="f-field" type="email" placeholder="Email address">
@@ -868,7 +868,7 @@
   document.getElementById('basket-submit')?.addEventListener('click', () => {
     const msg = buildEnquiryMessage();
     const subject = 'Event Enquiry — Truly Scrumptious';
-    const mailto = `mailto:hello@trulyscrumptious.co.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(msg)}`;
+    const mailto = `mailto:info@tsoxford.co.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(msg)}`;
     window.location.href = mailto;
   });
 
@@ -1097,8 +1097,8 @@ ABOUT THE BUSINESS:
 - Name: Truly Scrumptious Oxford
 - Owner: Jamie Forbes
 - Based in Oxford, serving Oxfordshire, Cotswolds and surrounding areas
-- Phone: 01865 000 000
-- Email: hello@trulyscrumptious.co.uk
+- Phone: 07949 167 324
+- Email: info@tsoxford.co.uk
 - Philosophy: generous, flavour-led, seasonal, personal. Food that brings people together.
 
 SERVICES OFFERED:
@@ -1157,7 +1157,7 @@ WHAT YOU CANNOT DO:
 - Make bookings directly (direct to contact.html or phone)
 - Access real-time availability
 
-Always end responses about booking or pricing with a warm nudge to get in touch: the contact form at contact.html, email hello@trulyscrumptious.co.uk, or phone 01865 000 000.`;
+Always end responses about booking or pricing with a warm nudge to get in touch: the contact form at contact.html, email info@tsoxford.co.uk, or phone 07949 167 324.`;
 
   let messages = [];
   let isOpen = false;
@@ -1204,7 +1204,7 @@ Always end responses about booking or pricing with a warm nudge to get in touch:
       });
 
       const data = await response.json();
-      const reply = data.content && data.content[0] ? data.content[0].text : "I'm sorry, I couldn't process that. Please try again or contact us directly at hello@trulyscrumptious.co.uk";
+      const reply = data.content && data.content[0] ? data.content[0].text : "I'm sorry, I couldn't process that. Please try again or contact us directly at info@tsoxford.co.uk";
 
       document.getElementById('typing-indicator').classList.remove('show');
       appendMessage('assistant', reply);
@@ -1212,7 +1212,7 @@ Always end responses about booking or pricing with a warm nudge to get in touch:
 
     } catch(err) {
       document.getElementById('typing-indicator').classList.remove('show');
-      appendMessage('assistant', "Sorry, I'm having a moment! Please get in touch directly — call us on 01865 000 000 or email hello@trulyscrumptious.co.uk and we'll be happy to help.");
+      appendMessage('assistant', "Sorry, I'm having a moment! Please get in touch directly — call us on 07949 167 324 or email info@tsoxford.co.uk and we'll be happy to help.");
     }
 
     isLoading = false;
