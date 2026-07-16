@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checkbox fix test</title>
+<style>
+  body { font-family: -apple-system, Helvetica, Arial, sans-serif; padding: 28px; max-width: 680px; margin: 0 auto; color: #111110; }
+  h2 { font-size: 15px; margin: 28px 0 6px; }
+  .note { font-size: 13px; color: #6a6560; margin-bottom: 12px; line-height: 1.6; }
+  .form-check-group { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .form-check { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid rgba(0,0,0,0.12); border-radius: 2px; cursor: pointer; background: #f8f5ef; transition: all .2s; }
+  .form-check span { font-size: 12px; color: #6a6560; font-weight: 300; user-select: none; }
+  .form-check.checked { border-color: #56aae5; background: rgba(86,170,229,.08); }
+  .form-check.checked span { color: #56aae5; }
+
+  /* BROKEN — as currently live */
+  #broken .form-check input { display: none; }
+
+  /* FIXED — visually hidden but functional */
+  #fixed .form-check input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; pointer-events: none; }
+
+  .out { font-family: monospace; font-size: 12px; background: #f4f4f2; padding: 10px 12px; border-radius: 3px; margin-top: 10px; }
+</style></head><body>
+
+<h2>1. BROKEN (what's live now — <code>display:none</code>)</h2>
+<p class="note">Both start ticked, as if pre-filled from the basket. Try clicking to untick.</p>
+<div class="form-check-group" id="broken">
+  <label class="form-check checked"><input type="checkbox" value="BBQ" checked><span>BBQ</span></label>
+  <label class="form-check checked"><input type="checkbox" value="Buffet" checked><span>Buffet</span></label>
+</div>
+<div class="out" id="out-broken"></div>
+
+<h2>2. FIXED (visually-hidden input)</h2>
+<p class="note">Same thing. These should untick and re-tick freely.</p>
+<div class="form-check-group" id="fixed">
+  <label class="form-check checked"><input type="checkbox" value="BBQ" checked><span>BBQ</span></label>
+  <label class="form-check checked"><input type="checkbox" value="Buffet" checked><span>Buffet</span></label>
+</div>
+<div class="out" id="out-fixed"></div>
+
+<script>
+function wire(groupId, outId) {
+  var g = document.getElementById(groupId), o = document.getElementById(outId);
+  function report() {
+    var on = [].slice.call(g.querySelectorAll('input:checked')).map(function(c){return c.value;});
+    o.textContent = 'ticked: ' + (on.length ? on.join(', ') : '(none)');
+  }
+  g.querySelectorAll('.form-check').forEach(function(lab) {
+    var cb = lab.querySelector('input');
+    cb.addEventListener('change', function() { lab.classList.toggle('checked', cb.checked); report(); });
+  });
+  report();
+}
+wire('broken','out-broken');
+wire('fixed','out-fixed');
+</script>
+</body></html>

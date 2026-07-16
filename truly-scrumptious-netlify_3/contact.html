@@ -1,4 +1,4 @@
-<!-- v-checkbox-fix contact -->
+<!-- v-checkbox-fix2 contact -->
 <!DOCTYPE html>
 <!-- mobile-fix-v4 -->
 <html lang="en">
@@ -92,7 +92,13 @@
   .form-select:focus { border-color: var(--blue); background-color: var(--white); }
   .form-check-group { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
   .form-check { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid rgba(0,0,0,0.12); border-radius: 2px; cursor: pointer; background: var(--off-white); transition: all 0.2s; }
-  .form-check input { display: none; }
+  /* Visually hidden but still focusable/clickable — display:none would break
+     the label->input toggle entirely (the cause of the "locked" checkboxes). */
+  .form-check input {
+    position: absolute; opacity: 0; width: 1px; height: 1px;
+    margin: 0; padding: 0; border: 0; pointer-events: none;
+  }
+  .form-check:focus-within { outline: 2px solid var(--blue); outline-offset: 2px; }
   .form-check span { font-size: 12px; color: var(--mid); font-weight: 300; letter-spacing: 0.02em; user-select: none; }
   .form-check.checked { border-color: var(--blue); background: rgba(86,170,229,0.08); }
   .form-check.checked span { color: var(--blue); }
