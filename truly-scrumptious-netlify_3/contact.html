@@ -1,4 +1,4 @@
-<!-- v-final-fixes contact -->
+<!-- v-web3forms contact -->
 <!DOCTYPE html>
 <!-- mobile-fix-v4 -->
 <html lang="en">
@@ -113,6 +113,13 @@
     border: 1px solid rgba(86,170,229,0.3); border-radius: 2px; margin-top: 16px;
     font-size: 13.5px; color: var(--blue); font-weight: 300; line-height: 1.7;
   }
+  .form-error {
+    display: none; padding: 20px 24px; background: rgba(200,60,60,0.07);
+    border: 1px solid rgba(200,60,60,0.28); border-radius: 2px; margin-top: 16px;
+    font-size: 13.5px; color: #a03535; font-weight: 300; line-height: 1.7;
+  }
+  .form-error a { color: #a03535; text-decoration: underline; }
+  .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
 
   /* CONTACT INFO ASIDE */
   .contact-aside { }
@@ -711,10 +718,13 @@ function toggleMobileNav(){
       </div>
 
       <p style="font-size:11.5px;color:var(--light);font-weight:300;margin-bottom:12px;line-height:1.6;">By submitting this form your enquiry will be sent directly to Jamie via email.</p>
-      <button class="btn-submit" onclick="submitForm()">Send Enquiry</button>
+      <!-- Web3Forms honeypot: bots fill this in, humans never see it -->
+      <input type="checkbox" name="botcheck" id="f-botcheck" style="display:none !important;" tabindex="-1" autocomplete="off">
+      <button class="btn-submit" id="f-submit" onclick="submitForm()">Send Enquiry</button>
       <div class="form-success" id="form-success">
         Thank you — your enquiry has been sent! We'll be in touch within 1–2 working days to discuss your event and put together a bespoke quote.
       </div>
+      <div class="form-error" id="form-error"></div>
     </div>
 
     <!-- ASIDE -->
@@ -1107,12 +1117,33 @@ document.addEventListener('DOMContentLoaded', function() {
   } catch (e) { console.warn('basket prefill skipped', e); }
 });
 
+// ─────────────────────────────────────────────────────────────
+// Web3Forms — enquiries are emailed via api.web3forms.com
+// TO CHANGE WHO RECEIVES ENQUIRIES: sign up at web3forms.com with
+// the new address, then replace the access key below. Nothing else
+// needs to change.
+// ─────────────────────────────────────────────────────────────
+var W3F_ACCESS_KEY = 'cf1f85ed-3cce-4613-b6bb-2f4550193a13';
+
+function showFormError(html) {
+  var el = document.getElementById('form-error');
+  el.innerHTML = html;
+  el.style.display = 'block';
+  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
 function submitForm() {
   var first = document.getElementById('f-first').value.trim();
   var email = document.getElementById('f-email').value.trim();
 
+  document.getElementById('form-error').style.display = 'none';
+
   if (!first || !email) {
-    alert('Please fill in at least your name and email address.');
+    showFormError('Please fill in at least your name and email address.');
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    showFormError('That email address doesn\'t look right — please check it and try again.');
     return;
   }
 
@@ -1131,25 +1162,80 @@ function submitForm() {
     ideas = saved.map(function(it){ return it.note ? (it.name + ' (' + it.note + ')') : it.name; });
   } catch (e) {}
 
-  var subject = 'Event Enquiry — Truly Scrumptious';
-  var body = 'Name: ' + first + ' ' + (document.getElementById('f-last').value||'') + '\n';
-  body += 'Email: ' + email + '\n';
-  body += 'Phone: ' + (document.getElementById('f-phone').value||'Not provided') + '\n';
-  body += 'Date: ' + (document.getElementById('f-date').value||'Not specified') + '\n';
-  body += 'Guests: ' + (document.getElementById('f-guests').value||'Not specified') + '\n';
-  body += 'Event type: ' + (evType||'Not specified') + '\n';
-  body += 'Anticipated budget: ' + (document.getElementById('f-budget').value||'Not specified') + '\n';
-  body += 'Catering: ' + (services.length ? services.join(', ') : 'Not specified') + '\n';
-  body += 'Dietary: ' + (document.getElementById('f-dietary').value||'None stated') + '\n\n';
-  if (ideas.length) body += 'Event Ideas selected:\n- ' + ideas.join('\n- ') + '\n\n';
-  var itin = (document.getElementById('f-itinerary').value||'').trim();
-  if (itin) body += 'Event itinerary:\n' + itin + '\n\n';
-  body += 'Message:\n' + (document.getElementById('f-message').value||'') + '\n\n';
+  var val = function(id, fallback) {
+    var el = document.getElementById(id);
+    return (el && el.value) ? el.value : (fallback || '');
+  };
 
-  window.location.href = 'mailto:info@tsoxford.co.uk?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  var fullName = (first + ' ' + val('f-last')).trim();
 
-  document.getElementById('form-success').style.display = 'block';
-  document.getElementById('form-success').scrollIntoView({behavior:'smooth', block:'center'});
+  var payload = {
+    access_key: W3F_ACCESS_KEY,
+    subject: 'Event Enquiry — ' + fullName,
+    from_name: 'Truly Scrumptious Website',
+    replyto: email,
+    botcheck: document.getElementById('f-botcheck').checked,
+
+    'Name': fullName,
+    'Email': email,
+    'Phone': val('f-phone', 'Not provided'),
+    'Event date': val('f-date', 'Not specified'),
+    'Number of guests': val('f-guests', 'Not specified'),
+    'Event type': evType || 'Not specified',
+    'Anticipated budget': val('f-budget', 'Not specified'),
+    'Catering interested in': services.length ? services.join(', ') : 'Not specified',
+    'Dietary requirements': val('f-dietary', 'None stated'),
+    'Event ideas selected': ideas.length ? ideas.join('\n') : 'None selected',
+    'Event itinerary': val('f-itinerary', 'Not provided'),
+    'Message': val('f-message', '(no additional message)')
+  };
+
+  var btn = document.getElementById('f-submit');
+  var originalText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function(res) { return res.json().then(function(j){ return { ok: res.ok, json: j }; }); })
+  .then(function(r) {
+    if (r.ok && r.json.success) {
+      // Success — confirm, clear the form and empty the ideas basket
+      document.getElementById('form-success').style.display = 'block';
+      document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      btn.style.display = 'none';
+
+      ['f-first','f-last','f-email','f-phone','f-date','f-guests','f-dietary','f-message','f-itinerary','f-type-other'].forEach(function(id){
+        var el = document.getElementById(id); if (el) el.value = '';
+      });
+      ['f-type','f-budget'].forEach(function(id){
+        var el = document.getElementById(id); if (el) el.selectedIndex = 0;
+      });
+      document.querySelectorAll('#f-services .form-check.checked').forEach(function(lab){
+        lab.classList.remove('checked');
+        var cb = lab.querySelector('input[type="checkbox"]'); if (cb) cb.checked = false;
+      });
+      var oth = document.getElementById('f-type-other'); if (oth) oth.style.display = 'none';
+
+      try {
+        localStorage.removeItem('tsc_basket');
+        if (window.TSCBasket && typeof window.TSCBasket.clear === 'function') window.TSCBasket.clear();
+      } catch (e) {}
+    } else {
+      btn.disabled = false;
+      btn.textContent = originalText;
+      showFormError('Sorry — something went wrong sending your enquiry. Please try again, or call us on <a href="tel:+447949167324">07949 167 324</a> or email <a href="mailto:info@tsoxford.co.uk">info@tsoxford.co.uk</a>.');
+    }
+  })
+  .catch(function(err) {
+    console.error('enquiry send failed', err);
+    btn.disabled = false;
+    btn.textContent = originalText;
+    showFormError('Sorry — we couldn\'t send your enquiry just now. Please check your connection and try again, or call us on <a href="tel:+447949167324">07949 167 324</a>.');
+  });
 }
 </script>
 

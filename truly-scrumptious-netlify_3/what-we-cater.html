@@ -1,4 +1,4 @@
-<!-- v-contact-fix what-we-cater -->
+<!-- v-web3forms what-we-cater -->
 <!DOCTYPE html>
 <!-- v15 seo-ready -->
 <html lang="en">
@@ -1215,12 +1215,9 @@ function addMenuToIdeas(btn) {
     });
   });
 
-  // Submit — build mailto or redirect to contact with pre-filled message
+  // Submit — send the visitor to the quote form, which pre-fills from the basket
   document.getElementById('basket-submit')?.addEventListener('click', () => {
-    const msg = buildEnquiryMessage();
-    const subject = 'Event Enquiry — Truly Scrumptious';
-    const mailto = `mailto:info@tsoxford.co.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(msg)}`;
-    window.location.href = mailto;
+    window.location.href = 'contact.html#enquiry';
   });
 
   // Expose addItem globally so menu pages can call it
