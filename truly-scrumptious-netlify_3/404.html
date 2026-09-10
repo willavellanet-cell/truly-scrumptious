@@ -1,0 +1,144 @@
+<!-- v-golive 404 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Page not found | Truly Scrumptious Oxford</title>
+<base href="/">
+<script>
+/* Work out where the site lives: "/" on the real domain, "/truly-scrumptious/" on the github.io preview */
+(function () {
+  var base = /github\.io$/.test(location.hostname) ? '/truly-scrumptious/' : '/';
+  document.querySelector('base').href = base;
+
+  var path = decodeURIComponent(location.pathname).toLowerCase();
+  if (base !== '/' && path.indexOf(base) === 0) path = '/' + path.slice(base.length);
+
+  /* 1. Old preview links that still include the subfolder name */
+  var sub = '/truly-scrumptious-netlify_3/';
+  var i = location.pathname.indexOf(sub);
+  if (i !== -1) {
+    location.replace(base + location.pathname.slice(i + sub.length) + location.search + location.hash);
+    return;
+  }
+
+  /* 2. Old Joomla site links -> nearest new page (most specific first) */
+  var rules = [
+    [/afternoon-tea|sharing-pies|afternoon/, 'menu-afternoon-tea.html'],
+    [/barbecue|bbq/,                         'menu-bbq.html'],
+    [/sicilian|canape|street-food/,          'menu-canapes.html'],
+    [/grazing|picnic|buffet|sandwich|lunch/, 'menu-buffet.html'],
+    [/mediterranean|moroccan|vegetarian|winter-warmer|wedding|bespoke/, 'menu-bespoke.html'],
+    [/private-chef|chef/,                    'private-chef.html'],
+    [/take-a-look|gallery|photo/,            'gallery.html'],
+    [/contact|enquir|quote/,                 'contact.html'],
+    [/about/,                                'about.html'],
+    [/other-offerings|our-food|occasion|what-we-cater|cater/, 'what-we-cater.html'],
+    [/index\.php|^\/menus|^\/home/,          '']
+  ];
+  for (var r = 0; r < rules.length; r++) {
+    if (rules[r][0].test(path)) { location.replace(base + rules[r][1]); return; }
+  }
+  /* Anything else falls through to the page below */
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=aktiv-grotesk@700i,700,800i,800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f8f5ef;
+    --off-white: #faf8f4;
+    --blue: #56aae5;
+    --blue-mid: #3e96d6;
+    --black: #111110;
+    --mid: #6a6560;
+    --rule: rgba(0,0,0,0.1);
+    --font-serif: 'Aktiv Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    min-height: 100vh; display: flex; flex-direction: column;
+    background: var(--cream); color: var(--black);
+    font-family: var(--font-sans); -webkit-font-smoothing: antialiased;
+  }
+  header {
+    height: 84px; display: flex; align-items: center; padding: 0 5vw;
+    border-bottom: 1px solid var(--rule); background: var(--off-white);
+  }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo .bowl { height: 52px; width: auto; display: block; }
+  .logo .word { height: 28px; width: auto; display: block; }
+  main {
+    flex: 1; display: flex; flex-direction: column; justify-content: center;
+    max-width: 720px; margin: 0 auto; padding: 80px 6vw; text-align: center;
+  }
+  .eyebrow {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--blue); margin-bottom: 22px;
+  }
+  h1 {
+    font-family: var(--font-serif); font-weight: 800;
+    font-size: clamp(34px, 5vw, 52px); line-height: 1.08; letter-spacing: -0.01em;
+    margin-bottom: 20px;
+  }
+  p { color: var(--mid); font-size: 16px; line-height: 1.7; margin-bottom: 36px; }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 48px; }
+  .btn {
+    display: inline-block; padding: 15px 30px; font-size: 12px; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none;
+    border: 1px solid var(--black); color: var(--black); transition: background .2s, color .2s, border-color .2s;
+  }
+  .btn.primary { background: var(--blue); border-color: var(--blue); color: #fff; }
+  .btn.primary:hover { background: var(--blue-mid); border-color: var(--blue-mid); }
+  .btn:not(.primary):hover { background: var(--black); color: #fff; }
+  .menus { border-top: 1px solid var(--rule); padding-top: 32px; }
+  .menus h2 {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mid); margin-bottom: 16px;
+  }
+  .menus ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 26px; }
+  .menus a { color: var(--black); text-decoration: none; font-size: 15px; border-bottom: 1px solid transparent; }
+  .menus a:hover { color: var(--blue-mid); border-bottom-color: var(--blue-mid); }
+  footer { padding: 28px 5vw; text-align: center; font-size: 13px; color: var(--mid); border-top: 1px solid var(--rule); }
+  footer a { color: var(--mid); }
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="TSC" class="bowl">
+    <img src="wordmark.png" alt="truly scrumptious" class="word">
+  </a>
+</header>
+
+<main>
+  <div class="eyebrow">Page not found</div>
+  <h1>Sorry, we can't find that page</h1>
+  <p>We've recently launched our new website, so the page you were looking for may have moved. Everything you need is just a click away.</p>
+  <div class="btns">
+    <a href="index.html" class="btn primary">Go to homepage</a>
+    <a href="contact.html" class="btn">Get a quote</a>
+  </div>
+  <nav class="menus" aria-label="Menus">
+    <h2>Our menus</h2>
+    <ul>
+      <li><a href="menu-canapes.html">Canapés + Bowl Food</a></li>
+      <li><a href="menu-buffet.html">Buffets</a></li>
+      <li><a href="menu-bbq.html">BBQ</a></li>
+      <li><a href="menu-afternoon-tea.html">Stand Up + Reception</a></li>
+      <li><a href="menu-bespoke.html">Bespoke</a></li>
+      <li><a href="private-chef.html">Private Chef</a></li>
+      <li><a href="what-we-cater.html">What We Cater</a></li>
+    </ul>
+  </nav>
+</main>
+
+<footer>
+  Call <a href="tel:07949167324">07949 167 324</a> or email <a href="mailto:info@tsoxford.co.uk">info@tsoxford.co.uk</a>
+</footer>
+</body>
+</html>
