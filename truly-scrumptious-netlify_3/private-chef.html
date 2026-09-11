@@ -1,16 +1,25 @@
-<!-- v-ga4 private-chef -->
+<!-- v-cookie private-chef -->
 <!DOCTYPE html>
 <!-- mobile-fix-v4 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<!-- Google Analytics (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LSMQW1DG8K"></script>
+<!-- Google Analytics (GA4) — only loads after the visitor accepts cookies -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LSMQW1DG8K');
+  function tscLoadGA() {
+    if (window.tscGALoaded) return;
+    window.tscGALoaded = true;
+    window['ga-disable-G-LSMQW1DG8K'] = false;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-LSMQW1DG8K';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-LSMQW1DG8K');
+  }
+  try { if (localStorage.getItem('tsc_cookie_consent') === 'accepted') tscLoadGA(); } catch (e) {}
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Private Chef Oxford | Home Dining & Dinner Parties | Truly Scrumptious</title>
@@ -558,7 +567,7 @@ function toggleMobileNav(){
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Truly Scrumptious Oxford. All rights reserved.</p>
+      <p>© 2026 Truly Scrumptious Oxford. All rights reserved.</p>
       <a href="terms.html">Terms & Conditions</a>
     </div>
   </div>
@@ -573,5 +582,149 @@ function toggleMobileNav(){
   var hh=document.getElementById('ed-hero-h1'); if(hh&&d.hero_heading!=null) hh.innerHTML=d.hero_heading;
  }).catch(function(e){console.error('pc load',e);});
 })();
-</script></body>
+</script><!-- ━━━ COOKIE NOTICE + FOOTER ENQUIRY FORM (v-cookie) ━━━ -->
+<style>
+  .tsc-cookie {
+    position: fixed; left: 24px; bottom: 24px; z-index: 950;
+    max-width: 380px; padding: 22px 22px 20px;
+    background: var(--black, #111110); color: var(--cream, #f8f5ef);
+    border-radius: 2px; box-shadow: 0 12px 40px rgba(0,0,0,0.22);
+    font-family: var(--font-sans, 'Helvetica Neue', Helvetica, Arial, sans-serif);
+    display: none;
+  }
+  .tsc-cookie.show { display: block; }
+  .tsc-cookie p { font-size: 13px; line-height: 1.6; font-weight: 300; margin: 0 0 16px; color: var(--cream, #f8f5ef); }
+  .tsc-cookie-btns { display: flex; gap: 10px; }
+  .tsc-cookie button {
+    flex: 1; padding: 12px 0; border-radius: 2px; cursor: pointer;
+    font-family: inherit; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+    transition: background .2s, color .2s, border-color .2s;
+  }
+  .tsc-cookie .tsc-accept { background: var(--blue, #56aae5); color: #fff; border: 1px solid var(--blue, #56aae5); }
+  .tsc-cookie .tsc-accept:hover { background: var(--blue-mid, #3e96d6); border-color: var(--blue-mid, #3e96d6); }
+  .tsc-cookie .tsc-decline { background: transparent; color: var(--cream, #f8f5ef); border: 1px solid rgba(248,245,239,0.45); }
+  .tsc-cookie .tsc-decline:hover { border-color: var(--cream, #f8f5ef); }
+  .tsc-cookie-link {
+    background: none; border: none; padding: 0; cursor: pointer;
+    font: inherit; color: inherit; text-decoration: underline; text-underline-offset: 2px;
+  }
+  .tsc-footer-note {
+    font-family: var(--font-sans, 'Helvetica Neue', Helvetica, Arial, sans-serif);
+    font-size: 12.5px; line-height: 1.5; font-weight: 300; color: var(--mid, #6a6560);
+    margin-top: 10px; min-height: 1px;
+  }
+  .tsc-footer-note.ok { color: var(--blue-mid, #3e96d6); }
+  @media (max-width: 768px) {
+    .tsc-cookie { left: 12px; right: 12px; bottom: 12px; max-width: none; }
+  }
+</style>
+
+<div class="tsc-cookie" id="tsc-cookie" role="dialog" aria-live="polite" aria-label="Cookie preferences">
+  <p>We use analytics cookies to see how people use our website, so we can keep improving it. Is that okay with you?</p>
+  <div class="tsc-cookie-btns">
+    <button type="button" class="tsc-decline" id="tsc-decline">No thanks</button>
+    <button type="button" class="tsc-accept" id="tsc-accept">Accept</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var KEY = 'tsc_cookie_consent';
+  var box = document.getElementById('tsc-cookie');
+
+  function getChoice() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function setChoice(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+
+  function clearGACookies() {
+    var parts = location.hostname.split('.');
+    document.cookie.split(';').forEach(function (c) {
+      var name = c.split('=')[0].trim();
+      if (name.indexOf('_ga') !== 0) return;
+      for (var i = 0; i < parts.length - 1; i++) {
+        var d = parts.slice(i).join('.');
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=' + d;
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=.' + d;
+      }
+      document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+    });
+  }
+
+  document.getElementById('tsc-accept').addEventListener('click', function () {
+    setChoice('accepted'); box.classList.remove('show');
+    if (window.tscLoadGA) window.tscLoadGA();
+  });
+  document.getElementById('tsc-decline').addEventListener('click', function () {
+    setChoice('declined'); box.classList.remove('show');
+    window['ga-disable-G-LSMQW1DG8K'] = true;
+    clearGACookies();
+  });
+
+  window.tscCookieSettings = function () { box.classList.add('show'); };
+  if (!getChoice()) box.classList.add('show');
+
+  /* "Cookie settings" link in the footer so visitors can change their mind */
+  var fb = document.querySelector('.footer-bottom p');
+  if (fb) {
+    fb.appendChild(document.createTextNode(' · '));
+    var link = document.createElement('button');
+    link.type = 'button'; link.className = 'tsc-cookie-link'; link.textContent = 'Cookie settings';
+    link.addEventListener('click', window.tscCookieSettings);
+    fb.appendChild(link);
+  }
+})();
+
+/* Footer "Send Enquiry" mini form -> Web3Forms (same inbox as the contact page) */
+(function () {
+  var btn = document.querySelector('.btn-footer-submit');
+  if (!btn) return;
+  var fields = btn.parentNode.querySelectorAll('.f-field');
+  if (fields.length < 3) return;
+  var nameEl = fields[0], emailEl = fields[1], msgEl = fields[2];
+  var note = document.createElement('p');
+  note.className = 'tsc-footer-note'; note.setAttribute('role', 'status');
+  btn.insertAdjacentElement('afterend', note);
+  btn.type = 'button';
+
+  btn.addEventListener('click', function () {
+    var name = (nameEl.value || '').trim();
+    var email = (emailEl.value || '').trim();
+    var msg = (msgEl.value || '').trim();
+    note.className = 'tsc-footer-note';
+    if (!/^\S+@\S+\.\S+$/.test(email)) { note.textContent = 'Please add your email address so we can reply.'; emailEl.focus(); return; }
+    if (!msg) { note.textContent = 'Please tell us a little about your event.'; msgEl.focus(); return; }
+
+    var label = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Sending…'; note.textContent = '';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'a02e3726-51a2-47f7-8ab4-6e0366d36168',
+        subject: 'Website Enquiry — ' + (name || email),
+        from_name: 'Truly Scrumptious Website',
+        replyto: email,
+        'Name': name || 'Not provided',
+        'Email': email,
+        'Message': msg,
+        'Sent from': 'Footer form on ' + (location.pathname.split('/').pop() || 'homepage')
+      })
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (!d || !d.success) throw new Error('failed');
+      nameEl.value = ''; emailEl.value = ''; msgEl.value = '';
+      note.className = 'tsc-footer-note ok';
+      note.textContent = 'Thank you, your enquiry has been sent. We\u2019ll be in touch soon.';
+      btn.textContent = 'Sent';
+      setTimeout(function () { btn.disabled = false; btn.textContent = label; }, 4000);
+    })
+    .catch(function () {
+      note.textContent = 'Sorry, that didn\u2019t send. Please call 07949 167 324 or email info@tsoxford.co.uk.';
+      btn.disabled = false; btn.textContent = label;
+    });
+  });
+})();
+</script>
+</body>
 </html>
