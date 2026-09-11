@@ -1,4 +1,4 @@
-<!-- v-ga4 gallery -->
+<!-- v-chat-fix gallery -->
 <!DOCTYPE html>
 <!-- mobile-fix-v4 -->
 <html lang="en">
@@ -1380,11 +1380,11 @@ Always end responses about booking or pricing with a warm nudge to get in touch:
     scrollToBottom();
 
     try {
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
+      const response = await fetch('https://truly-scrumptious-chat.will-avellanet.workers.dev/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
+          model: 'claude-haiku-4-5-20251001',
           max_tokens: 1000,
           system: SYSTEM_PROMPT,
           messages: messages
