@@ -1,4 +1,4 @@
-<!-- v-cookie gallery -->
+<!-- v-privacy gallery -->
 <!DOCTYPE html>
 <!-- mobile-fix-v4 -->
 <html lang="en">
@@ -1488,7 +1488,7 @@ Always end responses about booking or pricing with a warm nudge to get in touch:
 </style>
 
 <div class="tsc-cookie" id="tsc-cookie" role="dialog" aria-live="polite" aria-label="Cookie preferences">
-  <p>We use analytics cookies to see how people use our website, so we can keep improving it. Is that okay with you?</p>
+  <p>We use analytics cookies to see how people use our website, so we can keep improving it. Is that okay with you? <a href="privacy.html#cookies" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Privacy policy</a></p>
   <div class="tsc-cookie-btns">
     <button type="button" class="tsc-decline" id="tsc-decline">No thanks</button>
     <button type="button" class="tsc-accept" id="tsc-accept">Accept</button>
@@ -1538,6 +1538,10 @@ Always end responses about booking or pricing with a warm nudge to get in touch:
     link.type = 'button'; link.className = 'tsc-cookie-link'; link.textContent = 'Cookie settings';
     link.addEventListener('click', window.tscCookieSettings);
     fb.appendChild(link);
+    fb.appendChild(document.createTextNode(' · '));
+    var priv = document.createElement('a');
+    priv.href = 'privacy.html'; priv.className = 'tsc-cookie-link'; priv.textContent = 'Privacy policy';
+    fb.appendChild(priv);
   }
 })();
 
