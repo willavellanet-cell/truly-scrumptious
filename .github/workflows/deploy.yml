@@ -1,5 +1,6 @@
 # Publishes ONLY the truly-scrumptious-netlify_3 folder as the website.
 # Runs automatically on every commit to main (including Pages CMS edits).
+# v2: leaves old test pages and old homepage versions out of the public site.
 name: Deploy site to GitHub Pages
 
 on:
@@ -24,6 +25,13 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
+      - name: Leave old test files out of the published site
+        run: |
+          cd truly-scrumptious-netlify_3
+          rm -rf truly-scrumptious-v5-chat-fixed
+          rm -f SITEMAP.html checkbox-test.html menu-bbq-4.html test-worker.html
+          rm -f truly_scrumptious_homepage.html truly_scrumptious_v*.html
+          rm -f _redirects netlify.toml
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:
