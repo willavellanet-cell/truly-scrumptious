@@ -71,38 +71,33 @@ content:
         label: "About — paragraph 2"
         type: text
       - name: card_bbq_image
-        label: "Menu card — BBQ photo"
+        label: "Menu card — Barbecue photo"
         type: image
         options:
           media: images
       - name: card_buffet_image
-        label: "Menu card — Buffet photo"
+        label: "Menu card — Buffet + Grazing photo"
         type: image
         options:
           media: images
       - name: card_canapes_image
-        label: "Menu card — Canapés photo"
+        label: "Menu card — Canapés + Bowl Food photo"
         type: image
         options:
           media: images
       - name: card_afternoon_image
-        label: "Menu card — Afternoon Tea photo"
-        type: image
-        options:
-          media: images
-      - name: card_bespoke_image
-        label: "Menu card — Bespoke photo"
+        label: "Menu card — Corporate + Conference photo"
         type: image
         options:
           media: images
       - name: card_whatwecater_image
-        label: "Menu card — What We Cater photo"
+        label: "Menu card — Event + Location photo"
         type: image
         options:
           media: images
 
   - name: menu_bbq
-    label: "Menu: BBQ"
+    label: "Menu: Barbecue"
     type: file
     path: truly-scrumptious-netlify_3/menu-bbq.json
     fields:
@@ -165,7 +160,7 @@ content:
         type: text
 
   - name: menu_buffet
-    label: "Menu: Buffet"
+    label: "Menu: Buffet + Grazing"
     type: file
     path: truly-scrumptious-netlify_3/menu-buffet.json
     fields:
@@ -228,7 +223,7 @@ content:
         type: text
 
   - name: menu_canapes
-    label: "Menu: Canapés"
+    label: "Menu: Canapés + Bowl Food"
     type: file
     path: truly-scrumptious-netlify_3/menu-canapes.json
     fields:
@@ -291,7 +286,7 @@ content:
         type: text
 
   - name: menu_afternoon
-    label: "Menu: Afternoon Tea"
+    label: "Menu: Corporate + Conference"
     type: file
     path: truly-scrumptious-netlify_3/menu-afternoon-tea.json
     fields:
@@ -354,7 +349,7 @@ content:
         type: text
 
   - name: what_we_cater
-    label: "Page: What We Cater"
+    label: "Page: Event + Location"
     type: file
     path: truly-scrumptious-netlify_3/what-we-cater.json
     fields:
@@ -376,7 +371,7 @@ content:
         label: "Hero — subtitle paragraph"
         type: text
       - name: occasions_intro
-        label: "What We Cater — intro paragraph"
+        label: "Event + Location — intro paragraph"
         type: text
       - name: occasions
         label: "Occasions (cards)"
