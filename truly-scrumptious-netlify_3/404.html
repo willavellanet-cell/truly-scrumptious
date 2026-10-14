@@ -1,4 +1,4 @@
-<!-- v-golive 404 -->
+<!-- v-jamie-oct2 404 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,8 +51,8 @@
   :root {
     --cream: #f8f5ef;
     --off-white: #faf8f4;
-    --blue: #56aae5;
-    --blue-mid: #3e96d6;
+    --blue: #A52CC9; --teal: #4BDBD5;
+    --blue-mid: #8A23A8;
     --black: #111110;
     --mid: #6a6560;
     --rule: rgba(0,0,0,0.1);
@@ -127,12 +127,12 @@
     <h2>Our menus</h2>
     <ul>
       <li><a href="menu-canapes.html">Canapés + Bowl Food</a></li>
-      <li><a href="menu-buffet.html">Buffets</a></li>
-      <li><a href="menu-bbq.html">BBQ</a></li>
-      <li><a href="menu-afternoon-tea.html">Stand Up + Reception</a></li>
+      <li><a href="menu-buffet.html">Buffet + Grazing</a></li>
+      <li><a href="menu-bbq.html">Barbecue</a></li>
+      <li><a href="menu-afternoon-tea.html">Corporate + Conference</a></li>
       <li><a href="menu-bespoke.html">Bespoke</a></li>
       <li><a href="private-chef.html">Private Chef</a></li>
-      <li><a href="what-we-cater.html">What We Cater</a></li>
+      <li><a href="what-we-cater.html">Event + Location</a></li>
     </ul>
   </nav>
 </main>
@@ -140,5 +140,19 @@
 <footer>
   Call <a href="tel:07949167324">07949 167 324</a> or email <a href="mailto:info@tsoxford.co.uk">info@tsoxford.co.uk</a>
 </footer>
+<!-- TEAL ACCENTS (Jamie's second brand colour) -->
+<style>
+  /* menu tabs: teal underline marks the current page */
+  body div.menu-nav a.active, body div.menu-nav a.active:link, body div.menu-nav a.active:visited { border-bottom-color: var(--teal) !important; }
+  .sm-tab.active { border-bottom-color: var(--teal) !important; }
+  .sm-tab.active::after, .sm-tab::after { background: var(--teal) !important; }
+  /* eyebrow labels sitting on photo heroes */
+  .page-hero .hero-eyebrow, .page-hero-content .hero-eyebrow, .hero-bg ~ .hero-content .hero-eyebrow, .hero-bg ~ .hero-content .eyebrow { color: var(--teal) !important; text-shadow: 0 1px 10px rgba(0,0,0,0.6), 0 0 2px rgba(0,0,0,0.35); }
+  /* footer: brand stripe + area pills */
+  footer { border-top: 2px solid var(--teal) !important; }
+  .area-tag { border-color: var(--teal) !important; }
+  /* chat window header */
+  .chat-header-avatar { background: var(--teal) !important; }
+</style>
 </body>
 </html>

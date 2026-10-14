@@ -1,9 +1,9 @@
 {
   "hero_image": "https://images.unsplash.com/photo-1555244162-803834f70033?w=1600&q=80",
   "hero_eyebrow": "Oxford & Oxfordshire",
-  "hero_line1": "Buffet Catering",
-  "hero_line2": "in Oxfordshire",
-  "hero_subtitle": "Vibrant, colourful and abundantly generous — buffet catering designed to impress and satisfy.",
+  "hero_line1": "Buffet +",
+  "hero_line2": "Grazing",
+  "hero_subtitle": "Vibrant and colourful — buffet catering designed to impress and satisfy.",
   "samples_intro": "A taste of what&rsquo;s possible. Cold buffets and picnic spreads, hot lunch menus by region, and full event-style buffets for larger occasions. Each one is a starting point for the conversation. Tap any menu to expand.",
   "cta_image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=1600&q=80",
   "cta_line1": "Planning an",
@@ -12,7 +12,7 @@
   "samples": [
     {
       "title": "Ploughman's",
-      "blurb": "Our simplest cold buffet — ideal for drop-off lunches. A proper British ploughman's with quality breads, cured meats, classic British cheeses and homemade pickles. Easy, generous, never disappointing.",
+      "blurb": "Our simplest cold buffet — ideal for drop-off lunches. A proper British ploughman's with quality breads, cured meats, classic British cheeses and homemade pickles. Easy, satisfying, never disappointing.",
       "courses": [
         {
           "course": "On the table",
@@ -107,7 +107,7 @@
     },
     {
       "title": "Summer Garden Party",
-      "blurb": "Our more generous summer cold spread — designed for relaxed afternoons in the garden. Cured and grilled meats, bright salads, British cheeses and proper homemade puddings.",
+      "blurb": "Our fuller summer cold spread — designed for relaxed afternoons in the garden. Cured and grilled meats, bright salads, British cheeses and proper homemade puddings.",
       "courses": [
         {
           "course": "On the table",
@@ -285,7 +285,7 @@
     },
     {
       "title": "Italian",
-      "blurb": "A proper Italian hot lunch — a generous lasagne with a vegan porcini or soya alternative, garlic bread and a chunky seasonal salad.",
+      "blurb": "A proper Italian hot lunch — a classic lasagne with a vegan porcini or soya alternative, garlic bread and a chunky seasonal salad.",
       "courses": [
         {
           "course": "Mains",
