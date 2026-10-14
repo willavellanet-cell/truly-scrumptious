@@ -1,4 +1,4 @@
-<!-- v-jamie-oct2 index -->
+<!-- v-golive index -->
 <!DOCTYPE html>
 <!-- v101 seo-ready -->
 <html lang="en">
@@ -2004,5 +2004,41 @@ Always end responses about booking or pricing with a warm nudge to get in touch:
   /* chat window header */
   .chat-header-avatar { background: var(--teal) !important; }
 </style>
+<!-- MOBILE CHAT + FORM FIXES (final authority — keep last) -->
+<style>
+  @media (max-width: 768px) {
+    /* Chat opens as a full screen sheet pinned to the visible screen edges, so the header and close button are always in view */
+    body .chat-window {
+      top: 0 !important; bottom: 0 !important; left: 0 !important; right: 0 !important;
+      width: auto !important; max-width: none !important;
+      height: auto !important; max-height: none !important;
+      border-radius: 0 !important; z-index: 1001 !important;
+    }
+    body .chat-header { padding: calc(14px + env(safe-area-inset-top)) 12px 14px 18px !important; }
+    body .chat-close {
+      width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+      font-size: 22px !important; color: rgba(255,255,255,0.85) !important; border-radius: 50%;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body .chat-close:active { background: rgba(255,255,255,0.12); }
+    body .chat-messages { overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+    body .chat-input-row { padding-bottom: calc(12px + env(safe-area-inset-bottom)) !important; }
+    /* 16px stops iPhone Safari zooming in when a field is tapped */
+    body .chat-input, body input, body select, body textarea { font-size: 16px !important; }
+    /* Keep the page behind still while chatting */
+    html.chat-open, html.chat-open body { overflow: hidden !important; }
+  }
+</style>
+<script>
+  (function () {
+    var orig = window.toggleChat, win = document.getElementById('chat-window');
+    if (!orig || !win) return;
+    function sync() { document.documentElement.classList.toggle('chat-open', win.classList.contains('open')); }
+    window.toggleChat = function () { orig.apply(this, arguments); sync(); };
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && win.classList.contains('open')) window.toggleChat();
+    });
+  })();
+</script>
 </body>
 </html>
