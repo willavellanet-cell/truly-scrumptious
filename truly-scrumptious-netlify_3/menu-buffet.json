@@ -102,6 +102,44 @@
       ]
     },
     {
+      "title": "Cold Buffet - Family Style Summer Picnic",
+      "blurb": "The extensive grounds of a gothic style country manor house. Various outbuildings added rustic charm, as did the barn dotted with fairy lights for the evening festivities. A ceremony on the terrace was followed by a drinks reception, then the meal in an open-air tent where guests sat at picnic tables.",
+      "courses": [
+        {
+          "course": "Crostini selection",
+          "items": [
+            "Sicilian caponata with toasted almonds",
+            "Roasted peppers with capers",
+            "Mozzarella with basil & a sprinkle of chilli"
+          ]
+        },
+        {
+          "course": "Main course — platters of roasted & cured meats",
+          "items": [
+            "Gammon with a honey, mustard & marmalade glaze",
+            "Italian style porchetta",
+            "Garlic & herb crusted roast beef",
+            "Assorted salame & chorizo"
+          ]
+        },
+        {
+          "course": "Sharing tarts",
+          "items": [
+            "Roasted cherry tomato, kalamata olive, feta & basil",
+            "Caramelised onion, garlic & goat cheese"
+          ]
+        },
+        {
+          "course": "Salads & cheese",
+          "items": [
+            "A selection of British and continental cheeses",
+            "Lemony chick pea, feta & herb salad",
+            "New potato, sun-dried tomato & basil salad"
+          ]
+        }
+      ]
+    },
+    {
       "title": "Cold Buffet - The Summer Garden Party",
       "blurb": "Our fuller summer cold spread — designed for relaxed afternoons in the garden. Cured and grilled meats, bright salads, British cheeses and proper homemade puddings.",
       "courses": [
@@ -315,44 +353,6 @@
           "items": [
             "Bagels with smoked salmon & cream cheese",
             "Bagels with home cured salt beef and a selection of mustards"
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Cold Buffet - Family Style Summer Picnic",
-      "blurb": "The extensive grounds of a gothic style country manor house. Various outbuildings added rustic charm, as did the barn dotted with fairy lights for the evening festivities. A ceremony on the terrace was followed by a drinks reception, then the meal in an open-air tent where guests sat at picnic tables.",
-      "courses": [
-        {
-          "course": "Crostini selection",
-          "items": [
-            "Sicilian caponata with toasted almonds",
-            "Roasted peppers with capers",
-            "Mozzarella with basil & a sprinkle of chilli"
-          ]
-        },
-        {
-          "course": "Main course — platters of roasted & cured meats",
-          "items": [
-            "Gammon with a honey, mustard & marmalade glaze",
-            "Italian style porchetta",
-            "Garlic & herb crusted roast beef",
-            "Assorted salame & chorizo"
-          ]
-        },
-        {
-          "course": "Sharing tarts",
-          "items": [
-            "Roasted cherry tomato, kalamata olive, feta & basil",
-            "Caramelised onion, garlic & goat cheese"
-          ]
-        },
-        {
-          "course": "Salads & cheese",
-          "items": [
-            "A selection of British and continental cheeses",
-            "Lemony chick pea, feta & herb salad",
-            "New potato, sun-dried tomato & basil salad"
           ]
         }
       ]
