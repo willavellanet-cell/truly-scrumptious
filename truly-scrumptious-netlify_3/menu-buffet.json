@@ -1,14 +1,10 @@
 {
-  "hero_image": "buffet-1.jpg",
+  "hero_image": "/Cold Buffet Table in the Garden.jpg",
   "hero_eyebrow": "Oxford & Oxfordshire",
   "hero_line1": "Buffet +",
   "hero_line2": "Grazing",
   "hero_subtitle": "Vibrant and colourful — buffet catering designed to impress and satisfy.",
   "samples_intro": "A taste of what&rsquo;s possible. Cold buffets and picnic spreads, hot lunch menus by region, and full event-style buffets for larger occasions. Each one is a starting point for the conversation. Tap any menu to expand.",
-  "cta_image": "gallery-10.jpg",
-  "cta_line1": "Planning an",
-  "cta_line2": "Event?",
-  "cta_subtitle": "Tell us about your event and we will create a menu that works perfectly for you.",
   "samples": [
     {
       "title": "Ploughman's",
@@ -361,5 +357,9 @@
         }
       ]
     }
-  ]
+  ],
+  "cta_image": "/East Mediterranean Plate.jpg",
+  "cta_line1": "Planning an",
+  "cta_line2": "Event?",
+  "cta_subtitle": "Tell us about your event and we will create a menu that works perfectly for you."
 }
