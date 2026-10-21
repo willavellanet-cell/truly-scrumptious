@@ -79,29 +79,6 @@
       ]
     },
     {
-      "title": "Hot Buffet - Festive Christmas Buffet",
-      "blurb": "A traditional Christmas cold spread — roast turkey, glazed gammon, festive sides and a selection of our own Christmas baking. Perfect for office parties, family gatherings or any winter celebration.",
-      "courses": [
-        {
-          "course": "On the table",
-          "items": [
-            "Roast turkey with cranberry sauce",
-            "Gammon glazed with grainy mustard & marmalade",
-            "Butternut squash and stilton tart",
-            "Mixed leaf salad with red onion and pomegranate seeds",
-            "“Light” coleslaw of red cabbage, carrot, fennel & parsley with a lemon vinaigrette",
-            "Jewelled couscous"
-          ]
-        },
-        {
-          "course": "Sweet Christmas treats",
-          "items": [
-            "A selection of our Christmas cookies and cakes including mini mince pies, Christmas cake, cinnamon & almond shortbread stars and orange & spice gooey chocolate brownie bites"
-          ]
-        }
-      ]
-    },
-    {
       "title": "Cold Buffet - Family Style Summer Picnic",
       "blurb": "The extensive grounds of a gothic style country manor house. Various outbuildings added rustic charm, as did the barn dotted with fairy lights for the evening festivities. A ceremony on the terrace was followed by a drinks reception, then the meal in an open-air tent where guests sat at picnic tables.",
       "courses": [
@@ -353,6 +330,29 @@
           "items": [
             "Bagels with smoked salmon & cream cheese",
             "Bagels with home cured salt beef and a selection of mustards"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Hot Buffet - Festive Christmas Buffet",
+      "blurb": "A traditional Christmas cold spread — roast turkey, glazed gammon, festive sides and a selection of our own Christmas baking. Perfect for office parties, family gatherings or any winter celebration.",
+      "courses": [
+        {
+          "course": "On the table",
+          "items": [
+            "Roast turkey with cranberry sauce",
+            "Gammon glazed with grainy mustard & marmalade",
+            "Butternut squash and stilton tart",
+            "Mixed leaf salad with red onion and pomegranate seeds",
+            "“Light” coleslaw of red cabbage, carrot, fennel & parsley with a lemon vinaigrette",
+            "Jewelled couscous"
+          ]
+        },
+        {
+          "course": "Sweet Christmas treats",
+          "items": [
+            "A selection of our Christmas cookies and cakes including mini mince pies, Christmas cake, cinnamon & almond shortbread stars and orange & spice gooey chocolate brownie bites"
           ]
         }
       ]
