@@ -7,7 +7,7 @@
   "samples_intro": "A taste of what's possible. Cold buffets and grazing platers, hot lunch menus by region, and full event-style buffets for larger occasions. Each one is a starting point for the conversation. Tap any menu to expand.",
   "samples": [
     {
-      "title": "Ploughman's",
+      "title": "Cold Buffet - Ploughman's",
       "blurb": "Our simplest cold buffet — ideal for drop-off lunches. A proper British ploughman's with quality breads, cured meats, classic British cheeses and homemade pickles. Easy, satisfying, never disappointing.",
       "courses": [
         {
@@ -23,7 +23,7 @@
       ]
     },
     {
-      "title": "The Coronation",
+      "title": "Cold Buffet - The Coronation",
       "blurb": "A classic English cold buffet built around Coronation Chicken — comfortable, familiar flavours perfect for garden lunches and relaxed receptions.",
       "courses": [
         {
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "title": "Simple Greek",
+      "title": "Cold Buffet - The Simple Greek",
       "blurb": "Bright Mediterranean flavours served cold and easy to graze on. Great for summer lunches, drinks receptions with substance, or any time a lighter, sunnier buffet is wanted.",
       "courses": [
         {
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "title": "Mediterranean Antipasti",
+      "title": "Cold Buffet - The Simple Mediterranean",
       "blurb": "A grazing-style cold buffet inspired by the antipasti table — cured meats, roasted vegetables, beautiful breads and bright salads, laid out for guests to help themselves.",
       "courses": [
         {
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "title": "Festive Christmas Buffet",
+      "title": "Hot Buffet - Festive Christmas Buffet",
       "blurb": "A traditional Christmas cold spread — roast turkey, glazed gammon, festive sides and a selection of our own Christmas baking. Perfect for office parties, family gatherings or any winter celebration.",
       "courses": [
         {
@@ -102,7 +102,7 @@
       ]
     },
     {
-      "title": "Summer Garden Party",
+      "title": "Cold Buffet - The Summer Garden Party",
       "blurb": "Our fuller summer cold spread — designed for relaxed afternoons in the garden. Cured and grilled meats, bright salads, British cheeses and proper homemade puddings.",
       "courses": [
         {
@@ -127,7 +127,7 @@
       ]
     },
     {
-      "title": "Ham & Salmon",
+      "title": "Cold Buffet - Ham & Salmon",
       "blurb": "A more elegant cold buffet built around two star centrepieces — home-baked glazed ham and poached salmon. Quietly impressive, ideal for milestone lunches and refined receptions.",
       "courses": [
         {
@@ -151,7 +151,7 @@
       ]
     },
     {
-      "title": "Mexican DIY Wraps",
+      "title": "Simple Hot Buffet - Mexican DIY Wraps",
       "blurb": "A relaxed, hands-on hot lunch — lively flavours and a build-your-own approach that always gets the room talking. Brilliant for offices and informal gatherings.",
       "courses": [
         {
@@ -165,7 +165,7 @@
       ]
     },
     {
-      "title": "Indian",
+      "title": "Simple Hot Buffet - Indian",
       "blurb": "Aromatic, gently spiced and full of warmth — an Indian-inspired hot lunch with a meat and a vegetarian curry alongside basmati rice.",
       "courses": [
         {
@@ -179,7 +179,7 @@
       ]
     },
     {
-      "title": "Moroccan",
+      "title": "Simple Hot Buffet - Moroccan",
       "blurb": "Fragrant North African tagines paired with jewelled couscous — comforting, lightly spiced, and beautiful on the table.",
       "courses": [
         {
@@ -193,7 +193,7 @@
       ]
     },
     {
-      "title": "Mediterranean",
+      "title": "Simple Hot Buffet - Mediterranean",
       "blurb": "A classic European hot lunch — a French-leaning meat main, a hearty vegetarian alternative and a comforting root vegetable mash.",
       "courses": [
         {
@@ -207,7 +207,7 @@
       ]
     },
     {
-      "title": "Pakistani",
+      "title": "Simple Hot Buffet - Pakistani",
       "blurb": "A rich, slow-cooked lamb keema alongside a vegetable curry and basmati rice — deeply flavoured but never heavy.",
       "courses": [
         {
@@ -221,7 +221,7 @@
       ]
     },
     {
-      "title": "Persian",
+      "title": "Simple Hot Buffet - Persian",
       "blurb": "Bright Persian flavours — herbs, citrus, pomegranate and warm spice — with a fresh seasonal salad and a buttery dip alongside.",
       "courses": [
         {
@@ -235,7 +235,7 @@
       ]
     },
     {
-      "title": "North African",
+      "title": "Simple Hot Buffet - North African",
       "blurb": "Smoky paprika chicken with a chickpea, spinach and saffron stew — full of colour and warmth, with flatbread or couscous to soak it all up.",
       "courses": [
         {
@@ -250,7 +250,7 @@
       ]
     },
     {
-      "title": "Lebanese",
+      "title": "Simple Hot Buffet - Lebanese",
       "blurb": "Vibrant, fresh Levantine flavours — shawarma and falafel with all the trimmings. Brilliant for a hands-on lunch where guests build their own plates.",
       "courses": [
         {
@@ -265,7 +265,7 @@
       ]
     },
     {
-      "title": "Thai",
+      "title": "Simple Hot Buffet - Thai",
       "blurb": "Fragrant Thai curries — a yellow chicken curry alongside a vegetable green curry — served with cooling cucumber salad and Thai scented rice.",
       "courses": [
         {
@@ -280,7 +280,7 @@
       ]
     },
     {
-      "title": "Italian",
+      "title": "Simple Hot Buffet - Italian",
       "blurb": "A proper Italian hot lunch — a classic lasagne with a vegan porcini or soya alternative, garlic bread and a chunky seasonal salad.",
       "courses": [
         {
@@ -320,7 +320,7 @@
       ]
     },
     {
-      "title": "Family Style Summer Picnic",
+      "title": "Cold Buffet - Family Style Summer Picnic",
       "blurb": "The extensive grounds of a gothic style country manor house. Various outbuildings added rustic charm, as did the barn dotted with fairy lights for the evening festivities. A ceremony on the terrace was followed by a drinks reception, then the meal in an open-air tent where guests sat at picnic tables.",
       "courses": [
         {
