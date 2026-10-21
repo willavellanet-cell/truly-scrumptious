@@ -1,14 +1,10 @@
 {
-  "hero_image": "canapes-1.jpg",
+  "hero_image": "/Banquet Seating.jpg",
   "hero_eyebrow": "Oxford & Oxfordshire",
   "hero_line1": "Corporate +",
   "hero_line2": "Conference",
   "hero_subtitle": "Conferences, away days, standing receptions and drinks parties — food designed to be eaten on your feet, glass in hand.",
   "samples_intro": "A taste of what&rsquo;s possible. Here&rsquo;s a recent menu we built around afternoon tea elements &mdash; finger sandwiches, mini tartlets, scones with jam and cream, followed by something more substantial. Tap to expand.",
-  "cta_image": "Corporate Lunch Plate.jpg",
-  "cta_line1": "Planning a",
-  "cta_line2": "Corporate Event?",
-  "cta_subtitle": "Tell us about your event and we will create a menu that works perfectly for you.",
   "samples": [
     {
       "title": "Afternoon Tea Canapés & Sharing Pies",
@@ -41,5 +37,9 @@
         }
       ]
     }
-  ]
+  ],
+  "cta_image": "/Corporate Lunch Plate.jpg",
+  "cta_line1": "Planning a",
+  "cta_line2": "Corporate Event?",
+  "cta_subtitle": "Tell us about your event and we will create a menu that works perfectly for you."
 }
